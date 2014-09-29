@@ -1,4 +1,11 @@
-<ul ng-repeat="beer in beers| limitTo:50">
+<p>Our beer.db database limited to 50 entries</p>
+
+<form class="form-inline">
+  <input ng-model="query" type="text"
+         placeholder="Filter by" autofocus>
+</form>
+<br>
+<ul ng-repeat="beer in beers| filter:query | limitTo:50">
   <li>{{beer.title}}<br>
     <small>Key: {{beer.key}}</small></li>
 </ul>
