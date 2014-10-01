@@ -12,7 +12,7 @@ angular.module('abeerApp')
     $rootScope.curTab = 'home'
     $http.get('data/beers.json').success (data) ->
       temp = angular.fromJson data
-#      console.log temp
+      console.log temp
       $scope.beers = temp.data.beers
 #      console.log $scope.beers
 #      console.log $scope.beers.beers
