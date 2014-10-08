@@ -24,11 +24,26 @@ angular
         controller: 'MainCtrl'
       .when '/about',
         templateUrl: 'views/about.html'
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+      .when '/country/:country',
+        templateUrl: 'views/country.html',
+        controller: 'CountryCtrl'
       .otherwise
         redirectTo: '/'
-  .run ($rootScope) ->
+  .run ($rootScope, $http) ->
     $rootScope.UM =
       name: "Giedo"
       visited_home: 0
       visited_about: 0
+
+    $http.get('data/countries.json').success (data) ->
+      $rootScope.countries = angular.fromJson data
+      console.log $rootScope.countries
+
+
+    $rootScope.maincontexts =
+      [
+        title: "Belgie"
+      ,
+        title: "Henk"
+      ]
