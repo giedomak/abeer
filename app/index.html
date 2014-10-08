@@ -21,19 +21,22 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li ng-class="{'active': curTab === 'home'}"><a ng-href="#">Home</a></li>
-          <li ng-class="{'active': curTab === 'about'}"><a ng-href="#/about">About</a></li>
-          <!--<li><a ng-href="#">Contact</a></li>-->
-        </ul>
-        <h3 class="text-muted">abeer</h3>
-      </div>
+      <div sidebar class="sidebar"></div>
+      <div class="content">
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+            <li ng-class="{'active': curTab === 'home'}"><a ng-href="#">Home</a></li>
+            <li ng-class="{'active': curTab === 'about'}"><a ng-href="#/about">About</a></li>
+            <!--<li><a ng-href="#">Contact</a></li>-->
+          </ul>
+          <h3 class="text-muted">abeer</h3>
+        </div>
 
-      <div ng-view=""></div>
+        <div ng-view=""></div>
 
-      <div class="footer">
-        <p>2ID56 - Adaptive web-based systems</p>
+        <div class="footer">
+          <p>2ID56 - Adaptive web-based systems</p>
+        </div>
       </div>
     </div>
 
@@ -85,6 +88,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/directives/sidebar.js"></script>
+    <script src="scripts/controllers/country.js"></script>
         <!-- endbuild -->
 </body>
 </html>
