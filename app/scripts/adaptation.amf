@@ -1,0 +1,12 @@
+.visited {
+	insert-um: #{(document.title + "-accessed").replace(/\s+/g, "-").replace(/[()]/g, "").trim().toLowerCase()};
+}
+
+@user(min-#{document.title.replace(/\s+/g, "-").replace(/[\.\(\);;,\"]/g, "").trim().toLowerCase()}-accessed: 172) {
+ 	p[id="beerppl"] {
+ 	    color: white;
+ 	    text-decoration: none;
+
+ 	}
+
+ }

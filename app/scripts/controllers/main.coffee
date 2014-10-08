@@ -8,7 +8,7 @@
  # Controller of the abeerApp
 ###
 angular.module('abeerApp')
-  .controller 'MainCtrl', ($http, $rootScope, $scope) ->
+  .controller 'MainCtrl', ($http, $window, $route, $rootScope, $scope) ->
     $rootScope.curTab = 'home'
     $http.get('data/beers.json').success (data) ->
       temp = angular.fromJson data
@@ -18,3 +18,7 @@ angular.module('abeerApp')
 #      console.log $scope.beers.beers
 #    $scope.beers = angular.fromJson('beers.json')
 #    console.log $scope.beers
+    $scope.reloadRoute = () ->
+      $window.location.reload()
+      true
+    true

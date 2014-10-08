@@ -13,6 +13,22 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+      <script type="text/javascript" src="scripts/adaptation/util.js"></script>
+      <script type="text/javascript" src="scripts/adaptation/AdaptationEngine.js"></script>
+      <script type="text/javascript" src="scripts/adaptation/ContextHelper.js"></script>
+      <script type="text/javascript" src="scripts/adaptation/parser.js"></script>
+      <script type="text/javascript" src="scripts/modelling/parser.js"></script>
+      <script type="text/javascript" src="scripts/modelling/UMEngine.js"></script>
+      <script type="text/javascript" src="scripts/util/IndexedDBAPI.js"></script>
+      <script type="text/javascript" src="scripts/util/LocalStorageAPI.js"></script>
+      <script type="text/javascript" src="scripts/util/Interface.js"></script>
+      <script type="text/javascript" src="scripts/util/state.js"></script>
+      <script type="text/javascript" src="scripts/util/UMAPI.js"></script>
+      <script type="text/javascript" src="scripts/wibaf.js"></script>
+      <script type="text/javascript" src="scripts/domain/loadDomain.js"></script>
+      <link href="scripts/adaptation.amf" rel="prefetch" type="text/amf" title="wibaf" />
+      <link href="scripts/modelling.umf" rel="prefetch" type="text/umf" title="UM" />
+
   </head>
   <body ng-app="abeerApp">
     <!--[if lt IE 7]>
@@ -20,16 +36,25 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <script>
+        ( function() {
+            new wibaf().init(function() {
+                <!-- Code to be executed after the adaptation -->
+            });
+        }());
+    </script>
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li ng-class="{'active': curTab === 'home'}"><a ng-href="#">Home</a></li>
-          <li ng-class="{'active': curTab === 'about'}"><a ng-href="#/about">About</a></li>
+          <li ng-class="{'active': curTab === 'home'}"><a  ng-href="#">Home</a></li>
+          <li ng-class="{'active': curTab === 'about'}"><a ng-click="reloadRoute()" ng-href="#/about">About</a></li>
           <!--<li><a ng-href="#">Contact</a></li>-->
         </ul>
         <h3 class="text-muted">abeer</h3>
-      </div>
 
+      </div>
+        <p class="visited-at-least-once"> YO YO YO BEER
+        </p>
       <div ng-view=""></div>
 
       <div class="footer">

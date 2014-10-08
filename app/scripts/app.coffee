@@ -8,6 +8,8 @@
  #
  # Main module of the application.
 ###
+
+
 angular
   .module('abeerApp', [
     'ngAnimate',
@@ -25,6 +27,8 @@ angular
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
-      .otherwise
+
+    .otherwise
         redirectTo: '/'
+
 
