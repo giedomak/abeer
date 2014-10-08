@@ -25,7 +25,7 @@ angular
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl',
-      .when '/country/:country',
+      .when '/country/:id',
         templateUrl: 'views/country.html',
         controller: 'CountryCtrl'
       .otherwise
@@ -38,12 +38,5 @@ angular
 
     $http.get('data/countries.json').success (data) ->
       $rootScope.countries = angular.fromJson data
+      country.visited = 0 for country in $rootScope.countries
       console.log $rootScope.countries
-
-
-    $rootScope.maincontexts =
-      [
-        title: "Belgie"
-      ,
-        title: "Henk"
-      ]
