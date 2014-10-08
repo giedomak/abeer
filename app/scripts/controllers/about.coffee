@@ -10,8 +10,4 @@
 angular.module('abeerApp')
   .controller 'AboutCtrl', ($rootScope, $scope) ->
     $rootScope.curTab = 'about'
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+    $rootScope.UM.visited_about++

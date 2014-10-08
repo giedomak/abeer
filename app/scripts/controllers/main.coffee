@@ -10,6 +10,8 @@
 angular.module('abeerApp')
   .controller 'MainCtrl', ($http, $rootScope, $scope) ->
     $rootScope.curTab = 'home'
+    $rootScope.UM.visited_home++
+
     $http.get('data/beers.json').success (data) ->
       temp = angular.fromJson data
       console.log temp

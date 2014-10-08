@@ -27,4 +27,8 @@ angular
         controller: 'AboutCtrl'
       .otherwise
         redirectTo: '/'
-
+  .run ($rootScope) ->
+    $rootScope.UM =
+      name: "Giedo"
+      visited_home: 0
+      visited_about: 0
