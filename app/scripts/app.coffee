@@ -38,6 +38,8 @@ angular
 
     $http.get('data/countries.json').success (data) ->
       $rootScope.countries = angular.fromJson data
+      country.visited = 0 for country in $rootScope.countries
+
       console.log $rootScope.countries
 
 

@@ -11,3 +11,6 @@ angular.module('abeerApp')
   .controller 'AboutCtrl', ($rootScope, $scope) ->
     $rootScope.curTab = 'about'
     $rootScope.UM.visited_about++
+
+    $scope.beers =
+      description: "hello"

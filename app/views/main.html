@@ -5,7 +5,7 @@
          placeholder="Filter by" autofocus>
 </form>
 <br>
-<ul ng-repeat="beer in beers| filter:query | limitTo:2">
+<ul ng-repeat="beer in beers| filter:query | limitTo:2" ng-show="UM.visited_home > 2">
   <li>{{beer.title}}<br>
     <small>Alcohol: {{beer.abv}}, Grade: {{beer.grade}}, OG: {{beer.og}}, Key: {{beer.key}}</small></li>
 </ul>
