@@ -23,13 +23,13 @@ body {
 }
 
 .sidebar {
-  position: absolute;
-  width: 200px;
-  height: 90%;
+//  position: absolute;
+//  width: 200px;
+//  height: 90%;
 }
 
 .content {
-  padding-left: 200px;
+//  padding-left: 200px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -64,45 +64,142 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
 
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+///* Responsive: Portrait tablets and up */
+//@media screen and (min-width: 768px) {
+//  .container {
+//    max-width: 830px;
+//  }
+//
+//  /* Remove the padding we set earlier */
+//  .header,
+//  .marketing,
+//  .footer {
+//    padding-left: 0;
+//    padding-right: 0;
+//  }
+//  /* Space out the masthead */
+//  .header {
+//    margin-bottom: 30px;
+//  }
+//  /* Remove the bottom border on the jumbotron for visual effect */
+//  .jumbotron {
+//    border-bottom: 0;
+//  }
+//}
+
+/* make sidebar nav vertical */
+@media (min-width: 768px){
+  .affix-content .container {
+    width: 700px;
   }
-}
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
+  html,body{
+    background-color: #f8f8f8;
+    height: 100%;
+//    overflow: hidden;
   }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 830px;
+  .affix-content .container .page-header{
+    margin-top: 0;
   }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
+  .affix-sidebar{
+    padding-right:0;
+    font-size:small;
     padding-left: 0;
-    padding-right: 0;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
+  .affix-row, .affix-container, .affix-content{
+    height: 100%;
+    overflow: scroll;
+    margin-left: 0;
+    margin-right: 0;
   }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
+  .affix-content{
+//    padding-top: 20px;
+//    margin-bottom: 10px;
+    background-color:white;
+  }
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar{
+    border-radius:0;
+    margin-bottom:0;
+    border:0;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .nav-list li a {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
   }
 }
+
+@media (min-width: 769px){
+  .affix-content .container {
+    width: 600px;
+  }
+  .affix-content .container .page-header{
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 992px){
+  .affix-content .container {
+    width: 900px;
+  }
+  .affix-content .container .page-header{
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1220px){
+  .affix-row{
+    overflow: hidden;
+  }
+
+  .affix-content{
+    overflow: auto;
+  }
+
+  .affix-content .container {
+    width: 1000px;
+  }
+
+  .affix-content .container .page-header{
+    margin-top: 0;
+  }
+  .affix-content{
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .affix-title{
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom:10px;
+  }
+  .navbar-nav {
+    margin: 0;
+  }
+  .navbar-collapse{
+    padding: 0;
+  }
+  .sidebar-nav .navbar li a:hover {
+    background-color: #428bca;
+    color: white;
+  }
+  .sidebar-nav .navbar li a > .caret {
+    margin-top: 8px;
+  }
+}
+
