@@ -2,4 +2,4 @@
 npm install
 bower install
 grunt build
-grunt serve
+cp -r /home/deploy/abeer/dist/* /var/www/app
