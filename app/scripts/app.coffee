@@ -40,3 +40,7 @@ angular
       $rootScope.countries = angular.fromJson data
       country.visited = 0 for country in $rootScope.countries
       console.log $rootScope.countries
+
+  .filter "newline", () ->
+    (data) ->
+      return data.replace(/\n\r?/g, '<br />')

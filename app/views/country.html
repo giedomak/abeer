@@ -4,5 +4,5 @@
 
 <small>Visited: {{countries[id].visited}}</small>
 <br>
-{{countries[id].content}}
+<div ng-bind-html="countries[id].content | newline"></div>
 
