@@ -1,8 +1,60 @@
-<ul>
-  <li>Countries</li>
-  <ul>
-    <li ng-repeat="(key, value) in countries">
-      <a ng-href="#/country/{{key}}">{{value.title}}</a>
-    </li>
-  </ul>
-</ul>
+<!--<ul>-->
+  <!--<li>Countries</li>-->
+  <!--<ul>-->
+    <!--<li ng-repeat="(key, value) in countries">-->
+      <!--<a ng-href="#/country/{{key}}">{{value.title}}</a>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</ul>-->
+  <div class="col-sm-3 col-md-2 affix-sidebar">
+    <div class="sidebar-nav">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="visible-xs navbar-brand">ABEER</span>
+        </div>
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <h4>ABEER</h4>
+          <ul class="nav navbar-nav" id="sidenav01">
+
+            <li><a href="#"><span class="glyphicon glyphicon-star"></span> Introduction</a></li>
+            <li>
+              <a data-toggle="collapse" data-target="#countries" data-parent="#sidenav01" class="collapsed btn-link">
+                <span class="glyphicon glyphicon-flag"></span> Countries <span class="caret pull-right"></span>
+              </a>
+              <div class="collapse" id="countries" style="height: 0px;">
+                <ul class="nav nav-list">
+                  <li ng-repeat="(key, value) in countries"><a ng-href="#/country/{{key}}">{{value.title}}</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a data-toggle="collapse" data-target="#type" data-parent="#sidenav01" class="collapsed btn-link">
+                <span class="glyphicon glyphicon-inbox"></span> Types <span class="caret pull-right"></span>
+              </a>
+              <div class="collapse" id="type" style="height: 0px;">
+                <ul class="nav nav-list">
+                  <li ng-repeat="(key, value) in types"><a ng-href="#/types/{{key}}">{{value.title}}</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a data-toggle="collapse" data-target="#strength" data-parent="#sidenav01" class="collapsed btn-link">
+                <span class="glyphicon glyphicon-inbox"></span> Strengths <span class="caret pull-right"></span>
+              </a>
+              <div class="collapse" id="strength" style="height: 0px;">
+                <ul class="nav nav-list">
+                  <li ng-repeat="(key, value) in strengths"><a ng-href="#/strengths/{{key}}">{{value.title}}</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
