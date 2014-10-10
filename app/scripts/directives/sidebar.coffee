@@ -2,4 +2,4 @@
 
 angular.module('abeerApp')
   .directive 'sidebar', () ->
-    templateUrl: "views/directives/sidebar.html"
+    templateUrl: "../../views/sidebar.html"
