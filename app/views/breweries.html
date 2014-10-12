@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<h1>Breweries</h1>
+<p>
+    Let's find some breweries. You can search if you want to.
+</p>
 
-</body>
-</html>
+
+<form class="form-inline">
+    <input ng-model="query" type="text"
+           placeholder="Filter by" autofocus>
+</form>
+<br>
+<ul ng-repeat="brewery in breweries| filter: value.description !== null |filter:query | limitTo:10">
+    <li><a ng-href="#/breweries/{{breweries.indexOf(brewery)}}">{{brewery.breweryName}}</a><br>
+        <p>{{brewery.description}}</p>
+        <small>Established: {{brewery.established}}, Organic: {{brewery.isOrganic}}, Website: <a href={{brewery.website}}>{{brewery.website}} </a></small></li>
+</ul>

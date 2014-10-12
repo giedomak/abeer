@@ -3,4 +3,14 @@
         Let's find some beers. You can search if you want to.
  </p>
 
-{{(UM.visited_about > 1) ? "Expert" : "Noob"}}
+
+<form class="form-inline">
+    <input ng-model="query" type="text"
+           placeholder="Filter by" autofocus>
+</form>
+<br>
+<ul ng-repeat="beer in beers| filter: value.description !== null |filter:query | limitTo:10">
+    <li><a ng-href="#/beers/{{beers.indexOf(beer)}}">{{beer.name}}</a><br>
+        <p>{{beer.description}}</p>
+        <small>Alcohol: {{beer.abv}}, IBU: {{beer.ibu}}, Year: {{beer.year}}, Brewery: {{beer.breweryName}}</small></li>
+</ul>

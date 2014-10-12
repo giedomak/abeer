@@ -23,20 +23,20 @@ angular
         templateUrl: 'views/intro.html'
 #        controller: 'MainCtrl'
       .when '/about',
-        templateUrl: 'views/about.html'
-        controller: 'AboutCtrl',
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
       .when '/beers',
         templateUrl: 'views/beers.html',
-        controller: 'BeersCtrl',
+        controller: 'BeersCtrl'
       .when '/breweries',
-        templateUrl: 'views/breweries.html'
-        controller: 'BreweriesCtrl',
+        templateUrl: 'views/breweries.html',
+        controller: 'BreweriesCtrl'
       .when '/beers/:id',
         templateUrl: 'views/beer.html',
-        controller: 'BeerCtrl',
+        controller: 'BeerCtrl'
       .when '/breweries/:id',
         templateUrl: 'views/brewery.html',
-        controller: 'BreweryCtrl',
+        controller: 'BreweryCtrl'
       .when '/country/:id',
         templateUrl: 'views/country.html',
         controller: 'CountryCtrl'

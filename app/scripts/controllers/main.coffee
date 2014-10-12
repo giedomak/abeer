@@ -12,15 +12,15 @@ angular.module('abeerApp')
     $rootScope.curTab = 'home'
     $rootScope.UM.visited_home++
 
-    $http.get('data/beers.json').success (data) ->
-      temp = angular.fromJson data
-      console.log temp
-      $scope.beers = temp.data.beers
+#    $http.get('data/beers.json').success (data) ->
+#      temp = angular.fromJson data
+#      console.log temp
+#      $scope.beers = temp.data.beers
 #      console.log $scope.beers
 #      console.log $scope.beers.beers
 #    $scope.beers = angular.fromJson('beers.json')
 #    console.log $scope.beers
-    $scope.reloadRoute = () ->
-      $window.location.reload()
-      true
-    true
+#    $scope.reloadRoute = () ->
+#      $window.location.reload()
+#      true
+#   true
