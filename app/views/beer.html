@@ -1,0 +1,8 @@
+<h1>
+    {{beers[id].name}}
+</h1>
+
+<small>Visited: {{beers[id].visited}}</small>
+<br>
+<div ng-bind-html="beers[id].description | newline"></div>
+

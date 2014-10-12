@@ -25,6 +25,18 @@ angular
       .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl',
+      .when '/beers',
+        templateUrl: 'views/beers.html',
+        controller: 'BeersCtrl',
+      .when '/breweries',
+        templateUrl: 'views/breweries.html'
+        controller: 'BreweriesCtrl',
+      .when '/beers/:id',
+        templateUrl: 'views/beer.html',
+        controller: 'BeerCtrl',
+      .when '/breweries/:id',
+        templateUrl: 'views/brewery.html',
+        controller: 'BreweryCtrl',
       .when '/country/:id',
         templateUrl: 'views/country.html',
         controller: 'CountryCtrl'
@@ -41,6 +53,8 @@ angular
       name: "Giedo"
       visited_home: 0
       visited_about: 0
+      visited_beers: 0
+      visited_breweries: 0
 
     $http.get('data/countries.json').success (data) ->
       $rootScope.countries = angular.fromJson data
@@ -56,6 +70,16 @@ angular
       $rootScope.strengths = angular.fromJson data
       strength.visited = 0 for strength in $rootScope.strengths
       console.log $rootScope.strengths
+
+    $http.get('data/beers.json').success (data) ->
+      $rootScope.beers = angular.fromJson data
+      beer.visited = 0 for beer in $rootScope.beers
+      console.log $rootScope.beers
+
+    $http.get('data/breweries.json').success (data) ->
+      $rootScope.breweries = angular.fromJson data
+      brewery.visited = 0 for brewery in $rootScope.breweries
+      console.log $rootScope.breweries
 
   .filter "newline", () ->
     (data) ->
