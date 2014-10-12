@@ -12,5 +12,5 @@
 <ul ng-repeat="beer in beers| filter: value.description !== null |filter:query | limitTo:10">
     <li><a ng-href="#/beers/{{beers.indexOf(beer)}}">{{beer.name}}</a><br>
         <p>{{beer.description}}</p>
-        <small>Alcohol: {{beer.abv}}, IBU: {{beer.ibu}}, Year: {{beer.year}}, Brewery: {{beer.breweryName}}</small></li>
+        <small>Alcohol: {{beer.abv}}, IBU: {{beer.ibu}}, Year: {{beer.year}}, Brewery: <a ng-href="#/breweries/{{getIndexIfObjWithOwnAttr(beer.breweryID)}}">{{beer.breweryName}}</a></small></li>
 </ul>

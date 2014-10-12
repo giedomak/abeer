@@ -11,3 +11,11 @@ angular.module('abeerApp')
   .controller 'BeersCtrl', ($rootScope, $scope) ->
     $rootScope.curTab = 'beers'
     $rootScope.UM.visited_beers++
+
+    $scope.getIndexIfObjWithOwnAttr = (value) ->
+      i = 0
+
+      while i < $rootScope.breweries.length
+        return i  if $rootScope.breweries[i]['breweryID'] is value
+        i++
+      1
