@@ -9,8 +9,19 @@
            placeholder="Filter by" autofocus>
 </form>
 <br>
-<ul ng-repeat="brewery in breweries| filter: value.description !== null |filter:query | limitTo:10">
-    <li><a ng-href="#/breweries/{{breweries.indexOf(brewery)}}">{{brewery.breweryName}}</a><br>
-        <p>{{brewery.description}}</p>
-        <small>Established: {{brewery.established}}, Organic: {{brewery.isOrganic}}, Website: <a href={{brewery.website}}>{{brewery.website}} </a></small></li>
-</ul>
+<div ng-repeat="brewery in breweries| filter: value.description !== null |filter:query | limitTo:10">
+    <div class="row">
+        <img class="col-md-2" ng-src="{{brewery.largeImgURL !== 'null' && brewery.largeImgURL || defaultImg}}">
+        <div class="col-md-10">
+            <a ng-href="#/breweries/{{breweries.indexOf(brewery)}}">{{brewery.breweryName}}</a><br>
+            <p class="beerDescription">{{brewery.description}}</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>Established {{brewery.established !=='null' && brewery.established || '-- '}}</td>
+                    <td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
+                    <td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

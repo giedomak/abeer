@@ -1,8 +1,22 @@
+
 <h1>
     {{breweries[id].breweryName}}
 </h1>
 
-<small>Visited: {{breweries[id].visited}}</small>
-<br>
-<div ng-bind-html="breweries[id].description | newline"></div>
+<div class="row">
+    <img class="col-lg-4" ng-src="{{breweries[id].largeImgURL !== 'null' && breweries[id].largeImgURL || defaultImg}}">
+    <div class="col-lg-6">
+        {{breweries[id].description}}
+        <table class="table table-bordered">
+            <tr>
+            <tr>
+                <td>Established {{breweries[id].established !=='null' && breweries[id].established || '-- '}}</td>
+                <td>{{breweries[id].isOrganic === 'true' && '' || 'Not'}} Organic</td>
+                <td>Website: <a href={{breweries[id].website}}>{{breweries[id].website}} </a></td>
+            </tr>
+            </tr>
+        </table>
+    </div>
+</div>
 
+<small>Visited: {{breweries[id].visited}}</small>

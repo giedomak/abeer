@@ -2,7 +2,21 @@
     {{beers[id].name}}
 </h1>
 
+<div class="row">
+    <img class="col-lg-4" ng-src="{{beers[id].largeImgURL !== 'null' && beers[id].largeImgURL || defaultImg}}">
+    <div class="col-lg-6">
+        {{beers[id].description}}
+        <table class="table table-bordered">
+            <tr>
+                <td>{{beers[id].abv !=='null' && beers[id].abv || '-- '}}% ABV</td>
+                <td>{{beers[id].ibu !== 'null' && beers[id].ibu || '-- '}} IBU</td>
+                <td>{{beers[id].year !== 'null' && beers[id].year || '-- '}} Year</td>
+                <td><a ng-href="#/breweries/{{getIndexIfObjWithOwnAttr(beers[id].breweryID)}}">{{beers[id].breweryName}}</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
 <small>Visited: {{beers[id].visited}}</small>
-<br>
-<div ng-bind-html="beers[id].description | newline"></div>
+
 

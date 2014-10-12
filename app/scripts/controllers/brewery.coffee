@@ -5,3 +5,4 @@ angular.module('abeerApp')
   console.log "Brewery init"
   $scope.id = $routeParams.id
   $rootScope.breweries[$scope.id].visited++
+  $scope.defaultImg = "images/defaultBreweryMedium.jpeg"

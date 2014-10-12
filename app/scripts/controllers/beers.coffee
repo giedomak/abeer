@@ -11,7 +11,7 @@ angular.module('abeerApp')
   .controller 'BeersCtrl', ($rootScope, $scope) ->
     $rootScope.curTab = 'beers'
     $rootScope.UM.visited_beers++
-
+    $scope.defaultImg = "images/defaultMedium.jpeg"
     $scope.getIndexIfObjWithOwnAttr = (value) ->
       i = 0
 

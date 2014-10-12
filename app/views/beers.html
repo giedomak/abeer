@@ -9,8 +9,20 @@
            placeholder="Filter by" autofocus>
 </form>
 <br>
-<ul ng-repeat="beer in beers| filter: value.description !== null |filter:query | limitTo:10">
-    <li><a ng-href="#/beers/{{beers.indexOf(beer)}}">{{beer.name}}</a><br>
-        <p>{{beer.description}}</p>
-        <small>Alcohol: {{beer.abv}}, IBU: {{beer.ibu}}, Year: {{beer.year}}, Brewery: <a ng-href="#/breweries/{{getIndexIfObjWithOwnAttr(beer.breweryID)}}">{{beer.breweryName}}</a></small></li>
-</ul>
+<div ng-repeat="beer in beers| filter: value.description !== null |filter:query | limitTo:10">
+    <div class="row">
+        <img class="col-md-2" ng-src="{{beer.mediumImgURL !== 'null' && beer.mediumImgURL || defaultImg}}">
+        <div class="col-md-10">
+            <a class="beername" ng-href="#/beers/{{beers.indexOf(beer)}}">{{beer.name}}</a><br>
+            <p class="beerDescription">{{beer.description}}</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>{{beer.abv !=='null' && beer.abv || '-- '}}% ABV</td>
+                    <td>{{beer.ibu !== 'null' && beer.ibu || '-- '}} IBU</td>
+                    <td>{{beer.year !== 'null' && beer.year || '-- '}} Year</td>
+                    <td><a ng-href="#/breweries/{{getIndexIfObjWithOwnAttr(beer.breweryID)}}">{{beer.breweryName}}</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
