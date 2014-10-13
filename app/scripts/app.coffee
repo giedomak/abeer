@@ -16,7 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-#    'autocomplete'
+    'autocomplete'
   ])
   .config ($routeProvider) ->
     $routeProvider
