@@ -18,15 +18,14 @@ angular
     'ngTouch'
 #    'autocomplete'
   ])
-  .config ($routeProvider, $httpProvider) ->
-    $httpProvider
-      .defaults
-        .headers
-          .common["X-Requested-With"] = undefined
+  .config ($routeProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'views/intro.html'
-#        controller: 'MainCtrl'
+        controller: 'MainCtrl'
+      .when '/search',
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl'
       .when '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
