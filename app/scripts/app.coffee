@@ -15,8 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'autocomplete'
+    'ngTouch'
+#    'autocomplete'
   ])
   .config ($routeProvider, $httpProvider) ->
     $httpProvider
