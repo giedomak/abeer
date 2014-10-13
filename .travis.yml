@@ -1,8 +1,15 @@
 language: node_js
 node_js:
-  - '0.10'
+- '0.10'
 before_script:
-  - 'gem install sass --version "=3.2.12"'
-  - 'gem install compass --version "=0.12.2"'
-  - 'npm install -g bower grunt-cli'
-  - 'bower install'
+- gem install sass --version "=3.2.12"
+- gem install compass --version "=0.12.2"
+- npm install -g bower grunt-cli
+- bower install
+env:
+  global:
+  - secure: NRUjETcXbL/XswtYHr9vNaaILfLVouJaqlRqZp7DbKJyMPFAdbC9tIGWVMetp+8Qe3bU8/UPHa747bHiXrJ6b4IuJoV4yDAyCY/YxJu9TMP7+A7od0Ezr+jdDeshfx4i3layR8+e90e77cSAxzYFWkXPGj1Rg6gVbQn5tYUAkQg=
+  - secure: xwynzwjGG/JE6CAZnn2QCBiDWgTAcSZb0I50fT9CNG/fJici7I4GWQkDtGi9LAvbq6+ZUiw4Rbp6oXj8oo/QBTT8Px0kyilW5MmlWu9gv4pQKTBUQsHadc6TCwql2HSfniYtFOh0k/lVWF8b9lip5XyBp3Bl/p/Q+u7iF6hajEM=
+after_success:
+  grunt build
+  "curl --ftp-create-dirs -T "dist/" -u $FTP_USER:$FTP_PASSWORD ftp://abeerfor.me/app/"
