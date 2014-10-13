@@ -8,14 +8,18 @@
  # Controller of the abeerApp
 ###
 angular.module('abeerApp')
-  .controller 'BeersCtrl', ($rootScope, $scope) ->
+  .controller 'BeersCtrl', ($rootScope, $scope, $http) ->
     $rootScope.curTab = 'beers'
     $rootScope.UM.visited_beers++
     $scope.defaultImg = "images/defaultMedium.jpeg"
     $scope.getIndexIfObjWithOwnAttr = (value) ->
       i = 0
-
       while i < $rootScope.breweries.length
         return i  if $rootScope.breweries[i]['breweryID'] is value
         i++
       1
+    $scope.beerResults = []
+    $scope.searchForBeer = (query) ->
+      $http.get('https://api.brewerydb.com/v2/search?q='.concat(query).concat('&type=beer&key=c98568169d21ec1ca3adbea16c28ff71&format=json&callback=JSONP_CALLBACK'))
+      .success (data) ->
+        $scope.beerResults = beer.name for beer in data.data

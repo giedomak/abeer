@@ -3,6 +3,10 @@
         Let's find some beers. You can search if you want to.
  </p>
 
+<autocomplete ng-model="result" attr-placeholder="type to search beers..." click-activation="true" data="beerResults" on-type="searchForBeer" on-select="doSomethingElse"></autocomplete>
+
+
+
 
 <form class="form-inline">
     <input ng-model="query" type="text"

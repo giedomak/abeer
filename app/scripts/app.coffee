@@ -15,9 +15,14 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'autocomplete'
   ])
-  .config ($routeProvider) ->
+  .config ($routeProvider, $httpProvider) ->
+    $httpProvider
+      .defaults
+        .headers
+          .common["X-Requested-With"] = undefined
     $routeProvider
       .when '/',
         templateUrl: 'views/intro.html'
