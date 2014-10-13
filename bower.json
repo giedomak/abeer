@@ -12,7 +12,7 @@
     "angular-animate": "~1.2.0",
     "angular-touch": "~1.2.0",
     "angular-route": "~1.2.0",
-    "allmighty-autocomplete": "~1.0~"
+    "allmighty-autocomplete": "~1.0.0~"
 
   },
   "devDependencies": {
