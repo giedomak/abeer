@@ -16,7 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-    'autocomplete'
+    'autocomplete',
   ])
   .config ($routeProvider) ->
     $routeProvider
@@ -29,6 +29,9 @@ angular
       .when '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      .when '/beers/:id',
+        templateUrl: '/views/beer.html',
+        controller: 'BeerCtrl'
       .when '/beers',
         templateUrl: 'views/beers.html',
         controller: 'BeersCtrl'
@@ -63,27 +66,22 @@ angular
     $http.get('data/countries.json').success (data) ->
       $rootScope.countries = angular.fromJson data
       country.visited = 0 for country in $rootScope.countries
-      console.log $rootScope.countries
 
     $http.get('data/type.json').success (data) ->
       $rootScope.types = angular.fromJson data
       type.visited = 0 for type in $rootScope.types
-      console.log $rootScope.types
 
     $http.get('data/strength.json').success (data) ->
       $rootScope.strengths = angular.fromJson data
       strength.visited = 0 for strength in $rootScope.strengths
-      console.log $rootScope.strengths
 
     $http.get('data/beers.json').success (data) ->
       $rootScope.beers = angular.fromJson data
       beer.visited = 0 for beer in $rootScope.beers
-      console.log $rootScope.beers
 
     $http.get('data/breweries.json').success (data) ->
       $rootScope.breweries = angular.fromJson data
       brewery.visited = 0 for brewery in $rootScope.breweries
-      console.log $rootScope.breweries
 
   .filter "newline", () ->
     (data) ->
