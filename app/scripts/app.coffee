@@ -62,6 +62,8 @@ angular
       visited_about: 0
       visited_beers: 0
       visited_breweries: 0
+      beers_visited: {}
+      breweries_visited: {}
 
     $http.get('data/countries.json').success (data) ->
       $rootScope.countries = angular.fromJson data

@@ -12,6 +12,11 @@ angular.module('abeerApp')
           console.log($scope.beerData)
     $scope.retrieveData()
 
+    console.log($rootScope.UM.beers_visited)
 
-    #$rootScope.id.visited++
+    if !$rootScope.UM.beers_visited[$scope.id]
+      $rootScope.UM.beers_visited[$scope.id] = 1
+    else
+      $rootScope.UM.beers_visited[$scope.id]++
+
     $scope.defaultImg = "images/default.jpg"

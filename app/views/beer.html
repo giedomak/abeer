@@ -5,17 +5,32 @@
 <div class="row">
     <img class="col-lg-4" ng-src="{{beerData.labels.large !== 'null' && beerData.labels.large || defaultImg}}">
     <div class="col-lg-6">
-        {{beers[id].description}}
+        {{beerData.description}}
         <table class="table table-bordered">
             <tr>
                 <td>{{beerData.abv !=='null' && beerData.abv || '-- '}}% ABV</td>
                 <td>{{beerData.ibu !== 'null' && beerData.ibu || '-- '}} IBU</td>
                 <td>{{beerData.year !== 'null' && beerData.year || '-- '}} Year</td>
-
+                <td>Category: {{beerData.style.category !== 'null' && beerData.style.category.name || '-- '}}</td>
+            </tr>
+            <tr>
+                <td>fgMin: {{beerData.style.fgMin !== 'null' && beerData.style.fgMin || '-- '}}</td>
+                <td>fgMax: {{beerData.style.fgMax !== 'null' && beerData.style.fgMax || '-- '}}</td>
+                <td>ogMin: {{beerData.style.ogMin !== 'null' && beerData.style.ogMin || '-- '}}</td>
+                <td>ogMax: {{beerData.style.ogMax !== 'null' && beerData.style.ogMax || '-- '}}</td>
+            </tr>
+            <tr>
+                <td>ibuMin: {{beerData.style.ibuMin !== 'null' && beerData.style.ibuMin || '-- '}}</td>
+                <td>ibuMax: {{beerData.style.ibuMax !== 'null' && beerData.style.ibuMax || '-- '}}</td>
+                <td>srmMin: {{beerData.style.srmMin !== 'null' && beerData.style.srmMin || '-- '}}</td>
+                <td>srmMax: {{beerData.style.srmMax !== 'null' && beerData.style.srmMax || '-- '}}</td>
             </tr>
         </table>
+        <p>Is {{beerData.isOrganic !=='n' && '' || 'not'}} Organic</p>
+        <p>Style Name: <br>{{beerData.style.name != 'null' && beerData.style.name || '--'}}</p>
+        <p>Style Description: <br> {{beerData.style.description != 'null' && beerData.style.description || '--'}}</p>
     </div>
 </div>
 
-<small>Visited: {{beers[id].visited}}</small>
+<small>Visited: {{UM.beers_visited[beerData.id]}}</small>
 
