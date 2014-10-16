@@ -22,4 +22,4 @@ env:
   - secure: VbJJGzD8muLULBbJeSVFfUrkujE60579/oj+wNa6C33aCyvdWlKA4ZdB0zT+APAeizaPacB68K5rTuCtJGaf14f7dIb82+X+tVAljcWNCUrgEcSYXAbcaPrZDZ8EMq1YyDRCzZVChZlJYC7O7i0Ht7qRvWY6uIi6I7LsPZPUiPo=
 after_script:
 - chmod -R 755 ./dist/*
-- ncftpput -R -v -m -U 755 -d -u $FTP_USER -p $FTP_PASSWORD abeerfor.me /app ./dist/*
+- ncftpput -R -v -m -U 755 -u $FTP_USER -p $FTP_PASSWORD abeerfor.me /app ./dist/*
