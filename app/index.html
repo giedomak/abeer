@@ -8,6 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/video.js/dist/video-js/video-js.css" />
     <!-- endbower -->
     <!-- endbuild -->
       <!-- build:css(.tmp) styles/main.css -->
@@ -58,6 +59,10 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>-->
+        <script src="http://vjs.zencdn.net/c/video.js"></script>
+
+        <!-- BigVideo -->
+        <script src="js/bigvideo.js"></script>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -88,6 +93,12 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/allmighty-autocomplete/script/autocomplete.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/video.js/dist/video-js/video.js"></script>
+    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+    <script src="bower_components/eventie/eventie.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="bower_components/BigVideo.js/lib/bigvideo.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -112,6 +123,13 @@
               angular.element(".navbar-toggle").trigger("click");
             }
           };
+        </script>
+        <script>
+            $(function() {
+                var BV = new $.BigVideo();
+                BV.init();
+                BV.show('http://sumrall.nl/beer.webm');
+            });
         </script>
 </body>
 </html>

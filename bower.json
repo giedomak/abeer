@@ -12,7 +12,9 @@
     "angular-animate": "~1.2.0",
     "angular-touch": "~1.2.0",
     "angular-route": "~1.2.0",
-    "allmighty-autocomplete": ""
+    "allmighty-autocomplete": "",
+      "BigVideo.js": ""
+
 
   },
   "devDependencies": {
