@@ -1,6 +1,6 @@
 abeer
 =====
 
-[![Build Status](https://magnum.travis-ci.com/giedomak/abeer.svg?token=CBhjb83JbxEdcVbCgAJA&branch=dev)](https://magnum.travis-ci.com/giedomak/abeer)
+[![Build Status](https://travis-ci.org/giedomak/abeer.svg?branch=dev)](https://travis-ci.org/giedomak/abeer)
 
 TU/e project for 2ID56 - Adaptive web-based systems
