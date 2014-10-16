@@ -8,7 +8,7 @@ before_script:
 - bower install
 - grunt build
 - sudo apt-get update
-- sudo apt-get install ncftpput -y
+- sudo apt-get install ncftp -y
 env:
   global:
   - secure: NRUjETcXbL/XswtYHr9vNaaILfLVouJaqlRqZp7DbKJyMPFAdbC9tIGWVMetp+8Qe3bU8/UPHa747bHiXrJ6b4IuJoV4yDAyCY/YxJu9TMP7+A7od0Ezr+jdDeshfx4i3layR8+e90e77cSAxzYFWkXPGj1Rg6gVbQn5tYUAkQg=
