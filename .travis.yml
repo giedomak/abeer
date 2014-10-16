@@ -3,9 +3,6 @@ node_js:
 - '0.10'
 notifications:
   email:
-    recipients:
-    - giedomak@gmail.com
-    - jmsumrall@gmail.com
     on_success: change
     on_failure: change
 before_script:
