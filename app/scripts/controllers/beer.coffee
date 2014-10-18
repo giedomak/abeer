@@ -6,7 +6,7 @@ angular.module('abeerApp')
     $scope.id = $routeParams.id
     $scope.beerData = {}
     $scope.retrieveData = ()  ->
-      $http.get('http://www.corsproxy.com/api.brewerydb.com/v2/beer/'.concat($scope.id).concat('?key=c98568169d21ec1ca3adbea16c28ff71&format=json'))
+      $http.get('http://www.abeerfor.me/api/beer/'.concat($scope.id))
         .success (data) ->
           $scope.beerData = data.data
           console.log($scope.beerData)

@@ -6,7 +6,7 @@ angular.module('abeerApp')
   $scope.beerResultsNames = []
 
   $scope.searchForBeer = (query) ->
-    $http.get('http://www.corsproxy.com/api.brewerydb.com/v2/search?q='.concat(query).concat('&type=beer&key=c98568169d21ec1ca3adbea16c28ff71&format=json'))
+    $http.get('http://abeerfor.me/api/search?q='.concat(query).concat('&type=beer'))
     .success (data) ->
       $scope.beerResults = (beer for beer in data.data)
       $scope.beerResultsNames = (beer.name for beer in data.data)
