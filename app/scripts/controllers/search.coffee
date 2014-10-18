@@ -23,3 +23,10 @@ angular.module('abeerApp')
   $scope.loadBeerPage = (beer) ->
     $location.path("/beers/"+ $scope.beerResults[$scope.getBeerWithName(beer)]['id'])
 
+  $scope.addPics = (results) ->
+    console.log(results)
+    for beer in results.data
+      if not beer.labels
+        beer.labels = {}
+        beer.labels.icon = ""
+    return results

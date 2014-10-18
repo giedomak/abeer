@@ -1,10 +1,21 @@
 <h1>Search</h1>
 <p>
     Awww yis, searchin' time!
+
 </p>
 
+<div class="padded-row">
 
-<div class="row">
-    <autocomplete ng-model="result" attr-placeholder="type to search beers..." click-activation="false" data="beerResultsNames" on-type="searchForBeer" on-select="loadBeerPage"></autocomplete>
-</div>
-
+    <angucomplete-alt id="searchField"
+        placeholder="Type a beer..."
+        pause="100"
+        selected-object="selectedBeer"
+        remote-url="http://abeerfor.me/api/search?type=beer&q="
+        remote-url-data-field="data"
+        title-field="name"
+        image-field="labels.icon"
+        input-class="form-control form-control-small"
+        match-class="highlight"
+        remote-url-response-formatter="addPics"
+            />
+    </div>

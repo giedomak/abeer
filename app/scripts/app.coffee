@@ -16,7 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-    'autocomplete',
+    'angucomplete-alt',
   ])
   .config ($routeProvider) ->
     $routeProvider
