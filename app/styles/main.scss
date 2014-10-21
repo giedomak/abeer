@@ -191,16 +191,18 @@ body {
 
 @media (min-width: 1220px){
   .affix-row{
-    overflow: hidden;
+    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   .affix-content{
-    overflow: auto;
+    overflow: visible;
   }
 
-  .affix-content .container {
-    width: 1000px;
-  }
+//  .affix-content .container {
+//    width: 1000px;
+//  }
 
   .affix-content .container .page-header{
     margin-top: 0;
