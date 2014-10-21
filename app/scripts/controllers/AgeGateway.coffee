@@ -8,7 +8,11 @@
  # Controller of the abeerApp
 ###
 angular.module('abeerApp')
-  .controller 'AgeGatewayCtrl', ($routeParams, $rootScope, $scope, $location, $http) ->
+  .controller 'AgeGatewayCtrl', ($routeParams, $rootScope, $scope, $window, $http) ->
+
+    $scope.day = 1
+    $scope.month = 1
+    $scope.year = 2014
 
     $scope.calendar = Date()
     $scope.countryCode = null
@@ -26,12 +30,12 @@ angular.module('abeerApp')
       todayYear = todayDate.getFullYear()
       todayMonth = todayDate.getMonth()
       todayDay = todayDate.getDate()
-      age = todayYear - $scope.calendar.getFullYear()
-      age--  if todayMonth < ($scope.calendar.getMonth() - 1)
-      age--  if ($scope.calendar.getMonth() is todayMonth) and todayDay < $scope.calendar.getDate()
+      age = todayYear - $scope.year
+      age--  if todayMonth < ($scope.month - 1)
+      age--  if ($scope.month is todayMonth) and todayDay < $scope.day
       $rootScope.UM.age = age
       if $scope.oldEnoughForCountry(age)
-        $location.path("/")
+        $window.location.href = "/"
 
     $scope.oldEnoughForCountry = (age) ->
       $scope.drinkingAge = $scope.country.drinking
@@ -50,3 +54,10 @@ angular.module('abeerApp')
       for country in $scope.flatCountries
         if country.code == $scope.countryCode.toLowerCase()
           $scope.country = country
+
+
+    $scope.days = [1..31]
+    $scope.months = [1..12]
+    $scope.years = [1900..2014]
+
+

@@ -1,10 +1,28 @@
-<div ng-controller="AgeGatewayCtrl">
+<div id="AgeDiv" ng-controller="AgeGatewayCtrl">
+
+    <img ng-src="images/logoSmaller.png">
+
 
     Country <select ng-model="country" ng-options="country.name for country in flatCountries" ng-change="countryClick(selectedCountry)"></select>
 
-    <datepicker ng-model="calendar" min-date="01.10.1901" show-weeks="true" class="well well-sm" ng-click="clickData(dt)"></datepicker>
+   Day <select ng-model="day" ng-options="num for num in days"></select>
 
-    <button ng-click="checkAge()">Go!</button>
+    Month <select ng-model="month" ng-options="num for num in months" ng-change=""></select>
+
+   Year <select ng-model="year" ng-options="num for num in years" ng-change=""></select>
+
+
+   <!-- <datepicker ng-model="calendar" min-date="01.10.1901" show-weeks="true" class="well well-sm" ng-click="clickData(dt)"></datepicker> -->
+
+    <button ng-click="checkAge()">Enter</button>
 
 
 </div>
+
+<script ng-show="isAgeGateway()">
+    $(function() {
+        var BV = new $.BigVideo();
+        BV.init();
+        BV.show('http://www.sumrall.nl/beer.webm');
+    });
+</script>

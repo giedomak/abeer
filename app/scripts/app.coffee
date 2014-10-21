@@ -62,7 +62,7 @@ angular
       controller: 'StrengthCtrl'
 #      .otherwise
 #        redirectTo: '/'
-  .run ($rootScope, $http) ->
+  .run ($rootScope, $http, $location) ->
     $rootScope.UM =
       name: "Giedo"
       age:0
@@ -92,6 +92,11 @@ angular
    # $http.get('data/breweries.json').success (data) ->
     #  $rootScope.breweries = angular.fromJson data
      # brewery.visited = 0 for brewery in $rootScope.breweries
+
+    $rootScope.isAgeGateway = () ->
+      if $location.path() == "/AgeGateway"
+        return true
+      return false
 
   .filter "newline", () ->
     (data) ->
