@@ -1,0 +1,862 @@
+{
+    "dz": {
+        "name": "Algeria",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ao": {
+        "name": "Angola",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "bw": {
+        "name": "Botswana",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "bi": {
+        "name": "Burundi",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "cm": {
+        "name": "Cameroon",
+        "drinking": 18,
+        "purchase": 21
+    },
+    "cv": {
+        "name": "Cape Verde",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "cf": {
+        "name": "Central African Republic",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "km": {
+        "name": "Comoros",
+        "drinking": 0,
+        "purchase": 0
+    },
+    "eg": {
+        "name": "Egypt",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "gq": {
+        "name": "Equatorial Guinea",
+        "drinking": 0,
+        "purchase": 0
+    },
+    "er": {
+        "name": "Eritrea",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "et": {
+        "name": "Ethiopia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ga": {
+        "name": "Gabon",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gm": {
+        "name": "Gambia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gh": {
+        "name": "Ghana",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gw": {
+        "name": "Guinea-Bissau",
+        "drinking": 0,
+        "purchase": 0
+    },
+    "ke": {
+        "name": "Kenya",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ls": {
+        "name": "Lesotho",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ly": {
+        "name": "Libya",
+        "drinking": null,
+        "purchase": null
+    },
+    "mw": {
+        "name": "Malawi",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "mu": {
+        "name": "Mauritius",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ma": {
+        "name": "Morocco",
+        "drinking": 0,
+        "purchase": 16
+    },
+    "mz": {
+        "name": "Mozambique",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "na": {
+        "name": "Namibia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ne": {
+        "name": "Niger",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ng": {
+        "name": "Nigeria",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "cg": {
+        "name": "Republic of the Congo",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "rw": {
+        "name": "Rwanda",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "sc": {
+        "name": "Seychelles",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "so": {
+        "name": "Somalia",
+        "drinking": 0,
+        "purchase": 0
+    },
+    "za": {
+        "name": "South Africa",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ss": {
+        "name": "South Sudan",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "sz": {
+        "name": "Swaziland",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "sd": {
+        "name": "Sudan",
+        "drinking": null,
+        "purchase": null
+    },
+    "tz": {
+        "name": "Tanzania",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "tg": {
+        "name": "Togo",
+        "drinking": 0,
+        "purchase": 0
+    },
+    "ug": {
+        "name": "Uganda",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "tn": {
+        "name": "Tunisia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "zm": {
+        "name": "Zambia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "zw": {
+        "name": "Zimbabwe",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ar": {
+        "name": "Argentina",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "bs": {
+        "name": "Bahamas",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "bz": {
+        "name": "Belize",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "bm": {
+        "name": "Bermuda",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "bo": {
+        "name": "Bolivia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "br": {
+        "name": "Brazil",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "vg": {
+        "name": "British Virgin Islands",
+        "drinking": 16,
+        "purchase": 18
+    },
+    "ca": {
+        "name": "Canada",
+        "drinking": 19,
+        "purchase": 19
+    },
+    "cl": {
+        "name": "Chile",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "co": {
+        "name": "Colombia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "cr": {
+        "name": "Costa Rica",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "cu": {
+        "name": "Cuba",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "do": {
+        "name": "Dominican Republic",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ec": {
+        "name": "Ecuador",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "sv": {
+        "name": "El Salvador",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "fk": {
+        "name": "Falkland Islands",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gt": {
+        "name": "Guatemala",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gy": {
+        "name": "Guyana",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ht": {
+        "name": "Haiti",
+        "drinking": 16,
+        "purchase": 16
+    },
+    "hn": {
+        "name": "Honduras",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "jm": {
+        "name": "Jamaica",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "mx": {
+        "name": "Mexico",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ni": {
+        "name": "Nicaragua",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "pa": {
+        "name": "Panama",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "py": {
+        "name": "Paraguay",
+        "drinking": 20,
+        "purchase": 20
+    },
+    "pe": {
+        "name": "Peru",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "pr": {
+        "name": "Puerto Rico",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "tt": {
+        "name": "Trinidad and Tobago",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "us": {
+        "name": "United States",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "vi": {
+        "name": "United States Virgin Islands",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "uy": {
+        "name": "Uruguay",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "ve": {
+        "name": "Venezuela",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "af": {
+        "name": "Afghanistan",
+        "drinking": null,
+        "purchase": null
+    },
+    "am": {
+        "name": "Armenia",
+        "drinking": 0,
+        "purchase": 0
+    },
+    "az": {
+        "name": "Azerbaijan",
+        "drinking": 16,
+        "purchase": 16
+    },
+    "bn": {
+        "name": "Brunei",
+        "drinking": null,
+        "purchase": null
+    },
+    "bd": {
+        "name": "Bangladesh",
+        "drinking": null,
+        "purchase": null
+    },
+    "kh": {
+        "name": "Cambodia",
+        "drinking": 0,
+        "purchase": 0
+    },
+    "cn": {
+        "name": "China",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "cy": {
+        "name": "Cyprus",
+        "drinking": 17,
+        "purchase": 17
+    },
+    "ge": {
+        "name": "Georgia",
+        "drinking": 16,
+        "purchase": 16
+    },
+    "hk": {
+        "name": "Hong Kong",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "in": {
+        "name": "India",
+        "drinking": 25,
+        "purchase": 25
+    },
+    "id": {
+        "name": "Indonesia",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "ir": {
+        "name": "Iran",
+        "drinking": null,
+        "purchase": null
+    },
+    "iq": {
+        "name": "Iraq",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "il": {
+        "name": "Israel",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "jo": {
+        "name": "Jordan",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "jp": {
+        "name": "Japan",
+        "drinking": 20,
+        "purchase": 20
+    },
+    "kz": {
+        "name": "Kazakhstan",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "kw": {
+        "name": "Kuwait",
+        "drinking": null,
+        "purchase": null
+    },
+    "kg": {
+        "name": "Kyrgyzstan",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "lb": {
+        "name": "Lebanon",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "mo": {
+        "name": "Macau",
+        "drinking": 0,
+        "purchase": 0
+    },
+    "my": {
+        "name": "Malaysia",
+        "drinking": 16,
+        "purchase": 18
+    },
+    "mv": {
+        "name": "Maldives",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "mn": {
+        "name": "Mongolia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "np": {
+        "name": "Nepal",
+        "drinking": 18,
+        "purchase": 0
+    },
+    "kp": {
+        "name": "North Korea",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "om": {
+        "name": "Oman",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "pk": {
+        "name": "Pakistan",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "ps": {
+        "name": "Palestine",
+        "drinking": 16,
+        "purchase": 16
+    },
+    "ph": {
+        "name": "Philippines",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "qa": {
+        "name": "Qatar",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "sa": {
+        "name": "Saudi Arabia",
+        "drinking": null,
+        "purchase": null
+    },
+    "sg": {
+        "name": "Singapore",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "kr": {
+        "name": "South Korea",
+        "drinking": 19,
+        "purchase": 19
+    },
+    "lk": {
+        "name": "Sri Lanka",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "sy": {
+        "name": "Syria",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "tw": {
+        "name": "Taiwan",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "tj": {
+        "name": "Tajikistan",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "th": {
+        "name": "Thailand",
+        "drinking": 20,
+        "purchase": 20
+    },
+    "tm": {
+        "name": "Turkmenistan",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "tr": {
+        "name": "Turkey",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ae": {
+        "name": "United Arab Emirates",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "vn": {
+        "name": "Vietnam",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "ye": {
+        "name": "Yemen",
+        "drinking": null,
+        "purchase": null
+    },
+    "al": {
+        "name": "Albania",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "at": {
+        "name": "Austria",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "by": {
+        "name": "Belarus",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "be": {
+        "name": "Belgium",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ba": {
+        "name": "Bosnia and Herzegovina",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "bg": {
+        "name": "Bulgaria",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "hr": {
+        "name": "Croatia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "cz": {
+        "name": "Czech Republic",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "dk": {
+        "name": "Denmark",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "ee": {
+        "name": "Estonia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "fi": {
+        "name": "Finland",
+        "drinking": 20,
+        "purchase": 20
+    },
+    "fr": {
+        "name": "France",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "de": {
+        "name": "Germany",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gi": {
+        "name": "Gibraltar",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gr": {
+        "name": "Greece",
+        "drinking": 17,
+        "purchase": 17
+    },
+    "hu": {
+        "name": "Hungary",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "is": {
+        "name": "Iceland",
+        "drinking": 20,
+        "purchase": 20
+    },
+    "ie": {
+        "name": "Ireland",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "it": {
+        "name": "Italy",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "lv": {
+        "name": "Latvia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "li": {
+        "name": "Liechtenstein",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "lt": {
+        "name": "Lithuania",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "lu": {
+        "name": "Luxembourg",
+        "drinking": 16,
+        "purchase": 16
+    },
+    "mk": {
+        "name": "Macedonia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "mt": {
+        "name": "Malta",
+        "drinking": 17,
+        "purchase": 17
+    },
+    "md": {
+        "name": "Moldova",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "me": {
+        "name": "Montenegro",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "nl": {
+        "name": "Netherlands",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "no": {
+        "name": "Norway",
+        "drinking": 0,
+        "purchase": 20
+    },
+    "pl": {
+        "name": "Poland",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "pt": {
+        "name": "Portugal",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ro": {
+        "name": "Romania",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "ru": {
+        "name": "Russia",
+        "drinking": 0,
+        "purchase": 18
+    },
+    "rs": {
+        "name": "Serbia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "sk": {
+        "name": "Slovakia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "si": {
+        "name": "Slovenia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "es": {
+        "name": "Spain",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "se": {
+        "name": "Sweden",
+        "drinking": 20,
+        "purchase": 20
+    },
+    "ch": {
+        "name": "Switzerland",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ua": {
+        "name": "Ukraine",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gb": {
+        "name": "United Kingdom",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "as": {
+        "name": "American Samoa",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "au": {
+        "name": "Australia",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "fj": {
+        "name": "Fiji",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "gu": {
+        "name": "Guam",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "fm": {
+        "name": "Micronesia, Federated States of",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "nz": {
+        "name": "New Zealand",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "mp": {
+        "name": "Northern Mariana Islands",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "pw": {
+        "name": "Palau",
+        "drinking": 21,
+        "purchase": 21
+    },
+    "pg": {
+        "name": "Papua New Guinea",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "ws": {
+        "name": "Samoa",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "sb": {
+        "name": "Solomon Islands",
+        "drinking": 21,
+        "purchase": 0
+    },
+    "to": {
+        "name": "Tonga",
+        "drinking": 18,
+        "purchase": 0
+    },
+    "tk": {
+        "name": "Tokelau",
+        "drinking": 18,
+        "purchase": 18
+    },
+    "vu": {
+        "name": "Vanuatu",
+        "drinking": 18,
+        "purchase": 18
+    }
+}

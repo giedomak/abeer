@@ -13,11 +13,11 @@ There are many breweries in many different countries.</p>
            placeholder="Filter by" autofocus>
 </form>
 <br>
-<div ng-repeat="brewery in breweries| filter: value.description !== null |filter:query | limitTo:10">
+<div ng-repeat="brewery in breweries| limitTo:40">
     <div class="row">
-        <img class="col-md-2" ng-src="{{brewery.largeImgURL !== 'null' && brewery.largeImgURL || defaultImg}}">
+        <img class="col-md-2" ng-src="{{brewery.images.medium !== 'null' && brewery.images.medium || defaultImg}}">
         <div class="col-md-10">
-            <a ng-href="#/breweries/{{breweries.indexOf(brewery)}}">{{brewery.breweryName}}</a><br>
+            <a ng-href="#/breweries/{{brewery.id}}">{{brewery.breweryName}}</a><br>
             <p class="beerDescription">{{brewery.description}}</p>
             <table class="table table-bordered">
                 <tr>

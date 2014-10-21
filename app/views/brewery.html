@@ -1,18 +1,18 @@
 
 <h1>
-    {{breweries[id].breweryName}}
+    {{brewery.name}}
 </h1>
 
 <div class="row">
-    <img class="col-lg-4" ng-src="{{breweries[id].largeImgURL !== 'null' && breweries[id].largeImgURL || defaultImg}}">
+    <img class="col-lg-4" ng-src="{{brewery.images.large !== 'null' && brewery.images.large || defaultImg}}">
     <div class="col-lg-6">
-        {{breweries[id].description}}
+        {{brewery.description}}
         <table class="table table-bordered">
             <tr>
             <tr>
-                <td>Established {{breweries[id].established !=='null' && breweries[id].established || '-- '}}</td>
-                <td>{{breweries[id].isOrganic === 'true' && '' || 'Not'}} Organic</td>
-                <td>Website: <a href={{breweries[id].website}}>{{breweries[id].website}} </a></td>
+                <td>Established {{brewery.established !=='null' && brewery.established || '-- '}}</td>
+                <td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
+                <td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
             </tr>
             </tr>
         </table>

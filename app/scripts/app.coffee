@@ -16,16 +16,23 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angucomplete-alt'
+    'angucomplete-alt',
+    'ui.bootstrap'
   ])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
         templateUrl: 'views/intro.html'
         controller: 'MainCtrl'
+      .when '/AgeGateway',
+          templateUrl: 'views/AgeGateway.html',
+          controller: 'AgeGatewayCtrl'
       .when '/search',
         templateUrl: 'views/search.html',
         controller: 'SearchCtrl'
+      .when '/ratebeers/:page',
+        templateUrl: 'views/ratebeers.html',
+        controller: 'RateBeersCtrl'
       .when '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
@@ -58,12 +65,13 @@ angular
   .run ($rootScope, $http) ->
     $rootScope.UM =
       name: "Giedo"
+      age:0
       visited_home: 0
       visited_about: 0
       visited_beers: 0
       visited_breweries: 0
-      beers_visited: {}
-      breweries_visited: {}
+      beers_local: {}
+      breweries_local: {}
 
     $http.get('data/countries.json').success (data) ->
       $rootScope.countries = angular.fromJson data
@@ -77,13 +85,13 @@ angular
       $rootScope.strengths = angular.fromJson data
       strength.visited = 0 for strength in $rootScope.strengths
 
-    $http.get('data/beers.json').success (data) ->
-      $rootScope.beers = angular.fromJson data
-      beer.visited = 0 for beer in $rootScope.beers
+  #  $http.get('data/beers.json').success (data) ->
+  #    $rootScope.beers = angular.fromJson data
+  #    beer.visited = 0 for beer in $rootScope.beers
 
-    $http.get('data/breweries.json').success (data) ->
-      $rootScope.breweries = angular.fromJson data
-      brewery.visited = 0 for brewery in $rootScope.breweries
+   # $http.get('data/breweries.json').success (data) ->
+    #  $rootScope.breweries = angular.fromJson data
+     # brewery.visited = 0 for brewery in $rootScope.breweries
 
   .filter "newline", () ->
     (data) ->

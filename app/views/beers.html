@@ -16,11 +16,11 @@ Each beer has a type and strength.</p>
            placeholder="Filter by" autofocus>
 </form>
 <br>
-<div ng-repeat="beer in beers| filter: value.description !== null |filter:query | limitTo:10">
+<div ng-repeat="beer in beers | limitTo:40">
     <div class="row">
-        <img class="col-md-2" ng-src="{{beer.mediumImgURL !== 'null' && beer.mediumImgURL || defaultImg}}">
+        <img class="col-md-2" ng-src="{{beer.labels.medium !== 'null' && beer.labels.medium || defaultImg}}">
         <div class="col-md-10">
-            <a class="beername" ng-href="#/beers/{{beers.indexOf(beer)}}">{{beer.name}}</a><br>
+            <a class="beername" ng-href="#/beers/{{beer.id}}">{{beer.name}}</a><br>
             <p class="beerDescription">{{beer.description}}</p>
             <table class="table table-bordered">
                 <tr>

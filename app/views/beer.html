@@ -3,7 +3,17 @@
 </h1>
 
 <div class="row">
-    <img class="col-lg-4" ng-src="{{beerData.labels.large !== 'null' && beerData.labels.large || defaultImg}}">
+    <div class="col-lg-4">
+    <img ng-src="{{beerData.labels.medium !== 'null' && beerData.labels.medium || defaultImg}}">
+    <div ng-hide="beerData.rating == null">Your Rating:</div>
+    <div ng-show="beerData.rating == null"> Know it? Drank it? Rate it!</div>
+    <rating ng-model="beerData.rating"
+            max="5" readonly="false" on-hover="hoveringOver(value)"
+            on-leave="overStar = null"
+            ng-click="ratingClick(beerData,beerData.rating)"
+            ></rating>
+    <p ng-hide="beerData.rating == null">{{beerData.rating}} Stars </p>
+    </div>
     <div class="col-lg-6">
         {{beerData.description}}
         <table class="table table-bordered">
@@ -32,5 +42,5 @@
     </div>
 </div>
 
-<small>Visited: {{UM.beers_visited[beerData.id]}}</small>
+<small>Visited: {{UM.beers_local[beerData.id].visited}}</small>
 

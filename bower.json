@@ -13,8 +13,9 @@
     "angular-touch": "~1.2.0",
     "angular-route": "~1.2.0",
     "angucomplete-alt": "",
-    "BigVideo.js": ""
-
+    "BigVideo.js": "",
+    "progress.js": "",
+    "angular-bootstrap":""
 
   },
   "devDependencies": {
