@@ -11,7 +11,8 @@
 </form>
 <br>
 <div spinner ng-hide="beerRows"></div>
-<div class="row" ng-repeat="row in beerRows" ng-show="beerRows">
+<div ng-show="beerRows">
+<div class="row" ng-repeat="row in beerRows">
     <div class="col-md-4" ng-repeat="i in row">
             <img popover-placement="right" popover="{{beers[i].description | limitTo: 140}}..." popover-trigger="mouseenter"
                  class="col-md-6"
@@ -37,3 +38,4 @@
     <button type="button" class="btn btn-default" ng-click="goNext()">Next Page</button>
 
 </div>
+  </div>

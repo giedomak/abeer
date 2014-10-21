@@ -8,6 +8,8 @@ There are many breweries in many different countries.</p>
 </p>
 
 
+<div spinner ng-hide="breweries"></div>
+<div ng-show="breweries">
 <form class="form-inline">
     <input ng-model="query" type="text"
            placeholder="Filter by" autofocus>
@@ -28,4 +30,5 @@ There are many breweries in many different countries.</p>
             </table>
         </div>
     </div>
+</div>
 </div>

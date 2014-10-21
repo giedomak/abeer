@@ -9,8 +9,8 @@ Each beer has a type and strength.</p>
  </p>
 
 
-
-
+<div spinner ng-hide="beers"></div>
+<div ng-show="beers">
 <form class="form-inline">
     <input ng-model="query" type="text"
            placeholder="Filter by" autofocus>
@@ -33,3 +33,4 @@ Each beer has a type and strength.</p>
         </div>
     </div>
 </div>
+  </div>
