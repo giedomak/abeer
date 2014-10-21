@@ -10,28 +10,25 @@
 <form class="form-inline">
 </form>
 <br>
-<div ng-repeat="(index,beer) in beers">
-    <div class="row" ng-show="index%3==0" />
-        <div class="col-md-4">
-            <img popover-placement="right" popover="{{beer.description | limitTo: 140}}..." popover-trigger="mouseenter"
+<div class="row" ng-repeat="row in beerRows">
+    <div class="col-md-4" ng-repeat="i in row">
+            <img popover-placement="right" popover="{{beers[i].description | limitTo: 140}}..." popover-trigger="mouseenter"
                  class="col-md-6"
-                 ng-src="{{beer.labels.medium !== 'null' && beer.labels.medium || defaultImg}}">
+                 ng-src="{{beers[i].labels.medium !== 'null' && beers[i].labels.medium || defaultImg}}">
             <div class="col-md-6">
-                <a class="beername" ng-href="#/beers/{{beer.id}}">{{beer.name}}</a> </br>
-                <div ng-hide="beer.rating == null">Your Rating:</div>
-                <div ng-show="beer.rating == null"> Know it? Drank it? Rate it!</div>
-                <rating ng-model="beer.rating"
+                <a class="beername" ng-href="#/beers/{{beers[i].id}}">{{beers[i].name}}</a> </br>
+                <div ng-hide="beers[i].rating == null">Your Rating:</div>
+                <div ng-show="beers[i].rating == null"> Know it? Drank it? Rate it!</div>
+                <rating ng-model="beers[i].rating"
                         max="5" readonly="false" on-hover="hoveringOver(value)"
                         on-leave="overStar = null"
-                        ng-click="ratingClick(beer,beer.rating)"
-                        ></rating>
-                <p ng-hide="beer.rating == null">{{beer.rating}} Stars </p>
+                        ng-click="ratingClick(beers[i],beers[i].rating)"
+                        >
+                </rating>
+                <p ng-hide="beers[i].rating == null">{{beers[i].rating}} Stars </p>
             </div>
-        </div>
     </div>
 </div>
-</div>
-
 
 <div class="row">
     <button type="button" class="btn btn-default" ng-click="goBack()" ng-hide="page==1">Previous Page</button>

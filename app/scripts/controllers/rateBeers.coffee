@@ -25,6 +25,7 @@ angular.module('abeerApp')
         console.log("Found beer in UM")
         console.log($rootScope.UM.beers_local[value.id])
         value.rating = $rootScope.UM.beers_local[value.id].rating
+    $scope.makeBeerRows($scope.beers, 3)
 
   $scope.ratingClick = (beer,rating) ->
     if $rootScope.UM.beers_local[beer.id]
@@ -38,4 +39,23 @@ angular.module('abeerApp')
 
   $scope.goNext = () ->
     $location.path("ratebeers/"+ (parseInt($scope.page) + 1))
+
+  $scope.makeBeerRows = (arr, lengthofsublist) ->
+    if not angular.isUndefined(arr) and arr.length > 0
+      $scope.beerRows= []
+      subArray = []
+      pushed = true
+      i = 0
+
+      while i < arr.length
+        if (i + 1) % lengthofsublist is 0
+          subArray.push i
+          $scope.beerRows.push subArray
+          subArray = []
+          pushed = true
+        else
+          subArray.push i
+          pushed = false
+        i++
+      $scope.beerRows.push subArray  unless pushed
 
