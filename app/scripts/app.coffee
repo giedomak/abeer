@@ -31,7 +31,7 @@ angular
         templateUrl: 'views/search.html',
         controller: 'SearchCtrl'
       .when '/ratebeers/:page',
-        templateUrl: 'views/ratebeers.html',
+        templateUrl: '../views/ratebeers.html',
         controller: 'RateBeersCtrl'
       .when '/about',
         templateUrl: 'views/about.html',
