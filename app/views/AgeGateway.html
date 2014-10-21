@@ -1,0 +1,10 @@
+<div ng-controller="AgeGatewayCtrl">
+
+    Country <select ng-model="country" ng-options="country.name for country in flatCountries" ng-change="countryClick(selectedCountry)"></select>
+
+    <datepicker ng-model="calendar" min-date="01.10.1901" show-weeks="true" class="well well-sm" ng-click="clickData(dt)"></datepicker>
+
+    <button ng-click="checkAge()">Go!</button>
+
+
+</div>
