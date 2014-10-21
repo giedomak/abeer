@@ -11,7 +11,7 @@
 </form>
 <br>
 <div ng-repeat="(index,beer) in beers">
-    <div class="row" ng:show="index%3==0" />
+    <div class="row" ng-show="index%3==0" />
         <div class="col-md-4">
             <img popover-placement="right" popover="{{beer.description | limitTo: 140}}..." popover-trigger="mouseenter"
                  class="col-md-6"

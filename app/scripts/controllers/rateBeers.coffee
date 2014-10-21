@@ -33,10 +33,6 @@ angular.module('abeerApp')
       $rootScope.UM.beers_local[beer.id] = beer
       $rootScope.UM.beers_local[beer.id].rating = rating
 
-
-
-
-
   $scope.goBack = () ->
     $location.path("ratebeers/"+ (parseInt($scope.page) - 1))
 
