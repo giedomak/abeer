@@ -51,14 +51,14 @@ angular
       .when '/breweries/:id',
         templateUrl: 'views/brewery.html',
         controller: 'BreweryCtrl'
-      .when '/country/:id',
-        templateUrl: 'views/country.html',
+      .when '/countries/:id',
+        templateUrl: 'views/include.html',
         controller: 'CountryCtrl'
       .when '/types/:id',
-        templateUrl: 'views/type.html',
+        templateUrl: 'views/include.html',
         controller: 'TypeCtrl'
     .when '/strengths/:id',
-      templateUrl: 'views/strength.html',
+      templateUrl: 'views/include.html',
       controller: 'StrengthCtrl'
 #      .otherwise
 #        redirectTo: '/'
@@ -72,6 +72,9 @@ angular
       visited_breweries: 0
       beers_local: {}
       breweries_local: {}
+      countries: {}
+      strengths: {}
+      types: {}
 
     $http.get('data/countries.json').success (data) ->
       $rootScope.countries = angular.fromJson data
