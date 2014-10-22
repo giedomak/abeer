@@ -1,8 +1,8 @@
 <h1>
     {{beerData.name}}
 </h1>
-
-<div class="row">
+<div spinner ng-hide="beerData"></div>
+<div class="row" ng-show="beerData">
     <div class="col-lg-4">
     <img ng-src="{{beerData.labels.medium !== 'null' && beerData.labels.medium || defaultImg}}">
     <div ng-hide="beerData.rating == null">Your Rating:</div>
@@ -40,6 +40,7 @@
         <p>Style Name: <br>{{beerData.style.name != 'null' && beerData.style.name || '--'}}</p>
         <p>Style Description: <br> {{beerData.style.description != 'null' && beerData.style.description || '--'}}</p>
     </div>
+</div>
 </div>
 
 <small>Visited: {{UM.beers_local[beerData.id].visited}}</small>

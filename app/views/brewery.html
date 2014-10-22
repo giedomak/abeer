@@ -3,19 +3,32 @@
     {{brewery.name}}
 </h1>
 
-<div class="row">
-    <img class="col-lg-4" ng-src="{{brewery.images.large !== 'null' && brewery.images.large || defaultImg}}">
-    <div class="col-lg-6">
-        {{brewery.description}}
-        <table class="table table-bordered">
-            <tr>
-            <tr>
-                <td>Established {{brewery.established !=='null' && brewery.established || '-- '}}</td>
-                <td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
-                <td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
-            </tr>
-            </tr>
-        </table>
+<div spinner ng-hide="brewery"></div>
+<div ng-show="brewery">
+    <div class="row">
+        <img class="col-lg-4" ng-src="{{brewery.images.large !== 'null' && brewery.images.large || defaultImg}}">
+        <div ng-hide="beerData.rating == null">Your Rating:</div>
+        <div ng-show="beerData.rating == null"> Been there? Drank that? Rate them!</div>
+        <rating ng-model="brewery.rating"
+                max="5" readonly="false" on-hover="hoveringOver(value)"
+                on-leave="overStar = null"
+                ng-click="ratingClick(brewery,brewery.rating)"
+                ></rating>
+        <p ng-hide="brewery.rating == null">{{brewery.rating}} Stars </p>
+        </div>
+    <div class="row">
+        <div class="col-lg-6">
+            {{brewery.description}}
+            <table class="table table-bordered">
+                <tr>
+                <tr>
+                    <td>Established {{brewery.established !=='null' && brewery.established || '-- '}}</td>
+                    <td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
+                    <td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
+                </tr>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 

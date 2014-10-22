@@ -4,7 +4,6 @@ angular.module('abeerApp')
   .controller 'BeerCtrl', ($routeParams, $rootScope, $scope, $http) ->
     console.log "Beers init"
     $scope.id = $routeParams.id
-    $scope.beerData = {}
     $http.get('http://www.abeerfor.me/api/beer/'.concat($scope.id))
       .success (data) ->
         $scope.beerData = data.data
