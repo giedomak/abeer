@@ -5,12 +5,12 @@ angular.module('abeerApp')
     console.log "Strength init"
     id = $routeParams.id
 
-    if id in $rootScope.strenghts
-      $rootScope.strenghts.id.visited++
+    if id in $rootScope.strengths
+      $rootScope.strengths.id.visited++
     else
-      $rootScope.strenghts.id = {}
-      $rootScope.strenghts.id.visited = 1
+      $rootScope.strengths.id = {}
+      $rootScope.strengths.id.visited = 1
 
-    $scope.visited = $rootScope.strenghts.id.visited
+    $scope.visited = $rootScope.strengths.id.visited
 
-    $scope.url = "views/strenghts/"+id+".html"
+    $scope.url = "views/strengths/"+id+".html"
