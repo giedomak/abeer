@@ -51,15 +51,24 @@ angular
       .when '/breweries/:id',
         templateUrl: 'views/brewery.html',
         controller: 'BreweryCtrl'
+      .when '/countries',
+        templateUrl: 'views/include.html',
+        controller: 'IncludeCtrl'
       .when '/countries/:id',
         templateUrl: 'views/include.html',
-        controller: 'CountryCtrl'
+        controller: 'IncludeCtrl'
+      .when '/types',
+        templateUrl: 'views/include.html',
+        controller: 'IncludeCtrl'
       .when '/types/:id',
         templateUrl: 'views/include.html',
-        controller: 'TypeCtrl'
+        controller: 'IncludeCtrl'
+    .when '/strengths',
+      templateUrl: 'views/include.html',
+      controller: 'IncludeCtrl'
     .when '/strengths/:id',
       templateUrl: 'views/include.html',
-      controller: 'StrengthCtrl'
+      controller: 'IncludeCtrl'
 #      .otherwise
 #        redirectTo: '/'
   .run ($rootScope, $http, $location) ->
