@@ -5,13 +5,13 @@ angular.module('abeerApp')
     console.log "Country init"
     id = $routeParams.id
 
-    if id in $rootScope.countries
-      $rootScope.countries.id.visited++
+    if id of $rootScope.UM.countries
+      $rootScope.UM.countries[id].visited++
     else
-      $rootScope.countries.id = {}
-      $rootScope.countries.id.visited = 1
+      $rootScope.UM.countries[id] = {}
+      $rootScope.UM.countries[id].visited = 1
 
-    $scope.visited = $rootScope.countries.id.visited
+    $scope.visited = $rootScope.UM.countries[id].visited
 
     $scope.url = "views/countries/"+id+".html"
 

@@ -5,12 +5,12 @@ angular.module('abeerApp')
     console.log "Type init"
     id = $routeParams.id
 
-    if id in $rootScope.types
-      $rootScope.types.id.visited++
+    if id of $rootScope.UM.types
+      $rootScope.UM.types[id].visited++
     else
-      $rootScope.types.id = {}
-      $rootScope.types.id.visited = 1
+      $rootScope.UM.types[id] = {}
+      $rootScope.UM.types[id].visited = 1
 
-    $scope.visited = $rootScope.types.id.visited
+    $scope.visited = $rootScope.UM.types[id].visited
 
     $scope.url = "views/types/"+id+".html"
