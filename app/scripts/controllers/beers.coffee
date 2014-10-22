@@ -13,11 +13,12 @@ angular.module('abeerApp')
     $rootScope.UM.visited_beers++
     $scope.defaultImg = "images/defaultMedium.jpeg"
     $scope.getIndexIfObjWithOwnAttr = (value) ->
-      i = 0
-      while i < $rootScope.breweries.length
-        return i  if $rootScope.breweries[i]['breweryID'] is value
-        i++
-      1
+      if $rootScope.breweries.length >= 0
+        i = 0
+        while i < $rootScope.breweries.length
+          return i  if $rootScope.breweries[i]['breweryID'] is value
+          i++
+        1
 
 
     $scope.basicBeerSearch = () ->
