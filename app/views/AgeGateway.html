@@ -1,39 +1,19 @@
-<div id="AgeDiv" ng-controller="AgeGatewayCtrl">
+<div id="AgeDiv" class="container" ng-controller="AgeGatewayCtrl">
 <div class="row">
     <img ng-src="images/logoSmaller.png">
 </div>
 
     <div class="row">
-
-    Country <select ng-model="country" ng-options="country.name for country in flatCountries" ng-change="countryClick(selectedCountry)"></select>
-<!--
-   Day <select ng-model="day" ng-options="num for num in days"></select>
-
-    Month <select ng-model="month" ng-options="num for num in months" ng-change=""></select>
-
-   Year <select ng-model="year" ng-options="num for num in years" ng-change=""></select>
-
--->
-   <!-- <datepicker ng-model="calendar" min-date="01.10.1901" show-weeks="true" class="well well-sm" ng-click="clickData(dt)"></datepicker> -->
-
-
-</div>
-
-
-    <div class="row">
-
-        <div class="col-lg-1">
-            <input ng-model="day" type="text" class="form-control" placeholder="DD" maxlength="2" required>
-        </div>
-        <div class=" col-lg-1">
-            <input ng-model="month" type="text" class="form-control" placeholder="MM" maxlength="2" required>
-        </div>
-        <div class="col-lg-1">
-            <input ng-model="year" type="text" class="form-control" placeholder="YYYY" maxlength="4" required>
-        </div>
-        <button type="button" class="btn btn-primary btn-lg" ng-click="checkAge()">Enter Site  ---> </button>
-
+        <select class="form-control center-block" ng-style="{width: '200px'}" ng-model="country" ng-options="country.name for country in flatCountries" ng-change="countryClick(selectedCountry)"></select>
     </div>
 
-    </video>
+   <div class="row">
+        <input class="form-control center-block" ng-model="day" type="text" class="form-control" placeholder="DD" maxlength="2" ng-style="{width:'50px'}"required>
+        <input class=" form-control center-block" ng-model="month" type="text" class="form-control" placeholder="MM" maxlength="2" ng-style="{width:'50px'}" required>
+        <input class="form-control center-block" ng-model="year" type="text" class="form-control" placeholder="YYYY" maxlength="4" ng-style="{width:'50px'}" required>
+   </div>
+<div class="row center-block">
+    <button type="button" class="btn btn-primary btn-lg center-block" ng-style="{width:'200px'}" ng-click="checkAge()">Enter Site </button>
+</div>
+
 </div>

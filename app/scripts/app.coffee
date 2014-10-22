@@ -93,7 +93,10 @@ angular
         return true
       return false
 
+    $rootScope.BV = new $.BigVideo()
+
 
   .filter "newline", () ->
     (data) ->
       return data.replace(/\n\r?/g, '<br />')
+
