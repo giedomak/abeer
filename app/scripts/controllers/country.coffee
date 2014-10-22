@@ -1,7 +1,17 @@
 'use strict'
 
 angular.module('abeerApp')
-  .controller 'CountryCtrl', ($routeParams, $rootScope, $scope) ->
+  .controller 'CountryCtrl', ($sce, $http, $routeParams, $rootScope, $scope) ->
     console.log "Country init"
-    $scope.id = $routeParams.id
-    $rootScope.countries[$scope.id].visited++
+    id = $routeParams.id
+
+    if id in $rootScope.countries
+      $rootScope.countries.id.visited++
+    else
+      $rootScope.countries.id = {}
+      $rootScope.countries.id.visited = 1
+
+    $scope.visited = $rootScope.countries.id.visited
+
+    $scope.url = "views/countries/"+id+".html"
+
