@@ -84,15 +84,6 @@ angular
     $http.get('data/strength.json').success (data) ->
       $rootScope.strengths = angular.fromJson data
       strength.visited = 0 for strength in $rootScope.strengths
-
-  #  $http.get('data/beers.json').success (data) ->
-  #    $rootScope.beers = angular.fromJson data
-  #    beer.visited = 0 for beer in $rootScope.beers
-
-   # $http.get('data/breweries.json').success (data) ->
-    #  $rootScope.breweries = angular.fromJson data
-     # brewery.visited = 0 for brewery in $rootScope.breweries
-
     $rootScope.isAgeGateway = () ->
       if $location.path() == "/AgeGateway"
         return true
