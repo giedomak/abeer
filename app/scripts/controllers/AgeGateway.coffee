@@ -10,9 +10,9 @@
 angular.module('abeerApp')
   .controller 'AgeGatewayCtrl', ($routeParams, $rootScope, $scope, $window, $http) ->
 
-    $scope.day = 1
-    $scope.month = 1
-    $scope.year = 2014
+    $scope.day = undefined
+    $scope.month = undefined
+    $scope.year = undefined
 
     $scope.calendar = Date()
     $scope.countryCode = null
