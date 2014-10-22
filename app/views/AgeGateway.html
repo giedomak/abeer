@@ -2,6 +2,7 @@
 <div class="row">
     <img ng-src="images/logoSmaller.png">
 </div>
+
     <div class="row">
 
     Country <select ng-model="country" ng-options="country.name for country in flatCountries" ng-change="countryClick(selectedCountry)"></select>
@@ -34,13 +35,5 @@
 
     </div>
 
-
+    </video>
 </div>
-
-<script ng-show="isAgeGateway()">
-    $(function() {
-        var BV = new $.BigVideo();
-        BV.init();
-        BV.show('http://www.sumrall.nl/beer.webm');
-    });
-</script>

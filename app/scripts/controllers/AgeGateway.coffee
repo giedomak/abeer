@@ -8,7 +8,7 @@
  # Controller of the abeerApp
 ###
 angular.module('abeerApp')
-  .controller 'AgeGatewayCtrl', ($routeParams, $rootScope, $scope, $window, $http) ->
+  .controller 'AgeGatewayCtrl', ($routeParams, $rootScope, $scope, $location, $http, $BigVideo) ->
 
     $scope.day = undefined
     $scope.month = undefined
@@ -35,7 +35,10 @@ angular.module('abeerApp')
       age--  if ($scope.month is todayMonth) and todayDay < $scope.day
       $rootScope.UM.age = age
       if $scope.oldEnoughForCountry(age)
-        $window.location.href = "/"
+        console.log($rootScope.UM.oldEnough)
+        $rootScope.UM.oldEnough = true
+        console.log($rootScope.UM.oldEnough)
+        $location.path("/")
 
     $scope.oldEnoughForCountry = (age) ->
       $scope.drinkingAge = $scope.country.drinking

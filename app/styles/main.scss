@@ -231,5 +231,28 @@ body {
 //  .sidebar-nav .navbar li a > .caret {
 //    margin-top: 8px;
 //  }
+
+
+  .blurredElement {
+
+    /* Any browser which supports CSS3 */
+    filter: blur(3px);
+
+    /* Firefox */
+    filter: url("blur.svg#gaussian_blur");
+
+    /* Webkit */
+    -webkit-filter: blur(3px);
+
+    /* Opera */
+    -o-filter: blur(2px);
+  }
+  video{
+    width: 100%;
+    height: auto;
+  }
+
+
+
 }
 

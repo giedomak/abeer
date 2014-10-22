@@ -65,7 +65,7 @@ angular
   .run ($rootScope, $http, $location) ->
     $rootScope.UM =
       name: "Giedo"
-      age:0
+      oldEnough:false
       visited_home: 0
       visited_about: 0
       visited_beers: 0
@@ -84,10 +84,12 @@ angular
     $http.get('data/strength.json').success (data) ->
       $rootScope.strengths = angular.fromJson data
       strength.visited = 0 for strength in $rootScope.strengths
+
     $rootScope.isAgeGateway = () ->
       if $location.path() == "/AgeGateway"
         return true
       return false
+
 
   .filter "newline", () ->
     (data) ->

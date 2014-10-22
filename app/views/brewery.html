@@ -1,9 +1,13 @@
+<div ng-class="UM.oldEnough ? '' : 'blurredElement'" >
 
 <h1>
     {{brewery.name}}
 </h1>
 
+
+
 <div spinner ng-hide="brewery"></div>
+
 <div ng-show="brewery">
     <div class="row">
         <img class="col-lg-4" ng-src="{{brewery.images.large !== 'null' && brewery.images.large || defaultImg}}">
@@ -30,6 +34,7 @@
             </table>
         </div>
     </div>
+</div>
 </div>
 
 <small>Visited: {{breweries[id].visited}}</small>
