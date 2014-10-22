@@ -2,4 +2,4 @@
 
 angular.module('abeerApp')
 .directive 'spinner', () ->
-  templateUrl: "../../views/spinner.html"
+  templateUrl: "../../views/directives/spinner.html"

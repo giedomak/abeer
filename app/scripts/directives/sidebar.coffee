@@ -2,7 +2,7 @@
 
 angular.module('abeerApp')
   .directive 'sidebar', () ->
-    templateUrl: "../../views/sidebar.html"
+    templateUrl: "../../views/directives/sidebar.html"
     controller: "sidebarCtrl"
 
   .controller "sidebarCtrl" , ($scope, $rootScope) ->
