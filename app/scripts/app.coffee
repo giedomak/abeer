@@ -20,6 +20,9 @@ angular
     'ui.bootstrap'
   ])
   .config ($routeProvider) ->
+    include =
+      templateUrl: 'views/include.html',
+      controller: 'IncludeCtrl'
     $routeProvider
       .when '/',
         templateUrl: 'views/intro.html'
@@ -51,24 +54,14 @@ angular
       .when '/breweries/:id',
         templateUrl: 'views/brewery.html',
         controller: 'BreweryCtrl'
-      .when '/countries',
-        templateUrl: 'views/include.html',
-        controller: 'IncludeCtrl'
-      .when '/countries/:id',
-        templateUrl: 'views/include.html',
-        controller: 'IncludeCtrl'
-      .when '/types',
-        templateUrl: 'views/include.html',
-        controller: 'IncludeCtrl'
-      .when '/types/:id',
-        templateUrl: 'views/include.html',
-        controller: 'IncludeCtrl'
-    .when '/strengths',
-      templateUrl: 'views/include.html',
-      controller: 'IncludeCtrl'
-    .when '/strengths/:id',
-      templateUrl: 'views/include.html',
-      controller: 'IncludeCtrl'
+
+      # countries, types and strengths all use the include template and controller
+      .when '/countries', include
+      .when '/countries/:id', include
+      .when '/types', include
+      .when '/types/:id', include
+      .when '/strengths', include
+      .when '/strengths/:id', include
 #      .otherwise
 #        redirectTo: '/'
   .run ($rootScope, $http, $location) ->
