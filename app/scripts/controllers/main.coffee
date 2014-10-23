@@ -8,9 +8,12 @@
  # Controller of the abeerApp
 ###
 angular.module('abeerApp')
-  .controller 'MainCtrl', ($http, $window, $route, $rootScope, $scope) ->
+  .controller 'MainCtrl', ($http, $window, $route, $rootScope, $scope, $location) ->
     $rootScope.curTab = 'home'
     $rootScope.UM.visited_home++
+
+    if !$rootScope.UM.setAge
+      $location.path("/AgeGateway")
 
 #    $http.get('data/beers.json').success (data) ->
 #      temp = angular.fromJson data

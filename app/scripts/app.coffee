@@ -75,6 +75,7 @@ angular
     $rootScope.UM =
       name: "Giedo"
       oldEnough:false
+      setAge:false
       visited_home: 0
       visited_about: 0
       visited_beers: 0

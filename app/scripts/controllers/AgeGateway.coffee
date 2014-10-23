@@ -12,8 +12,8 @@ angular.module('abeerApp')
 
     $rootScope.BV.init()
     $rootScope.BV.show(
+      {type:"video/webm", src: "videos/beer.webm"},
       {type:"video/mp4", src: "videos/beer.mp4"},
-      {type:"video/webm", src: "videos/beer.webm"}
       {type:"video/ogg", src: "videos/beer.ogv"})
 
 
@@ -44,6 +44,7 @@ angular.module('abeerApp')
       if $scope.oldEnoughForCountry(age)
         $rootScope.UM.oldEnough = true
       $rootScope.BV.remove()
+      $rootScope.UM.setAge = true
       $location.path("/")
 
     $scope.oldEnoughForCountry = (age) ->
