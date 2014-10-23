@@ -22,6 +22,7 @@ module.exports = (config) ->
       'bower_components/angular-sanitize/angular-sanitize.js'
       'bower_components/angular-touch/angular-touch.js'
       'bower_components/angucomplete-alt/angucomplete-alt.js'
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
       'app/scripts/**/*.coffee'
       'test/spec/**/*.coffee'
     ],
