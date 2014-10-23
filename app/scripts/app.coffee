@@ -86,18 +86,6 @@ angular
       strengths: {}
       types: {}
 
-    $http.get('data/countries.json').success (data) ->
-      $rootScope.countries = angular.fromJson data
-      country.visited = 0 for country in $rootScope.countries
-
-    $http.get('data/type.json').success (data) ->
-      $rootScope.types = angular.fromJson data
-      type.visited = 0 for type in $rootScope.types
-
-    $http.get('data/strength.json').success (data) ->
-      $rootScope.strengths = angular.fromJson data
-      strength.visited = 0 for strength in $rootScope.strengths
-
     $rootScope.isAgeGateway = () ->
       if $location.path() == "/AgeGateway"
         return true

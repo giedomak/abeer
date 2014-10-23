@@ -36,7 +36,7 @@
               </a>
               <div class="collapse" id="countries" style="height: 0px;">
                 <ul class="nav nav-list">
-                  <li ng-repeat="(key, value) in countries"><a ng-href="#/country/{{key}}">{{value.title}}</a></li>
+                  <li ng-repeat="country in countries"><a ng-href="#/countries/{{country.url}}">{{country.name}}</a></li>
                 </ul>
               </div>
             </li>
@@ -46,7 +46,7 @@
               </a>
               <div class="collapse" id="type" style="height: 0px;">
                 <ul class="nav nav-list">
-                  <li ng-repeat="(key, value) in types"><a ng-href="#/types/{{key}}">{{value.title}}</a></li>
+                  <li ng-repeat="type in types"><a ng-href="#/types/{{type.url}}">{{type.name}}</a></li>
                 </ul>
               </div>
             </li>
@@ -56,7 +56,7 @@
               </a>
               <div class="collapse" id="strength" style="height: 0px;">
                 <ul class="nav nav-list">
-                  <li ng-repeat="(key, value) in strengths"><a ng-href="#/strengths/{{key}}">{{value.title}}</a></li>
+                  <li ng-repeat="strength in strengths"><a ng-href="#/strengths/{{strength.url}}">{{strength.name}}</a></li>
                 </ul>
               </div>
             </li>

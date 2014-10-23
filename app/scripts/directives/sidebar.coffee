@@ -8,6 +8,24 @@ angular.module('abeerApp')
   .controller "sidebarCtrl" , ($scope, $rootScope) ->
     console.log "sidebar init"
 
+    $scope.countries = [
+      { name: "Africa", url: "africa" }
+      { name: "Asia", url: "asia" }
+    ]
+
+    $scope.types = [
+      { name: "Ale", url: "ale" }
+      { name: "Amber", url: "amber" }
+      { name: "Blonde", url: "blonde" }
+
+    ]
+
+    $scope.strengths = [
+      { name: "Alcohol free", url: "alcoholfree" }
+      { name: "Low (1-4%)", url: "low" }
+    ]
+
+    # collapse in mobile view
     collapse_nav = () ->
       if (angular.element('.navbar-toggle').css('display') != 'none')
         angular.element(".navbar-toggle").trigger("click")

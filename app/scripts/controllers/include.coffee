@@ -5,7 +5,7 @@ angular.module('abeerApp')
     console.log "Include init"
 
     # get the name of the type for example
-    id = $routeParams.id
+    if $routeParams.id then id = $routeParams.id.toLowerCase()
 
     # get the first part of the path. i.e. countries or types
     nav = $location.path().split("/")[1]
