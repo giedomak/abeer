@@ -23,28 +23,30 @@
   </head>
   <body ng-app="abeerApp">
     <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="container-fluid">
       <div class="row">
 
-          <div sidebar ng-hide="isAgeGateway()"></div>
-            <div class="col-sm-9 col-md-10">
-              <div class="content">
+        <div sidebar ng-hide="isAgeGateway()"></div>
 
-              <div ng-view=""></div>
+        <div class="col-sm-9 col-md-10">
+          <div class="content">
 
+            <div ng-view=""></div>
 
-          <br>
+            <br>
+
             <div class="footer" ng-hide="isAgeGateway()">
             <p>TU/e - 2ID56 - Adaptive web-based systems</p>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
