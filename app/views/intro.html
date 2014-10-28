@@ -1,8 +1,17 @@
 <h1>Introduction</h1>
 <restricted-page></restricted-page>
+
 <p>Welcome to ABEER, the Adaptive Beer Exhibitor and Empirical Recommender. 
-In ABEER you can read about beers, breweries, countries, types en strengths. 
-Also, the system will provide you some recommendations for beers, based on your browsing behaviour and explicit preferences.</p> The more you interact with the system, the better the recommendations will become. 
+In ABEER you can read about <a href="#/beers">beers</a>, <a href="#/breweries">breweries</a>,
+<span ng-show="UM.visited_breweries > 0"><a href="#/countries">countries</a></span>
+<span ng-hide="UM.visited_breweries > 0">countries</span>,
+<span ng-show="UM.visited_beers > 0"><a href="#/types">types</a></span>
+<span ng-hide="UM.visited_beers> 0">types</span>
+and
+<span ng-show="UM.visited_beers > 0"><a href="#/strengths">strengths</a></span>
+<span ng-hide="UM.visited_beers > 0">strengths</span>.
+Also, the system will provide you some recommendations for beers, based on your browsing behaviour 
+and explicit preferences.The more you interact with the system, the better the recommendations will become. </p> 
 
 <p>Enjoy your beer!</p>
 
