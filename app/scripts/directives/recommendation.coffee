@@ -6,7 +6,7 @@ angular.module('abeerApp')
 	controller: "RecommendationCtrl"
 	scope: {}
 
-.controller 'RecommendationCtrl', ($scope, $rootScope) ->
+.controller 'RecommendationCtrl', ($scope, $rootScope, $http) ->
 	console.log "Rec init"
 	$scope.beers = $rootScope.UM.beers_local
 
@@ -51,9 +51,7 @@ angular.module('abeerApp')
 		for beer in beers
 			abv.push parseFloat beer.abv
 			organic.push if beer.isOrganic is "N" then 0 else 1
-			ibu.push parseInt beer.ibu
-
-		console.log abv, organic, ibu
+			if beer.ibu then ibu.push parseInt beer.ibu
 
 		# calc avarage abv, organic and ibu
 		total = 0
@@ -68,12 +66,25 @@ angular.module('abeerApp')
 		total += val for val in ibu
 		ibu_avg = total / ibu.length
 
-		console.log ibu_avg
-		console.log abv_avg
-		console.log organic_avg
+		# use the API to get a list with possible recommendations
+		query = 'http://abeerfor.me/api/beers'
+		if abv_avg then query = query.concat('?abv=').concat(abv_avg-0.5).concat(',').concat(abv_avg+0.5)
+		if ibu_avg then query = query.concat('&ibu=').concat(ibu_avg-2).concat(',').concat(ibu_avg+2)
+		console.log query
+		$http.get(query)
+		.success (data) ->
+			console.log data
 
-		console.log beers
-		$scope.beers = beers
+			# pick a random beer from a random page
+			page = Math.floor (Math.random() * data.numberOfPages)
+
+			console.log query.concat('&p=').concat(page)
+			$http.get(query.concat('&p=').concat(page))
+			.success (data) ->
+				console.log data
+
+				# get a random beer from the page and set it as recommendation
+				$scope.beer = data.data[Math.floor(Math.random()*data.data.length)]
 
 	# calculate preference each time the UM changes
 	$rootScope.$watch "UM.beers_local", () ->
