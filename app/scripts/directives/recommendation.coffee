@@ -78,8 +78,9 @@ angular.module('abeerApp')
 			# pick a random beer from a random page
 			page = Math.floor (Math.random() * data.numberOfPages)
 
-			console.log query.concat('&p=').concat(page)
-			$http.get(query.concat('&p=').concat(page))
+			if abv_avg or ibu_avg then char = '&' else char = '?'
+			console.log query.concat(char).concat('p=').concat(page)
+			$http.get(query.concat(char).concat('p=').concat(page))
 			.success (data) ->
 				console.log data
 
