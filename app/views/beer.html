@@ -14,9 +14,16 @@
             ng-click="ratingClick(beerData,beerData.rating)"
             ></rating>
     <p ng-hide="beerData.rating == null">{{beerData.rating}} Stars </p>
+
+        <label class="checkbox">
+            <input type="checkbox" ng-model="beerData.drinkLater" ng-change="drinkLaterClick(beerData)">
+            Drink later?
+        </label>
+
     </div>
+    <div class="col-lg-6" ng-bind-html="beerData.description"></div>
     <div class="col-lg-6">
-        {{beerData.description}}
+
         <table class="table table-bordered">
             <tr>
                 <td>{{beerData.abv !=='null' && beerData.abv || '-- '}}% ABV</td>
@@ -39,7 +46,7 @@
         </table>
         <p>Is {{beerData.isOrganic !=='n' && '' || 'not'}} Organic</p>
         <p>Style Name: <br>{{beerData.style.name != 'null' && beerData.style.name || '--'}}</p>
-        <p>Style Description: <br> {{beerData.style.description != 'null' && beerData.style.description || '--'}}</p>
+        <p>Style Description: <br> <p ng-bind-html="beerData.style.description"></p></p>
     </div>
 </div>
 </div>

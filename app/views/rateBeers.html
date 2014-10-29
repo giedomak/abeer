@@ -28,6 +28,12 @@
                         >
                 </rating>
                 <p ng-hide="beers[i].rating == null">{{beers[i].rating}} Stars </p>
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="beers[i].drinkLater" ng-change="drinkLaterClick(beers[i])">
+                    Drink later?
+                </label>
+
             </div>
     </div>
 </div>

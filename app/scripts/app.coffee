@@ -67,8 +67,8 @@ angular
   .run ($rootScope, $http, $location) ->
     $rootScope.UM =
       name: "Giedo"
-      oldEnough:false
-      setAge:false
+      oldEnough:true
+      setAge:true
       visited_home: 0
       visited_about: 0
       visited_beers: 0
@@ -86,6 +86,35 @@ angular
 
     $rootScope.BV = new $.BigVideo()
 
+    $rootScope.initializeBeer = (newbeer) ->
+      $rootScope.UM.beers_local[newbeer.id] = newbeer
+      $rootScope.UM.beers_local[newbeer.id].visited = 0
+      $rootScope.UM.beers_local[newbeer.id].drinkLater = false
+      $rootScope.UM.beers_local[newbeer.id].rating = null
+
+    $rootScope.countriesJSON = []
+    $http.get("/data/countries.json")
+      .success (data) ->
+        $rootScope.countriesJSON = data
+
+    $rootScope.typeJSON = []
+    $http.get("/data/type.json")
+      .success (data) ->
+        $rootScope.typeJSON = data
+
+    $rootScope.linkAnnotate = (text) ->
+      markedUp = text
+      for country in $rootScope.countriesJSON
+
+        markedUp = markedUp.replace(country.title, "<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ", "") + "\">" + country.title + "</a>")
+        for altName in country.aka
+          markedUp = markedUp.replace(altName, "<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ", "") + "\">" + altName + "</a>")
+
+      for type in $rootScope.typeJSON
+        regEx = RegExp(" " + type.title, "ig");
+        markedUp = markedUp.replace(regEx, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ", "") + "\" ng-style=\"{color:'red'}\">" + " " + type.title + "</a>")
+
+      return markedUp
 
   .filter "newline", () ->
     (data) ->

@@ -1,90 +1,112 @@
 [
   {
     "title": "France",
-    "content": "Most beer sold in France is mass-produced, with major breweries having control of over 90% of the market and lagers predominating. There are also distinctive traditional beer styles, such as the top-fermented Bière de Garde. In recent years, France has also seen a proliferation of microbreweries.\n\nBefore industrialisation, most beer was brewed in small rural breweries, which catered to the needs of the local residents. In the early 20th century there were over a thousand breweries in France. As rural population declined, these breweries almost disappeared and along with them the tradition and diversity of the regional beers, which started to be replaced by larger urban ones."
+    "aka": ["French"],
+    "content": "Most beer sold in <a href='france.com'>France</a> is mass-produced, with major breweries having control of over 90% of the market and lagers predominating. There are also distinctive traditional beer styles, such as the top-fermented Bière de Garde. In recent years, France has also seen a proliferation of microbreweries.\n\nBefore industrialisation, most beer was brewed in small rural breweries, which catered to the needs of the local residents. In the early 20th century there were over a thousand breweries in France. As rural population declined, these breweries almost disappeared and along with them the tradition and diversity of the regional beers, which started to be replaced by larger urban ones."
   },
   {
     "title": "Germany",
+    "aka": ["German"],
     "content": "Beer is a major part of German culture. For many years German beer was brewed in adherence to the Reinheitsgebot order or law which only permitted water, hops, and malt as beer ingredients. The order also required that beers not exclusively using barley-malts such as wheat beer must be top-fermented.\n\nSince 1993, the production of beer has been governed by the Provisional German Beer Law which allows a greater range of ingredients (only in top-fermenting beers) and additives, that have to be completely, or at least as much as possible, removed from the final product.\n\nWhile the beer market is weaker but more centralized in northern Germany, the south has lots of smaller local breweries. Almost half of all German breweries are in Bavaria. In total, there are approximately 1,300 breweries in Germany producing over 5,000 brands of beer."
   },
   {
     "title": "United States",
+    "aka": ["American"],
     "content": "Beer in the United States is manufactured by more than 3,000 breweries, which range in size from industry giants to brew pubs and microbreweries. The United States produced 196 million barrels of beer in 2012, and consumes roughly 28 US gallons (110 L) of beer per capita annually. In 2011, the United States was ranked fifteenth in the world in per capita consumption, while total consumption was second only to China.\n\nAlthough beer was a part of colonial life in the United States, the passing of the Eighteenth Amendment to the United States Constitution in 1919 prohibited the sale of alcoholic beverages and forced nearly all American breweries to close. After the repeal of Prohibition, the industry consolidated into a small number of large-scale breweries. Many of the big breweries that returned to producing beer after Prohibition, today largely owned by international conglomerates like Anheuser-Busch InBev or SABMiller, still retain their dominance of the market in the 21st century. However, the majority of the new breweries that have opened in the U.S. over the past three decades have been small breweries and brewpubs, which are often termed \"craft breweries\" to differentiate them from the larger and older breweries."
   },
   {
     "title": "Spain & Portugal",
+    "aka": ["Spanish", "Portuguese"],
     "content": "Although Spain is traditionally known as a land of wine drinkers, more and more people are beginning to drink beer instead. It is thought that this is down to the fact that the country has seen a large number of microbreweries open, particularly in areas like Catalonia. These microbreweries are helping the industry to grow and transform. The microbrewery owners are getting more creative with hop combinations and spices, giving Spanish beer a unique flavour that it has lacked in the past.\n\nBeer in Portugal has a long history, going as far back as the time of the ancient Roman province of Lusitania, where beer was commonly made and drunk. Portugal is among the 11 largest beer producers in Europe, and is the 7th largest European exporter of the product.\n\nBrewing in Portugal was long dominated by two companies — Unicer - Bebidas de Portugal, S.A. and Sociedade Central de Cervejas, S.A. They were created from the remains of well-established Portuguese brewers after the 1974 military coup, when the industry was nationalised. Both were privatised in the 1990s. Between them, they control more than 90% of the Portuguese beer market."
   },
   {
     "title": "South America",
+    "aka": ["South American"],
     "content": "Argentina may not be known for its beer, at least not in comparison to its wine, but much like the rest of the world it’s got its fair share of home-grown breweries. \n\nBrazil is the world's third largest market for beer with over 13.2 billion litres produced in 2012 and annual per capita consumption of 62,2 litres. The tradition of brewing in Brazil dates back to German immigration in the early nineteenth century. The first breweries date from the 1830s, although the brand Bohemia is claimed to be the first Brazilian beer, with production starting in 1853 in the city of Petrópolis, Rio de Janeiro.\n\nWhile pisco is Peru’s national drink and certainly claims more plaudits than Peru’s frankly average beers, it can’t match cerveza in terms of sheer popularity. In Peru, beer is the drink of the masses: it’s cheap, it’s plentiful and it’s communal.\n\nBeer is a popular beverage in Venezuela. The country produces a variety of beers and beer related products, and though not very varied, they are considered as very good quality beers by many Venezuelans. Beer production in Venezuela started in 1925 with Cerveza Zulia which quickly became the most popular beer. Before that date, beers were imported from Brazil (particularly Brahma) and Europe (Heineken and others)."
   },
   {
     "title": "Slovakia",
+    "aka": ["Slovakian"],
     "content": "Beer in Slovakia (Slovak: pivo) has been produced and consumed, at least since the 15th century. Together with the neighbouring Czech Republic, with whom it has a shared and intertwined history, Slovakia has a number of breweries and a rich beer culture. Brews in Slovakia usually range between 3.8 and 5.0% alcohol content, and are classified further by its appearance of colour with 10* (pale) 12.5* and 12* (lager) being the most common degrees, however dark beers up to 16.5 degrees and above are also available. Since the fall of communism most large commercial breweries are owned by either Heineken or SABMiller.\n\nSlovakia’s oldest brewery was built in the year 1473 by members of the Knights Templar order in the Banská Bystrica region. This turned out to be a good choice of location, as the region was a centre for the mining industry and over the years the brewery would find success selling to the miners that dominated the work force of the area. Miners in the area often refer to beer as liquid bread and they often drank it while they worked."
   },
   {
     "title": "Scandinavia",
+    "aka": ["Scandinavian"],
     "content": "Beer in Sweden has a history that can be traced to the Viking period. It is known, through old writings such as Hávamál and others, that the Viking culture used brewing to produce ale and mead. Through the centuries since and up until the 19th century, brewing was mostly a matter of production for household needs. The beer was usually weak in alcoholic content and used as an everyday beverage. For celebrations and feasts, stronger \"feast-beer\" and potent mead was brewed.\n\nBeer in Norway has a long history, going back at least 1000 years. Until around 200 years ago no farm was complete without a brewhouse. From the early 20th century brewing was industrialized and home brewing outlawed. Since then, significant consolidation in the brewing sector has reduced the number of major breweries to just a handful. With the exception of the malty juleøl (Christmas beer), most beer styles brewed in Norway today trace their ancestry to central Europe.\n\nFinland has a long history of beer dating back to the Middle Ages. The oldest still-existing commercial brewery in Finland and Nordic countries is Sinebrychoff, founded in 1819. \"Suomalaisen oluen päivä\", or the Finnish Beer Day is celebrated on the 13th of October to commemorate the founding of Oy Sinebrychoff Ab and the birth of Finnish beer. \n\nBeer in Denmark is dominated by Carlsberg and Tuborg. Since Tuborg was acquired by Carlsberg in 1970 this has left a near monopoly for Carlsberg. A number of regional breweries however managed to survive, and most of them merged to Royal Unibrew in 2005. Also in recent years a large number of micro breweries have appeared."
   },
   {
     "title": "Romania",
+    "aka": ["Romanian"],
     "content": "Beer in Romania comes from the long tradition of Romanian brewing, being introduced in Transylvania by the German colonists (Transylvanian Saxons) and in Moldavia by cultural connections with Poland.\n\nA national association of beer with mititei came into existence during the 1877 Independence War of Romania and after that it saw a spread of beer pubs throughout the Romanian Kingdom. The beer pubs (berării) became a place of social and business meetings for the Romanian urban middle-class. Currently, Romanians are amongst the heaviest beer drinkers in the world, with an annual consumption of over 100 litres per capita in 2007.\n\nRomanian law considers beer and wine to be foodstuffs and therefore they are not subject to the usual tariffs and restrictions imposed upon alcoholic beverages."
   },
   {
     "title": "Other (Europe)",
+    "aka": [],
     "content": "From the following European countries, we only have a few beers in the database: Poland, Slovenia, Albania, Bosnia Herzegovina, Croatia, Montenegro, Serbia, Greece, Turkey, Estonia, Lithuania, Latvia, Iceland, Bulgaria, Belarus, Russia, Ukraine."
   },
   {
     "title": "New Zealand",
+    "aka": [],
     "content": "Beer is the most popular alcoholic drink in New Zealand, accounting for 63% of available alcohol for sale. New Zealand is ranked 21st in beer consumption per capita, at around 75.5 litres per person per annum. The vast majority of beer produced in New Zealand is a type of lager, either pale or amber in colour, and between 4% – 5% alcohol by volume. There are also around 50 smaller breweries and brewpubs producing a vast range of beer styles, including some ales. The two largest breweries in New Zealand, Lion Nathan and DB Breweries, control almost 90% of sales by volume between them.\n\nMajor ingredients of beer were not introduced to New Zealand until Europeans arrived in the late-18th century. Captain James Cook brewed a beer flavoured with local spruce tree needles while visiting New Zealand in 1773 in order to combat scurvy aboard ship."
   },
   {
     "title": "Netherlands",
+    "aka": ["Dutch"],
     "content": "Beer in the Netherlands is known for the pale lagers, especially Heineken and Grolsch, which are exported globally. Grolsch is the leading import lager in the United Kingdom. Heineken is the world's third-largest brewer of beer, after Anheuser-Busch InBev and SABMiller.\n\nWhile pale lager makes up the majority of beer production and consumption in the Netherlands (95% according to the Centraal Brouwerij Kantoor), most Dutch brewers also brew specials. The most common is 'witbier' (white beer). Also Bok, brewed in Autumn and Spring, a tradition closely related to German Bock beer, is an often brewed special.\n\nThe Netherlands exports the largest proportion of beer of any country in the world - approximately 50% of production, according to The Brewers of Europe. In 2004, almost 1,300 million litres were exported out of a total production of 2,300 million litres."
   },
   {
     "title": "Mexico",
+    "aka": ["Mexican"],
     "content": "Beer in Mexico has a long history. While Mesoamerican cultures knew of fermented alcoholic beverages, including a corn beer, long before the Spanish conquest, European style beer brewed with barley was introduced with the Spanish soon after Hernán Cortés’ arrival. Production of this beer here was limited during the colonial period due to the lack of materials and severe restrictions and taxes placed on the product by Spanish authorities. After the Mexican War of Independence, these restrictions disappeared, and the industry was permitted to develop. However, the arrival of German immigrants and the short-lived empire of Austrian Maximilian I in the 19th century provided the impetus for the opening of many breweries in various parts of the country. By 1918, there were 36 brewing companies, but over the 20th century, the industry consolidated until today, only two corporations, Grupo Modelo and FEMSA control 90% of the Mexican beer market. This industry is one of the most prevalent in the country, with over 63% of the population buying one brand or another. Beer is also a major export for the country, with most going to the United States, but is available in over 150 countries in the world."
   },
   {
     "title": "Italy",
+    "aka": ["Italian"],
     "content": "Italy is considered to be part of the wine belt of Europe. Nevertheless, beer, particularly mass-produced pale lagers, are common in the country. It is traditionally considered to be an ideal accompaniment to pizza; since the 1970s, beer has spread from pizzerias and has become much more popular for drinking in other situations.\n\nSince the beginning of the 2000s, there has been a rise in the number of new microbreweries opening. The success of this phenomenon is due to the excellent quality of their products. The local materials are of good quality and much of the experience derived from wine-making applies to brewing."
   },
   {
     "title": "Ireland",
+    "aka": ["Irish"],
     "content": "Brewing in Ireland has a long history, and total production of beer stands at over 8 million hectolitres, and approximately half the alcohol consumed is beer. Lager accounts for 60% of the beer sold, Stout 34% and the remaining 6% is Ale.\n\nBy the beginning of the nineteenth century there were over two hundred breweries in the country, fifty-five of them in Dublin. During the nineteenth century the number of breweries fell to about fifty, and by 2007 only about 12 remained."
   },
   {
     "title": "Africa",
+    "aka": ["African"],
     "content": "Beer in Africa, is produced commercially in most African countries, and varieties of beer are also made by indigenous tribes. Beer is served in a range of locales, from neighbourhood shebeens to upscale bars. Many countries have standardized beer bottle sizes, which are cleaned and re-used, and so when buying beer at a store often people must pay a deposit on the bottle as well as the price of the beer. South Africa consumes the most beer of any African country, with an average of 60 litres of beer consumed per person annually.\n\nThe brewing of traditional beer is a common practice among Africans in rural areas. Varieties and types of beer depend on local customs and resources. Among various beers brewed locally are honey beers and ginger beers. A typical alternative to glass-bottle beers is local beer sold in tetra-pak style paper cartons."
   },
   {
     "title": "Czech Republic",
+    "aka": ["Czech"],
     "content": "Beer in Czechia (Czech: pivo) has a long history, with brewing taking place in Břevnov Monastery in 993. The city of Brno had the right to brew beer from the 12th century while Plzeň and České Budějovice, Pilsen and Budweis in German, had breweries in the 13th century.\n\nThe most common Czech beers are pale lagers of pilsner type, with characteristic transparent golden colour, high foaminess and lighter flavour. The Czech Republic has the highest beer consumption per capita in the world."
   },
   {
     "title": "Caribbean",
+    "aka": [],
     "content": "The beers of the Caribbean are unique to each island in the region, although many are variances of the same style. Each island generally brews its own unique pale lager, the occasional stout, and often a non-alcoholic malta beverage. Contract-brewing of international beers is also common, with Heineken Pilsener and Guinness Foreign Extra Stout being the most popular. The beers vary between the islands to suit the taste and the brewing method used."
   },
   {
     "title": "Canada",
+    "aka": ["Canadian"],
     "content": "Beer in Canada was introduced by European settlers in the seventeenth century, and a number of commercial brewers thrived until Prohibition in Canada. Though short-lived, very few brewers survived, and it was only in the late twentieth century that new breweries opened up. The Canadian Beer industry now plays an important role in Canadian identity, though globalization of the brewing industry has seen the major players in Canada acquired by or merged with foreign companies, notably its three largest beer producers, Labatt, Molson and Sleeman. The result is that Moosehead has become the largest fully Canadian-owned brewer."
   },
   {
     "title": "Belgium",
+    "aka": ["Belgian"],
     "content": "Beer in Belgium varies greatly in type. There are approximately 180 breweries in the country, ranging from international giants to microbreweries.\n\nOn average, Belgians drink 84 litres of beer each year, down from around 200 each year in 1900. Most beers are bought or served in bottles, rather than cans, and almost every style of beer has its own particular, uniquely shaped glass or other drinking-vessel. Using the correct glass is considered to improve its flavour.\n\nBeer in Belgium dates back to the age of the first crusades in the 1100s, long before Belgium became an independent country. Under Catholic church permission, local French and Flemish abbeys brewed and distributed beer as a fund raising method. The relatively low-alcohol beer of that time was preferred as a sanitary option to available drinking water. What are now traditional, artisanal brewing methods evolved, under abbey supervision, during the next seven centuries. The Trappist monasteries that now brew beer in Belgium were occupied in the late 18th century primarily by monks fleeing the French Revolution. However, the first Trappist brewery in Belgium (Westmalle) did not start operation until 10 December 1836, almost 50 years after the Revolution. That beer was exclusively for the monks and is described as \"dark and sweet.\" The first recorded sale of beer (a brown beer) was on 1 June 1861."
   },
   {
     "title": "Austria",
+    "aka": ["Austrian"],
     "content": "Austrian beers comes in a wide variety of styles, and many small breweries are scattered across the country, though a few larger breweries dominate markets. Austrian brewers were never subject to the tight restrictions of the Reinheitsgebot, and as a result more variety remains here than in Germany. The most common style of beer is similar to the German Märzen, though the Austrian style is distinct."
   },
   {
     "title": "Australia",
+    "aka": ["Australian"],
     "content": "Beer arrived in Australia at the beginning of British colonisation. In 2004 Australia was ranked fourth internationally in per capita beer consumption, at around 110 litres per year; although, the nation ranked considerably lower in terms of total per capita alcohol consumption. The most popular beer style in modern Australia is lager.\n\nThe oldest brewery still in operation is the Cascade Brewery, established in Tasmania in 1824. The largest Australian-owned brewery is the family-owned Coopers Brewery, as the other two major breweries Foster's Group and Lion Nathan are owned by the British-South African SABMiller and the Japanese Kirin Brewing Company, respectively.\n\nWithin an alcoholic beverage market worth some $16.3 billion, beer comprises about 48% compared to wine at 29% and spirits at 21%. Within the beer sector, premium beers have a 7.8% share of the market; full strength beer has 70.6%; mid-strength holds 12%; and light beer has 9.6%. 85% of beer is produced by national brewers, the remainder by regional or microbreweries. Microbreweries manufacturing less than 30,000 litres receive a 60% excise rebate."
   },
   {
     "title": "Asia",
+    "aka": ["Asian"],
     "content": "Beer in Asia began with Asia's first modern brewery in 1855 which was built entirely using European brewing technology. It was set up to supply the British in India by Edward Dyer at Kasauli in the Himalayan Mountains under the name Dyer Breweries. The company still exists and is known as Mohan Meakin Limited, which today comprises a large group of companies involved in many industries.\n\nIn the late 1820s, Edward Dyer moved from England to set up the first brewery in India (later incorporated as Dyer Breweries in 1855) at Kasauli in the Himalayan Mountains. The Kasauli brewery launched India's and indeed Asia's first beer, Lion, which was in great demand by the thirsty British administrators and troops stationed in the sweltering heat of India. Lion was much appreciated as a beer, and one famous poster featured a satisfied British Tommy declaring, \"as good as back home!\"."
   }
 ]
