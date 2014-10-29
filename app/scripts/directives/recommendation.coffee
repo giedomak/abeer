@@ -4,14 +4,15 @@ angular.module('abeerApp')
 .directive 'recommendation', () ->
 	templateUrl: "../../views/directives/recommendation.html"
 	controller: "RecommendationCtrl"
+	scope: {}
 
 .controller 'RecommendationCtrl', ($scope, $rootScope) ->
 	console.log "Rec init"
+	$scope.beers = $rootScope.UM.beers_local
 
 	# calculate the preference of each beer in the UM
 	calc_preference = () ->
-		for beer of $rootScope.UM.beers_local
-			console.log beer
+		for key, beer of $rootScope.UM.beers_local
 			beer.preference = 0.5
 
 			# AGE
@@ -32,9 +33,11 @@ angular.module('abeerApp')
 
 		console.log $rootScope.UM.beers_local
 
-		$scope.beers = $rootScope.UM.beers_local
-
 	# calculate preference each time the UM changes
-	$rootScope.$watch "UM", () ->
+	$rootScope.$watch "UM.beers_local", () ->
+		console.log "test"
+#		if not calculating
+		console.log "UM changed"
 		calc_preference()
+	, true
 
