@@ -55,10 +55,6 @@ angular.module('abeerApp')
       console.log("Not enough")
       return false
 
-    $scope.countryClick = (selectedCountry) ->
-      console.log(selectedCountry)
-      $scope.country = selectedCountry
-
     $http.get('http://ipinfo.io/geo').success (data) ->
       $scope.countryCode = (angular.fromJson data).country
       for country in $scope.flatCountries
