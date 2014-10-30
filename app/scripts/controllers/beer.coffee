@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('abeerApp')
-  .controller 'BeerCtrl', ($routeParams, $rootScope, $scope, $http, $sce) ->
+  .controller 'BeerCtrl', ($routeParams, $rootScope, $scope, $http, $sce, $compile) ->
     console.log "Beers init"
     $scope.id = $routeParams.id
     $http.get('http://www.abeerfor.me/api/beer/'.concat($scope.id))
@@ -14,7 +14,7 @@ angular.module('abeerApp')
         $scope.beerData.rating = $rootScope.UM.beers_local[$scope.id].rating
         $scope.beerData.drinkLater = $rootScope.UM.beers_local[$scope.id].drinkLater
         $scope.beerData.description = $sce.trustAsHtml($rootScope.linkAnnotate($scope.beerData.description))
-        $scope.beerData.style.description = $sce.parseAsHtml($rootScope.linkAnnotate($scope.beerData.style.description))
+        $scope.beerData.style.description = $compile(angular.element($sce.parseAsHtml($rootScope.linkAnnotate($scope.beerData.style.description))))
 
 
     $scope.defaultImg = "images/default.jpg"

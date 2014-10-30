@@ -64,7 +64,7 @@ angular
       .when '/strengths/:id', include
 #      .otherwise
 #        redirectTo: '/'
-  .run ($rootScope, $http, $location) ->
+  .run ($rootScope, $http, $location, $compile) ->
     $rootScope.UM =
       name: "Giedo"
       oldEnough:true
