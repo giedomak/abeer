@@ -2,6 +2,7 @@
 <h1>
     {{beerData.name}}
 </h1>
+<small>Visited: {{UM.beers_local[beerData.id].visited}}</small>
 <div spinner ng-hide="beerData"></div>
 <div class="row" ng-show="beerData">
     <div class="col-lg-4">
@@ -46,11 +47,8 @@
         </table>
         <p>Is {{beerData.isOrganic !=='n' && '' || 'not'}} Organic</p>
         <p>Style Name: <br>{{beerData.style.name != 'null' && beerData.style.name || '--'}}</p>
-        <p>Style Description: <br> <p ng-bind-html="beerData.style.description"></p></p>
+        <p>Style Description: <br> <p ng-bind-html="beerData.style.description"></p>
     </div>
 </div>
-</div>
-
-<small>Visited: {{UM.beers_local[beerData.id].visited}}</small>
 
 </restricted-page>
