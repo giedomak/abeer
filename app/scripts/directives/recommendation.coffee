@@ -31,6 +31,7 @@ angular.module('abeerApp')
 		"Its GREAT"
 		"Don't wait any longer"
 	]
+
 	$scope.quote = ""
 
 	# calculate the preference of each beer in the UM

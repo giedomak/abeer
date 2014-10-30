@@ -5,6 +5,9 @@ angular.module('abeerApp')
   $scope.beerResults = []
   $scope.beerResultsNames = []
 
+  $scope.selectedBeer = (data) ->
+	  $location.path("/beers/"+data.description.id)
+
   $scope.searchForBeer = (query) ->
     $http.get('http://abeerfor.me/api/search?q='.concat(query).concat('&type=beer'))
     .success (data) ->
