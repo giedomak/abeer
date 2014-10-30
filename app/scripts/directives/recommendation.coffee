@@ -11,8 +11,7 @@ angular.module('abeerApp')
 	$scope.beers = $rootScope.UM.beers_local
 
 
-	$scope.quote = () ->
-		return $scope.quotes[Math.floor(Math.random()*$scope.quotes.length)]
+	$scope.quote = ""
 
 	# calculate the preference of each beer in the UM
 	calc_preference = () ->
@@ -90,6 +89,7 @@ angular.module('abeerApp')
 
 				# get a random beer from the page and set it as recommendation
 				$scope.beer = data.data[Math.floor(Math.random()*data.data.length)]
+				$scope.quote = $scope.quotes[Math.floor(Math.random()*$scope.quotes.length)]
 
 	# calculate preference each time the UM changes
 	$rootScope.$watch "UM.beers_local", () ->
