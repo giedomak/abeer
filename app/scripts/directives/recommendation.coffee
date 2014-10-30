@@ -10,6 +10,14 @@ angular.module('abeerApp')
 	console.log "Rec init"
 	$scope.beers = $rootScope.UM.beers_local
 
+	$scope.quotes = [
+		"Try it, I think it really suits you!"
+		"Its GOOD!"
+	]
+
+	$scope.quote = () ->
+		return $scope.quotes[Math.floor(Math.random()*$scope.quotes.length)]
+
 	# calculate the preference of each beer in the UM
 	calc_preference = () ->
 		for key, beer of $rootScope.UM.beers_local
