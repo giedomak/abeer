@@ -11,27 +11,32 @@ angular.module('abeerApp')
 .controller 'PopularBeersCtrl', ($scope, $rootScope, $http) ->
   $rootScope.curTab = 'popularBeers'
   $scope.defaultImg = "images/defaultMedium.jpeg"
+  $scope.beers = []
 
   $http.get('http://abeerfor.me:1991/popular')
     .success (data) ->
-      console.log data
-      $scope.beers = data
-      for value, index in $scope.beers
-        console.log index, value
-        value.rating = null
-        value.drinkLater = null
-        if $rootScope.UM.beers_local[value.id]
-          console.log("Found beer in UM")
-          console.log($rootScope.UM.beers_local[value.id])
-          value.rating = $rootScope.UM.beers_local[value.id].rating
-          value.drinkLater = $rootScope.UM.beers_local[value.id].drinkLater
-      $scope.makeBeerRows($scope.beers, 3)
+      $scope.beerData = data
+      angular.forEach($scope.beerData, (key, value) -> $scope.getBeerData(value))
+
+
+  $scope.getBeerData = (beerID) ->
+    $http.get("http://abeerfor.me/api/beer/".concat(beerID))
+      .success (data) ->
+        data.data.rating = null
+        data.data.drinkLater = null
+        if $rootScope.UM.beers_local[data.data.id]
+          data.data.rating = $rootScope.UM.beers_local[data.data.id].rating
+          data.data.drinkLater = $rootScope.UM.beers_local[data.data.id].drinkLater
+        $scope.beers.push data.data
+        $scope.makeBeerRows($scope.beers, 3)
 
 
   $scope.ratingClick = (beer,rating) ->
     if !$rootScope.UM.beers_local[beer.id]
       $rootScope.initializeBeer(beer)
     $rootScope.UM.beers_local[beer.id].rating = rating
+    $http.get('http://www.abeerfor.me:1991/ratebeer/'.concat(beer.id).concat("/").concat(rating))
+
 
   $scope.drinkLaterClick = (beer) ->
     if !$rootScope.UM.beers_local[beer.id]
