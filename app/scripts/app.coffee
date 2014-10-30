@@ -36,6 +36,9 @@ angular
       .when '/ratebeers/:page',
         templateUrl: '../views/rateBeers.html',
         controller: 'RateBeersCtrl'
+      .when '/popular',
+        templateUrl: '../views/popularBeers.html',
+        controller: 'PopularBeersCtrl'
       .when '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
@@ -64,7 +67,7 @@ angular
       .when '/strengths/:id', include
 #      .otherwise
 #        redirectTo: '/'
-  .run ($rootScope, $http, $location, $compile) ->
+  .run ($rootScope, $http, $location) ->
     $rootScope.UM =
       name: "Giedo"
       oldEnough:true
@@ -111,8 +114,7 @@ angular
           markedUp = markedUp.replace(altName, "<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ", "") + "\">" + altName + "</a>")
 
       for type in $rootScope.typeJSON
-        regEx = RegExp(" " + type.title, "ig");
-        markedUp = markedUp.replace(regEx, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ", "") + "\" ng-style=\"{color:'red'}\">" + " " + type.title + "</a>")
+        markedUp = markedUp.replace(type.title, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ", "") + "\" ng-style=\"{color:'red'}\">" + " " + type.title + "</a>")
 
       return markedUp
 

@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('abeerApp')
-  .controller 'IncludeCtrl', ($location, $sce, $http, $routeParams, $rootScope, $scope) ->
+  .controller 'IncludeCtrl', ($location, $http, $routeParams, $rootScope, $scope) ->
     console.log "Include init"
 
     # get the name of the type for example
