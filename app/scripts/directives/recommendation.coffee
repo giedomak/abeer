@@ -9,6 +9,8 @@ angular.module('abeerApp')
 .controller 'RecommendationCtrl', ($scope, $rootScope, $http) ->
 	console.log "Rec init"
 	$scope.beers = $rootScope.UM.beers_local
+	t1 = new Date()
+	first = true
 
 	$scope.quotes = [
 		"Try it, I think it really suits you!"
@@ -111,8 +113,15 @@ angular.module('abeerApp')
 				$scope.quote = $scope.quotes[Math.floor(Math.random()*$scope.quotes.length)]
 
 	# calculate preference each time the UM changes
-	$rootScope.$watch "UM.beers_local", () ->
-		calc_preference()
-		calc_recommendation()
+	$rootScope.$watch "UM.beers_local", (o,n) ->
+		t2 = new Date()
+		dif = t1.getTime() - t2.getTime()
+		Seconds_from_T1_to_T2 = dif
+		Seconds_Between_Dates = Math.abs(Seconds_from_T1_to_T2)
+		if Seconds_Between_Dates >= 100 or first
+			first = false
+			calc_preference()
+			calc_recommendation()
+			t1 = new Date()
 	, true
 
