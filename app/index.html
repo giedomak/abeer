@@ -30,9 +30,9 @@
     <div class="container-fluid">
       <div class="row">
 
-        <div sidebar ng-hide="isAgeGateway()"></div>
+        <div sidebar class="col-sm-3 col-md-2" ng-hide="isAgeGateway()"></div>
 
-        <div class="col-sm-9 col-md-10">
+        <div class="col-sm-6 col-md-8">
           <div class="content">
 
             <div ng-view=""></div>
@@ -45,6 +45,9 @@
 
           </div>
         </div>
+
+		<div recommendation class="col-sm-3 col-md-2"></div>
+
       </div>
     </div>
 
