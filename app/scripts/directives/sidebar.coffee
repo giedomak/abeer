@@ -23,15 +23,15 @@ angular.module('abeerApp')
       { name: "Ireland", url: "ireland" }
       { name: "Italy", url: "italy" }
       { name: "Mexico", url: "mexico" }
-      { name: "The Netherlands", url: "netherlands" }
+      { name: "Netherlands", url: "netherlands" }
       { name: "New Zealand", url: "newzealand" }
-      { name: "Europe (other)", url: "othereurope" }
       { name: "Romania", url: "romania" }
-      { name: "Scandinavia (Sweden, Norway, Finland, Denmark)", url: "scandinavia" }
+      { name: "Scandinavia", url: "scandinavia" }
       { name: "Slovakia", url: "slovakia" }
-      { name: "South America (Argentina, Brazil, Peru, Venezuela)", url: "southamerica" }
+      { name: "South America", url: "southamerica" }
       { name: "Spain & Portugal", url: "spainportugal" }
       { name: "United States", url: "unitedstates" }
+      { name: "Europe (other)", url: "othereurope" }
     ]
 
     $scope.types = [

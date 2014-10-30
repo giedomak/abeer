@@ -13,6 +13,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   opacity: 0;
 }
 
+a.visited{
+    color: purple;
+}
+
 html {
   /*always show scrollbar*/
   overflow-y: -moz-scrollbars-vertical;
