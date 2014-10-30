@@ -12,7 +12,25 @@ angular.module('abeerApp')
 	t1 = new Date()
 	first = true
 
-
+	$scope.quotes = [
+		"Try it, I think it really suits you!"
+		"Its GOOD!"
+		"This one is perfect for you"
+		"Its AWESOME"
+		"Go get it!"
+		"Its delicious"
+		"YUMMY"
+		"Try it, you like it"
+		"Try this one!"
+		"It is tasty"
+		"Have you ever considered this one?"
+		"This one tastes good"
+		"You won't regret this one"
+		"As if an angel pisses on your tongue"
+		"Yummy in your tummy"
+		"Its GREAT"
+		"Don't wait any longer"
+	]
 	$scope.quote = ""
 
 	# calculate the preference of each beer in the UM

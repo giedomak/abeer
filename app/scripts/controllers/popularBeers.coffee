@@ -8,16 +8,16 @@
  # Controller of the abeerApp
 ###
 angular.module('abeerApp')
-.controller 'PopularBeersCtrl', ($routeParams, $rootScope, $scope, $http) ->
+.controller 'PopularBeersCtrl', ($scope, $rootScope, $http) ->
   $rootScope.curTab = 'popularBeers'
   $scope.defaultImg = "images/defaultMedium.jpeg"
 
-  $scope.basicBeerSearch = () ->
-    $http.get('http://abeerfor.me/popular')
+  $http.get('http://abeerfor.me:1991/popular')
     .success (data) ->
       console.log data
-      $scope.beers = (beer for beer in data.data)
+      $scope.beers = data
       for value, index in $scope.beers
+        console.log index, value
         value.rating = null
         value.drinkLater = null
         if $rootScope.UM.beers_local[value.id]
@@ -25,9 +25,8 @@ angular.module('abeerApp')
           console.log($rootScope.UM.beers_local[value.id])
           value.rating = $rootScope.UM.beers_local[value.id].rating
           value.drinkLater = $rootScope.UM.beers_local[value.id].drinkLater
+      $scope.makeBeerRows($scope.beers, 3)
 
-
-  $scope.makeBeerRows($scope.beers, 3)
 
   $scope.ratingClick = (beer,rating) ->
     if !$rootScope.UM.beers_local[beer.id]
@@ -39,13 +38,6 @@ angular.module('abeerApp')
       $rootScope.initializeBeer(beer)
     $rootScope.UM.beers_local[beer.id].drinkLater = beer.drinkLater
 
-
-
-  $scope.goBack = () ->
-    $location.path("ratebeers/"+ (parseInt($scope.page) - 1))
-
-  $scope.goNext = () ->
-    $location.path("ratebeers/"+ (parseInt($scope.page) + 1))
 
   $scope.makeBeerRows = (arr, lengthofsublist) ->
     if not angular.isUndefined(arr) and arr.length > 0

@@ -25,6 +25,7 @@ angular.module('abeerApp')
        $rootScope.initializeBeer(beer)
       $rootScope.UM.beers_local[$scope.id].rating = rating
       beer.rating = rating
+      $http.get('http://www.abeerfor.me:1991/ratebeer/'.concat(beer.id).concat("/").concat(rating))
 
     $scope.drinkLaterClick = (beer) ->
       if !$rootScope.UM.beers_local[$scope.id]
