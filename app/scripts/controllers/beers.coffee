@@ -20,8 +20,6 @@ angular.module('abeerApp')
           i++
         1
 
-
-    $scope.basicBeerSearch = () ->
-      $http.get('http://abeerfor.me/api/beers')
-        .success (data) ->
-          $scope.beers = (beer for beer in data.data)
+    $http.get('http://abeerfor.me/api/beers')
+      .success (data) ->
+        $scope.beers = (beer for beer in data.data)
