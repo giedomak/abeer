@@ -28,10 +28,12 @@ def getBeerData(beer):
 
 class index:
     def GET(self):
+        web.header('Access-Control-Allow-Origin',      '*')
         return "{Heineken Sucks}"
 
 class beer_id:
     def GET(self, beer):
+        web.header('Access-Control-Allow-Origin',      '*')
     	if beer in beer_db:
     		return str(beer_db[beer])
     	else:
@@ -39,6 +41,7 @@ class beer_id:
 
 class beer_rate:
     def GET(self, beer,rating):
+        web.header('Access-Control-Allow-Origin',      '*')
     	if beer in beer_db:
     		beer_db[beer].append(int(rating)) 
     		dump_db()
@@ -50,6 +53,7 @@ class beer_rate:
 
 class popular:
     def GET(self):
+        web.header('Access-Control-Allow-Origin',      '*')
     	returnjson = {}
     	for beer in beer_db:
     		returnjson[beer] = getBeerData(beer)
