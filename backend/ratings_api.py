@@ -24,7 +24,9 @@ def dump_db():
 	dumpF.close()
 
 def getBeerData(beer):
-	return json.loads(urllib2.urlopen("http://www.abeerfor.me/api/beer/" + str(beer)).read())
+	data = json.loads(urllib2.urlopen("http://www.abeerfor.me/api/beer/" + str(beer)).read())
+    data['ratings'] = beer_db[beer]
+    return data
 
 class index:
     def GET(self):
@@ -54,10 +56,9 @@ class beer_rate:
 class popular:
     def GET(self):
         web.header('Access-Control-Allow-Origin',      '*')
-    	returnjson = {}
+    	returnjson = []
     	for beer in beer_db:
-    		returnjson[beer] = getBeerData(beer)
-    		returnjson[beer]['ratings'] = beer_db[beer]
+            returnjson.append(getBeerData(beer))
     	return json.dumps(returnjson,indent=4, separators=(',', ': '))
 
 
