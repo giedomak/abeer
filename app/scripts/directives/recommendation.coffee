@@ -119,6 +119,12 @@ angular.module('abeerApp')
 				$scope.beer = data.data[Math.floor(Math.random()*data.data.length)]
 				$scope.quote = $scope.quotes[Math.floor(Math.random()*$scope.quotes.length)]
 
+	calc_savedbeers = () ->
+		# make an array of the object, so we can calculate
+		beers = (val for key, val of $rootScope.UM.beers_local)
+
+		$scope.savedbeers = beers.filter (x) -> x.drinkLater is true
+
 	# calculate preference each time the UM changes
 	$rootScope.$watch "UM.beers_local", (o,n) ->
 		t2 = new Date()
@@ -129,6 +135,7 @@ angular.module('abeerApp')
 			first = false
 			calc_preference()
 			calc_recommendation()
+			calc_savedbeers()
 			t1 = new Date()
 	, true
 

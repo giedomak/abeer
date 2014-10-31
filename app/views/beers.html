@@ -36,6 +36,7 @@ Each beer has a <a href="#/types">type</a> and <a href="#/strengths">strength</a
 <br>
 <div ng-repeat="beer in beers | limitTo:40">
     <div class="row">
+		<div class="beer">
         <img class="col-md-2" ng-src="{{beer.labels.medium !== 'null' && beer.labels.medium || defaultImg}}">
         <div class="col-md-10">
             <a class="beername" ng-href="#/beers/{{beer.id}}">{{beer.name}}</a><br>
@@ -49,6 +50,7 @@ Each beer has a <a href="#/types">type</a> and <a href="#/strengths">strength</a
                 </tr>
             </table>
         </div>
+		</div>
     </div>
 </div>
   </div>

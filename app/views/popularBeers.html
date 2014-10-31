@@ -13,6 +13,7 @@
 <div ng-show="beerRows">
     <div class="row" ng-repeat="row in beerRows">
         <div class="col-md-4" ng-repeat="i in row">
+			<div class="beer">
             <img popover-placement="right" popover="{{beers[i].description | limitTo: 140}}..." popover-trigger="mouseenter"
                  class="col-md-6"
                  ng-src="{{beers[i].labels.medium !== 'null' && beers[i].labels.medium || defaultImg}}">
@@ -34,14 +35,8 @@
                 </label>
 
             </div>
+			</div>
         </div>
-    </div>
-
-    <div class="row">
-        <button type="button" class="btn btn-default" ng-click="goBack()" ng-hide="page==1">Previous Page</button>
-
-        <button type="button" class="btn btn-default" ng-click="goNext()">Next Page</button>
-
     </div>
 </div>
 
