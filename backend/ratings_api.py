@@ -1,6 +1,8 @@
 import web
 import json
 import urllib2
+import chardet
+
 
 
 urls = (
@@ -8,7 +10,6 @@ urls = (
     "/getbeer/(.+)", "beer_id",
     "/ratebeer/(.+)/(.+)", "beer_rate",
     "/popular", "popular"
-
 )
 
 db_file = "beerRatingDB.txt"
@@ -24,7 +25,18 @@ def dump_db():
 	dumpF.close()
 
 def getBeerData(beer):
-	data = json.loads(urllib2.urlopen("http://www.abeerfor.me/api/beer/" + str(beer)).read())
+    print "--------------------------" 
+    print "New Beer Request "
+    url = "http://www.abeerfor.me/api/beer/" + str(beer)
+    result = urllib2.urlopen(url)
+    rawdata = result.read()
+    try:
+        encoding = chardet.detect(rawdata)
+        data = rawdata.decode(encoding['encoding'])
+    except:
+        data = rawdata
+    print data
+    data = json.loads(data)['data']
     data['ratings'] = beer_db[beer]
     return data
 
@@ -56,10 +68,12 @@ class beer_rate:
 class popular:
     def GET(self):
         web.header('Access-Control-Allow-Origin',      '*')
-    	returnjson = []
-    	for beer in beer_db:
-            returnjson.append(getBeerData(beer))
-    	return json.dumps(returnjson,indent=4, separators=(',', ': '))
+        return json.dumps(beer_db)
+    #	returnjson = []
+	#print beer_db.keys()
+   # 	for beer in beer_db.keys():
+   #         returnjson.append(getBeerData(beer))
+    #	return json.dumps(returnjson,indent=4, separators=(',', ': '))
 
 
 
