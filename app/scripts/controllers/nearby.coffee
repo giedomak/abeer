@@ -63,7 +63,12 @@ angular.module('abeerApp')
     $scope.map.control.refresh({latitude: position.coords.latitude, longitude: position.coords.longitude})
     latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
     $scope.geocoder.geocode({'latLng':latlng}, (result, status) ->
-      console.log result
+      for listing in result[0].address_components
+        if "locality" in listing.types
+          $scope.locality = listing.short_name
+        if "country" in listing.types
+          $scope.country = listing.short_name
+      $scope.getNearbyBreweries()
     )
 
 

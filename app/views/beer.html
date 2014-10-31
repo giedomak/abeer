@@ -45,6 +45,10 @@
                 <td>srmMax: {{beerData.style.srmMax !== 'null' && beerData.style.srmMax || '-- '}}</td>
             </tr>
         </table>
+
+
+        <p>Brewery: <a href={{"#/breweries/".concat(beerData.breweries[0].id)}}> {{beerData.breweries[0].name}}</a></p>
+
         <p>Is {{beerData.isOrganic !=='n' && '' || 'not'}} Organic</p>
         <p>Style Name: <br>{{beerData.style.name != 'null' && beerData.style.name || '--'}}</p>
         <p>Style Description: <br> <p ng-bind-html="beerData.style.description"></p>
