@@ -2,13 +2,21 @@
 
 <h4>What should I drink today?</h4>
 <br>
-<b>Recommended beer</b>
-<br>
-&#x2192; <a ng-href="#/beers/{{beer.id}}">{{beer.name}}</a>
+<div ng-show="beer">
+	<b>Recommended beer</b>
+	<br>
+	&#x2192; <a ng-href="#/beers/{{beer.id}}">{{beer.name}}</a>
+
+	<br>
+	{{quote}}
+</div>
 
 <br>
-{{quote}}
+<br>
+<div ng-show="savedbeers">
+	<b>Saved beers</b>
 
-<br>
-<br>
-<b>Saved beers</b>
+	<div ng-repeat="beer in savedbeers">
+		&#x2192; <a ng-href="#/beers/{{beer.id}}">{{beer.name}}</a>
+	</div>
+</div>
