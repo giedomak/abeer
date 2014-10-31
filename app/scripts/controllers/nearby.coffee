@@ -11,15 +11,7 @@ angular.module('abeerApp')
   $scope.lat = 5.5
   $scope.long = 5.5
 
-  $http.get('http://ipinfo.io/geo')
-    .success (data) ->
-      resp = angular.fromJson data
-      $scope.locality = resp.city
-      $scope.country = resp.country
-      $scope.lat = resp.loc.split(',')[0]
-      $scope.long = resp.loc.split(',')[1]
-      console.log $scope.locality, $scope.country, $scope.lat
-      $scope.getNearbyBreweries()
+  $scope.geocoder = new google.maps.Geocoder();
 
   $scope.map =
     center:
@@ -69,6 +61,10 @@ angular.module('abeerApp')
       latitude: position.coords.latitude
       longitude: position.coords.longitude
     $scope.map.control.refresh({latitude: position.coords.latitude, longitude: position.coords.longitude})
+    latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+    $scope.geocoder.geocode({'latLng':latlng}, (result, status) ->
+      console.log result
+    )
 
 
   navigator.geolocation.getCurrentPosition($scope.receivedLoc);
