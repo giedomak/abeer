@@ -6,7 +6,8 @@
 
 <div ng-show="brewery">
     <div class="row">
-        <img class="col-lg-4" ng-src="{{brewery.images.large !== 'null' && brewery.images.large || defaultImg}}">
+        <img class="col-xs-12 col-md-4" ng-src="{{brewery.images.large !== 'null' && brewery.images.large || defaultImg}}">
+		<div class="col-md-8">
         <div ng-hide="beerData.rating == null">Your Rating:</div>
         <div ng-show="beerData.rating == null"> Been there? Drank that? Rate them!</div>
         <rating ng-model="brewery.rating"
@@ -15,20 +16,20 @@
                 ng-click="breweryRatingClick(brewery,brewery.rating)"
                 ></rating>
         <p ng-hide="brewery.rating == null">{{brewery.rating}} Stars </p>
+		</div>
+		<div class="clearfix"></div><br>
+		<div class="col-md-12">
+			{{brewery.description}}<br><br>
+			<table class="table table-bordered">
+				<tr>
+				<tr>
+					<td>Established {{brewery.established !=='null' && brewery.established || '-- '}}</td>
+					<td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
+					<td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
+				</tr>
+			</table>
+		</div>
         </div>
-    <div class="row">
-        <div class="col-lg-6">
-            {{brewery.description}}
-            <table class="table table-bordered">
-                <tr>
-                <tr>
-                    <td>Established {{brewery.established !=='null' && brewery.established || '-- '}}</td>
-                    <td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
-                    <td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
-                </tr>
-            </table>
-        </div>
-    </div>
 </div>
 
 
@@ -37,6 +38,7 @@
 <div ng-show="beerRows">
     <div class="row" ng-repeat="row in beerRows">
         <div class="col-md-4" ng-repeat="i in row">
+			<div class="beer">
             <img popover-placement="right" popover="{{beers[i].description | limitTo: 140}}..." popover-trigger="mouseenter"
                  class="col-md-6"
                  ng-src="{{beers[i].labels.medium !== 'null' && beers[i].labels.medium || defaultImg}}">
@@ -56,14 +58,7 @@
                     <input type="checkbox" ng-model="beers[i].drinkLater" ng-change="drinkLaterClick(beers[i])">
                     Drink later?
                 </label>
-
+			</div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-<small>Visited: {{breweries[id].visited}}</small>
