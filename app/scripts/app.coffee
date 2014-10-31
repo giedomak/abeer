@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'angucomplete-alt',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'google-maps'.ns()
   ])
   .config ($routeProvider) ->
     include =
@@ -54,6 +55,9 @@ angular
       .when '/breweries/:id',
         templateUrl: 'views/brewery.html',
         controller: 'BreweryCtrl'
+      .when '/nearby',
+        templateUrl: 'views/nearby.html',
+        controller: 'NearbyCtrl'
 
       # countries, types and strengths all use the include template and controller
       .when '/countries', include
