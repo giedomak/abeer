@@ -259,8 +259,12 @@ body {
     width: 100%;
     height: auto;
   }
+}
 
-
-
+.fade {
+	opacity: 1;
+	&.ng-hide-remove {
+		animation: fadeInDown 0.5s;
+	}
 }
 
