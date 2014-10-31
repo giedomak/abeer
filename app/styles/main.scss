@@ -22,7 +22,7 @@ html {
   overflow-y: -moz-scrollbars-vertical;
   overflow-y: scroll;
 }
-
+.angular-google-map-container { height: 400px; }
 /* Space out content a bit */
 body {
   padding-top: 20px;
@@ -259,8 +259,23 @@ body {
     width: 100%;
     height: auto;
   }
+}
 
+.fade {
+	opacity: 1;
+	&.ng-hide-remove {
+		animation: fadeInDown 0.5s;
+	}
+}
 
-
+.beer {
+	box-shadow: 2px 2px 2px lightgrey;
+	margin-bottom: 10px;
+	border: 1px solid #d3d3d3;
+	border-radius: 3px;
+	float: left;
+	padding-top: 10px;
+	width: 100%;
+	height: 100%;
 }
 

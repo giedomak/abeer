@@ -16,11 +16,18 @@ angular.module('abeerApp')
 		"Try it, I think it really suits you!"
 		"Its GOOD!"
 		"This one is perfect for you"
+		"And on the 7th day of Creation, God rested. And he drank this beer."
+		"There once was a man from Nantucket, And before he kicked the bucket, He drank this beer, His eyes went queer, And he died with the best beer in his stomach."
+		"Forget Tinder, just fool around with this beer"
+		"We computed this recommendation with our Dual-Positron MD5 Hash Nuclear Enabled Quantum Leather recommendation engine. Yes, it was expensive"
+		"If you don't like it, return it to the store. Just say you talked to 'Chuck' on the phone and he approved the refund"
+		"The tastiest thing since sliced bread. Yeah, sliced bread tastes the same as unsliced bread, but that's not the point"
+		"Tastes better than a conversation about Zwarte Piet"
 		"Its AWESOME"
 		"Go get it!"
 		"Its delicious"
 		"YUMMY"
-		"Try it, you like it"
+		"Try it, you'll like it"
 		"Try this one!"
 		"It is tasty"
 		"Have you ever considered this one?"
@@ -112,6 +119,12 @@ angular.module('abeerApp')
 				$scope.beer = data.data[Math.floor(Math.random()*data.data.length)]
 				$scope.quote = $scope.quotes[Math.floor(Math.random()*$scope.quotes.length)]
 
+	calc_savedbeers = () ->
+		# make an array of the object, so we can calculate
+		beers = (val for key, val of $rootScope.UM.beers_local)
+
+		$scope.savedbeers = beers.filter (x) -> x.drinkLater is true
+
 	# calculate preference each time the UM changes
 	$rootScope.$watch "UM.beers_local", (o,n) ->
 		t2 = new Date()
@@ -122,6 +135,7 @@ angular.module('abeerApp')
 			first = false
 			calc_preference()
 			calc_recommendation()
+			calc_savedbeers()
 			t1 = new Date()
 	, true
 

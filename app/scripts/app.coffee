@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'angucomplete-alt',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'google-maps'.ns()
   ])
   .config ($routeProvider) ->
     include =
@@ -42,9 +43,6 @@ angular
       .when '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      .when '/beers/:id',
-        templateUrl: '/views/beer.html',
-        controller: 'BeerCtrl'
       .when '/beers',
         templateUrl: 'views/beers.html',
         controller: 'BeersCtrl'
@@ -57,6 +55,9 @@ angular
       .when '/breweries/:id',
         templateUrl: 'views/brewery.html',
         controller: 'BreweryCtrl'
+      .when '/nearby',
+        templateUrl: 'views/nearby.html',
+        controller: 'NearbyCtrl'
 
       # countries, types and strengths all use the include template and controller
       .when '/countries', include

@@ -1,0 +1,38 @@
+<h1>Nearby Breweries</h1>
+
+<br>
+<p>
+    In an event of an emergency, it is best to take shelter in a safe place. No place is safer than a Brewery. Look below to find on nearest to you!
+</p>
+
+<ui-gmap-google-map id="map" center="map.center" zoom="map.zoom" control="map.control">
+    <ui-gmap-markers models="breweryLocs" coords="'self'" icon="'icon'">
+    </ui-gmap-markers>
+</ui-gmap-google-map>
+
+
+<div spinner ng-hide="breweries"></div>
+<div ng-show="breweries">
+
+    <br>
+    <div ng-repeat="brewery in breweries">
+        <div class="row">
+            <img class="col-md-2" ng-src="{{brewery.images.medium !== 'null' && brewery.images.medium || defaultImg}}">
+            <div class="col-md-10">
+                <a ng-href="#/breweries/{{brewery.id}}">{{brewery.name}}</a><br>
+                <p class="beerDescription">{{brewery.description}}</p>
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Established {{brewery.established !=='null' && brewery.established || '-- '}}</td>
+                        <td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
+                        <td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
