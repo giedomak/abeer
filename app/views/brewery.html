@@ -1,9 +1,6 @@
-<restricted-page>
 <h1>
     {{brewery.name}}
 </h1>
-
-
 
 <div spinner ng-hide="brewery"></div>
 
@@ -15,7 +12,7 @@
         <rating ng-model="brewery.rating"
                 max="5" readonly="false" on-hover="hoveringOver(value)"
                 on-leave="overStar = null"
-                ng-click="ratingClick(brewery,brewery.rating)"
+                ng-click="breweryRatingClick(brewery,brewery.rating)"
                 ></rating>
         <p ng-hide="brewery.rating == null">{{brewery.rating}} Stars </p>
         </div>
@@ -29,11 +26,44 @@
                     <td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
                     <td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
                 </tr>
-                </tr>
             </table>
         </div>
     </div>
 </div>
-</div>
-</restricted-page>
+
+
+
+<div spinner ng-hide="beerRows"></div>
+<div ng-show="beerRows">
+    <div class="row" ng-repeat="row in beerRows">
+        <div class="col-md-4" ng-repeat="i in row">
+            <img popover-placement="right" popover="{{beers[i].description | limitTo: 140}}..." popover-trigger="mouseenter"
+                 class="col-md-6"
+                 ng-src="{{beers[i].labels.medium !== 'null' && beers[i].labels.medium || defaultImg}}">
+            <div class="col-md-6">
+                <a class="beername" ng-href="#/beers/{{beers[i].id}}">{{beers[i].name}}</a> </br>
+                <div ng-hide="beers[i].rating == null">Your Rating:</div>
+                <div ng-show="beers[i].rating == null"> Know it? Drank it? Rate it!</div>
+                <rating ng-model="beers[i].rating"
+                        max="5" readonly="false" on-hover="hoveringOver(value)"
+                        on-leave="overStar = null"
+                        ng-click="beerRatingClick(beers[i],beers[i].rating)"
+                        >
+                </rating>
+                <p ng-hide="beers[i].rating == null">{{beers[i].rating}} Stars </p>
+
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="beers[i].drinkLater" ng-change="drinkLaterClick(beers[i])">
+                    Drink later?
+                </label>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 <small>Visited: {{breweries[id].visited}}</small>

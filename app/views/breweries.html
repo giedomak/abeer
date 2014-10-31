@@ -17,10 +17,28 @@ There are many breweries in many different <a href="#/countries">countries</a>.<
 
 <div spinner ng-hide="breweries"></div>
 <div ng-show="breweries">
-<form class="form-inline">
-    <input ng-model="query" type="text"
-           placeholder="Filter by" autofocus>
-</form>
+
+    <div class="padded-row">
+
+        <angucomplete-alt id="searchField"
+                          placeholder="Type a brewery..."
+                          pause="100"
+                          selected-object="selectedBrewery"
+                          remote-url="http://abeerfor.me/api/search?type=brewery&q="
+                          remote-url-data-field="data"
+                          title-field="name"
+                          image-field="labels.icon"
+                          input-class="form-control form-control-small"
+                          match-class="highlight"
+                          remote-url-response-formatter="addPics"
+                />
+    </div>
+
+
+
+
+
+
 <br>
 <div ng-repeat="brewery in breweries| limitTo:40">
     <div class="row">

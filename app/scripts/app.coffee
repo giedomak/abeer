@@ -42,9 +42,6 @@ angular
       .when '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      .when '/beers/:id',
-        templateUrl: '/views/beer.html',
-        controller: 'BeerCtrl'
       .when '/beers',
         templateUrl: 'views/beers.html',
         controller: 'BeersCtrl'

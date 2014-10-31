@@ -13,10 +13,26 @@ Each beer has a <a href="#/types">type</a> and <a href="#/strengths">strength</a
 
 <div spinner ng-hide="beers"></div>
 <div ng-show="beers">
-<form class="form-inline">
-    <input ng-model="query" type="text"
-           placeholder="Filter by" autofocus>
-</form>
+
+    <div class="padded-row">
+
+        <angucomplete-alt id="searchField"
+                          placeholder="Type a beer..."
+                          pause="100"
+                          selected-object="selectedBeer"
+                          remote-url="http://abeerfor.me/api/search?type=beer&q="
+                          remote-url-data-field="data"
+                          title-field="name"
+                          image-field="labels.icon"
+                          input-class="form-control form-control-small"
+                          match-class="highlight"
+                          remote-url-response-formatter="addPics"
+                />
+    </div>
+
+
+
+
 <br>
 <div ng-repeat="beer in beers | limitTo:40">
     <div class="row">
