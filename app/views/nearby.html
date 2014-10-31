@@ -11,21 +11,21 @@
 </ui-gmap-google-map>
 
 
-<div spinner ng-hide="breweries"></div>
-<div ng-show="breweries">
+<div spinner ng-hide="breweryResults"></div>
+<div ng-show="breweryResults">
 
     <br>
-    <div ng-repeat="brewery in breweries">
+    <div ng-repeat="location in breweryResults">
         <div class="row">
-            <img class="col-md-2" ng-src="{{brewery.images.medium !== 'null' && brewery.images.medium || defaultImg}}">
+            <img class="col-md-2" ng-src="{{location.brewery.images.medium !== 'null' && location.brewery.images.medium || defaultImg}}">
             <div class="col-md-10">
-                <a ng-href="#/breweries/{{brewery.id}}">{{brewery.name}}</a><br>
-                <p class="beerDescription">{{brewery.description}}</p>
+                <a ng-href="#/breweries/{{location.brewery.id}}">{{location.brewery.name}}</a><br>
+                <p class="beerDescription">{{location.brewery.description}}</p>
                 <table class="table table-bordered">
                     <tr>
-                        <td>Established {{brewery.established !=='null' && brewery.established || '-- '}}</td>
-                        <td>{{brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
-                        <td>Website: <a href={{brewery.website}}>{{brewery.website}} </a></td>
+                        <td>Established {{location.brewery.established !=='null' && location.brewery.established || '-- '}}</td>
+                        <td>{{location.brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
+                        <td>Website: <a href={{location.brewery.website}}>{{location.brewery.website}} </a></td>
                     </tr>
                 </table>
             </div>
