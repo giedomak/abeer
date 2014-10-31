@@ -1,87 +1,92 @@
-<!--<ul>-->
-  <!--<li>Countries</li>-->
-  <!--<ul>-->
-    <!--<li ng-repeat="(key, value) in countries">-->
-      <!--<a ng-href="#/country/{{key}}">{{value.title}}</a>-->
-    <!--</li>-->
-  <!--</ul>-->
-<!--</ul>-->
-  <div>
-    <div class="sidebar-nav">
-        <img ng-src="images/logoSmaller.png">
+<div>
+	<div class="sidebar-nav">
+		<img ng-src="images/logoSmaller.png">
 
-        <div class="navbar navbar-default" role="navigation">
+		<div class="navbar navbar-default" role="navigation">
 
-            <div class="navbar-header">
+			<div class="navbar-header">
 
-            <button id="navbutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!--<span class="visible-xs navbar-brand">ABEER</span>-->
-        </div>
-        <div class="navbar-collapse collapse sidebar-navbar-collapse">
-         <!-- <h4 class="visible-lg visible-md visible-sm">ABEER</h4>-->
-          <ul class="nav navbar-nav" id="sidenav01">
+				<button id="navbutton" type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".sidebar-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!--<span class="visible-xs navbar-brand">ABEER</span>-->
+			</div>
+			<div class="navbar-collapse collapse sidebar-navbar-collapse">
+				<!-- <h4 class="visible-lg visible-md visible-sm">ABEER</h4>-->
+				<ul class="nav navbar-nav" id="sidenav01">
 
-			  <!-- INTRODUCTION -->
-            <li><a href="#"><span class="glyphicon glyphicon-star"></span> Introduction</a></li>
+					<!-- INTRODUCTION -->
+					<li><a href="#"><span class="glyphicon glyphicon-star"></span> Introduction</a></li>
 
-			  <!-- BEERS -->
-              <li><a href="#/beers"><span class="glyphicon glyphicon-glass"></span> Beers &#160</a></li>
+					<!-- BEERS -->
+					<li><a href="#/beers"><span class="glyphicon glyphicon-glass"></span> Beers &#160</a></li>
 
-			  <!-- TYPES -->
-              <li ng-show="UM.visited_beers > 0" class="fade">
-                <a href="#/types" data-toggle="collapse" data-target="#type" data-parent="#sidenav01" class="collapsed btn-link">
-                <span class="glyphicon glyphicon-list-alt"></span> Types <span class="caret"></span>
-                </a>
-                <div class="collapse" id="type" style="height: 0px;">
-                    <ul class="nav nav-list">
-                    <li ng-repeat="type in types"><a ng-href="#/types/{{type.url}}">{{type.name}}</a></li>
-                    </ul>
-                </div>
-              </li>
+					<!-- TYPES -->
+					<li ng-show="UM.visited_beers > 0" class="fade">
+						<a href="#/types" data-toggle="collapse" data-target="#type" data-parent="#sidenav01"
+						   class="collapsed btn-link">
+							<span class="glyphicon glyphicon-list-alt"></span> Types <span class="caret"></span>
+						</a>
 
-			  <!-- STRENGTHS -->
-              <li ng-show="UM.visited_beers > 0" class="fade">
-                <a href="#/strengths" data-toggle="collapse" data-target="#strength" data-parent="#sidenav01" class="collapsed btn-link">
-                <span class="glyphicon glyphicon-fire"></span> Strengths <span class="caret"></span>
-                </a>
-                <div class="collapse" id="strength" style="height: 0px;">
-                    <ul class="nav nav-list">
-                        <li ng-repeat="strength in strengths"><a ng-href="#/strengths/{{strength.url}}">{{strength.name}}</a></li>
-                    </ul>
-                </div>
-              </li>
+						<div class="collapse" id="type" style="height: 0px;">
+							<ul class="nav nav-list">
+								<li ng-repeat="type in types"><a ng-href="#/types/{{type.url}}">{{type.name}}</a></li>
+							</ul>
+						</div>
+					</li>
 
-			  <!-- BREWERIES -->
-              <li><a href="#/breweries"><span class="glyphicon glyphicon-tower"></span> Breweries</a></li>
+					<!-- STRENGTHS -->
+					<li ng-show="UM.visited_beers > 0" class="fade">
+						<a href="#/strengths" data-toggle="collapse" data-target="#strength" data-parent="#sidenav01"
+						   class="collapsed btn-link">
+							<span class="glyphicon glyphicon-fire"></span> Strengths <span class="caret"></span>
+						</a>
 
-			  <!-- COUNTRIES -->
-              <li ng-show="UM.visited_breweries > 0" class="fade">
-                <a href="#/countries" data-toggle="collapse" data-target="#countries" data-parent="#sidenav01" class="collapsed btn-link">
-                <span class="glyphicon glyphicon-globe"></span> Countries <span class="caret"></span>
-                </a>
-                <div class="collapse" id="countries" style="height: 0px;">
-                <ul class="nav nav-list">
-                  <li ng-repeat="country in countries"><a ng-href="#/countries/{{country.url}}">{{country.name}}</a></li>
-                </ul>
-                </div>
-              </li>
+						<div class="collapse" id="strength" style="height: 0px;">
+							<ul class="nav nav-list">
+								<li ng-repeat="strength in strengths"><a ng-href="#/strengths/{{strength.url}}">{{strength.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</li>
 
-			  <!-- SEARCH -->
-              <li ng-show="UM.visited_beers > 0 && UM.visited_breweries > 0" class="fade"><br></br><a href="#/search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+					<!-- BREWERIES -->
+					<li><a href="#/breweries"><span class="glyphicon glyphicon-tower"></span> Breweries</a></li>
 
-			  <!-- RATE BEERS -->
-              <li ng-show="UM.visited_beers > 0 && UM.visited_breweries > 0" class="fade"><a href="#/ratebeers/1"><span class="glyphicon glyphicon-thumbs-up"></span> Rate Beers</a></li>
+					<!-- COUNTRIES -->
+					<li ng-show="UM.visited_breweries > 0" class="fade">
+						<a href="#/countries" data-toggle="collapse" data-target="#countries" data-parent="#sidenav01"
+						   class="collapsed btn-link">
+							<span class="glyphicon glyphicon-globe"></span> Countries <span class="caret"></span>
+						</a>
 
-			  <!-- POPULAR -->
-              <li ng-show="UM.visited_beers > 0 && UM.visited_breweries > 0" class="fade"><a href="#/popular"><span class="glyphicon glyphicon-heart-empty"></span> Popular</a></li>
+						<div class="collapse" id="countries" style="height: 0px;">
+							<ul class="nav nav-list">
+								<li ng-repeat="country in countries"><a ng-href="#/countries/{{country.url}}">{{country.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</li>
 
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-  </div>
+					<!-- SEARCH -->
+					<li ng-show="UM.visited_beers > 0 && UM.visited_breweries > 0" class="fade"><br></br><a
+							href="#/search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+
+					<!-- RATE BEERS -->
+					<li ng-show="UM.visited_beers > 0 && UM.visited_breweries > 0" class="fade"><a href="#/ratebeers/1"><span
+							class="glyphicon glyphicon-thumbs-up"></span> Rate Beers</a></li>
+
+					<!-- POPULAR -->
+					<li ng-show="UM.visited_beers > 0 && UM.visited_breweries > 0" class="fade"><a
+							href="#/popular"><span class="glyphicon glyphicon-heart-empty"></span> Popular</a></li>
+
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+</div>
