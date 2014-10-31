@@ -21,10 +21,13 @@ angular.module('abeerApp')
       console.log $scope.locality, $scope.country, $scope.lat
       $scope.getNearbyBreweries()
 
-  $scope.receivedLoc = (position) ->
-    console.log position
+  $scope.map =
+    center:
+      latitude: 51.470921
+      longitude: 4.662819
+    zoom: 10
+    control: {}
 
-  navigator.geolocation.getCurrentPosition($scope.receivedLoc);
 
 
   $scope.getNearbyBreweries = () ->
@@ -61,13 +64,20 @@ angular.module('abeerApp')
     return results
 
 
+  $scope.receivedLoc = (position) ->
+    $scope.map.center =
+      latitude: position.coords.latitude
+      longitude: position.coords.longitude
+    $scope.map.control.refresh({latitude: position.coords.latitude, longitude: position.coords.longitude})
 
-  $scope.initialize = ->
-    mapOptions =
-      zoom: 8
-      center: new google.maps.LatLng(-34.397, 150.644)
 
-    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions)
-    return
-  map = undefined
-  google.maps.event.addDomListener window, "load", $scope.initialize
+  navigator.geolocation.getCurrentPosition($scope.receivedLoc);
+
+  $scope.breweryLocs =
+    [
+      latitude: 51.4369673
+      longitude: 5.4772592
+      title: "Van Moll"
+      id: 0
+    ]
+

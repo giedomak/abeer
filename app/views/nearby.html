@@ -5,7 +5,10 @@
     In an event of an emergency, it is best to take shelter in a safe place. No place is safer than a Brewery. Look below to find on nearest to you!
 </p>
 
-<div id="map-canvas"></div>
+<ui-gmap-google-map id="map" center="map.center" zoom="map.zoom" control="map.control">
+    <ui-gmap-markers models="breweryLocs" coords="'self'" icon="'icon'">
+    </ui-gmap-markers>
+</ui-gmap-google-map>
 
 
 <div spinner ng-hide="breweries"></div>
