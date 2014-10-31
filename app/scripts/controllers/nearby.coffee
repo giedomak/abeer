@@ -20,21 +20,15 @@ angular.module('abeerApp')
     zoom: 10
     control: {}
 
-
-
-  $scope.getNearbyBreweries = () ->
-    $http.get('http://abeerfor.me/api/locations?countryIsoCode='.concat($scope.country).concat('&locality=').concat($scope.locality))
-      .success (data) ->
-       $scope.breweries = (brewery for brewery in data.data)
-
   $scope.selectedBrewery = (data) ->
     $location.path("/breweries/"+data.description.id)
 
-  $scope.searchForBrewery = (query) ->
-    $http.get('http://abeerfor.me/api/search?q='.concat(query).concat('&type=brewery'))
+  $scope.getNearbyBreweries = () ->
+    $http.get('http://abeerfor.me/api/locations?countryIsoCode='.concat($scope.country).concat('&locality=').concat($scope.locality))
     .success (data) ->
       $scope.breweryResults = (brewery for brewery in data.data)
       $scope.breweryResultsNames = (brewery.name for brewery in data.data)
+      console.log $scope.breweryResults
 
 
   $scope.getBreweryWithName = (value) ->
