@@ -72,6 +72,8 @@ angular.module('abeerApp')
 		beers.sort (a,b) ->
 			return a.preference < b.preference
 
+		$scope.prefs = beers
+
 		# pick the top 3
 		beers = beers[0..2]
 
@@ -97,6 +99,9 @@ angular.module('abeerApp')
 		total += val for val in ibu
 		ibu_avg = total / ibu.length
 
+		$scope.abv_avg = abv_avg
+		$scope.ibu_avg = ibu_avg
+
 		# use the API to get a list with possible recommendations
 		query = 'http://abeerfor.me/api/beers'
 		if abv_avg then query = query.concat('?abv=').concat(abv_avg-0.5).concat(',').concat(abv_avg+0.5)
@@ -105,6 +110,8 @@ angular.module('abeerApp')
 		$http.get(query)
 		.success (data) ->
 			console.log data
+
+			$scope.totalResults = data.totalResults
 
 			# pick a random beer from a random page
 			page = Math.floor (Math.random() * data.numberOfPages)
