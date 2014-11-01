@@ -32,16 +32,14 @@
         </div>
 </div>
 
-
-
-<div spinner ng-hide="beerRows"></div>
-<div ng-show="beerRows">
+<div ng-show="beerRows" class="fade2">
+	<h2>Beers from this brewery:</h2>
     <div class="row" ng-repeat="row in beerRows">
         <div class="col-md-4" ng-repeat="i in row">
 			<div class="beer">
             <img popover-placement="right" popover="{{beers[i].description | limitTo: 140}}..." popover-trigger="mouseenter"
                  class="col-md-6"
-                 ng-src="{{beers[i].labels.medium !== 'null' && beers[i].labels.medium || defaultImg}}">
+                 ng-src="{{beers[i].labels.medium !== 'null' && beers[i].labels.medium || defaultImgBeer}}">
             <div class="col-md-6">
                 <a class="beername" ng-href="#/beers/{{beers[i].id}}">{{beers[i].name}}</a> </br>
                 <div ng-hide="beers[i].rating == null">Your Rating:</div>

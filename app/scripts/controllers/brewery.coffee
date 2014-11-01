@@ -4,6 +4,7 @@ angular.module('abeerApp')
 .controller 'BreweryCtrl', ($routeParams, $rootScope, $scope, $http) ->
   console.log "Brewery init"
   $scope.defaultImg = "images/defaultBreweryMedium.jpeg"
+  $scope.defaultImgBeer = "images/default.jpg"
 
   $scope.id = $routeParams.id
   $http.get('http://www.abeerfor.me/api/brewery/'.concat($scope.id))
