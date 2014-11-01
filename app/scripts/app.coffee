@@ -74,8 +74,8 @@ angular
 .run ($rootScope, $http, $location) ->
 	$rootScope.UM =
 		name: "Giedo"
-		oldEnough: true
-		setAge: true
+		oldEnough: false
+		setAge: false
 		visited_home: 0
 		visited_about: 0
 		visited_beers: 0
