@@ -11,9 +11,9 @@ angular.module('abeerApp')
 .controller 'AgeGatewayCtrl', ($routeParams, $rootScope, $scope, $location, $http) ->
 	$rootScope.BV.init()
 	$rootScope.BV.show(
-			{type: "video/webm", src: "videos/beer.webm"},
-			{type: "video/mp4", src: "videos/beer.mp4"},
-			{type: "video/ogg", src: "videos/beer.ogv"})
+			{type: "video/webm", src: "videos/beer.webm", ambient:true},
+			{type: "video/mp4", src: "videos/beer.mp4", ambient:true},
+			{type: "video/ogg", src: "videos/beer.ogv", ambient:true})
 
 
 	$scope.day = undefined
