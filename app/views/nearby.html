@@ -26,7 +26,7 @@
                     <tr>
                         <td>Established {{location.brewery.established !=='null' && location.brewery.established || '-- '}}</td>
                         <td>{{location.brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
-                        <td>Website: <a href={{location.brewery.website}}>{{location.brewery.website}} </a></td>
+                        <td>Website: <a ng-href={{location.brewery['website']}}>{{location.brewery['website']}} </a></td>
                     </tr>
                 </table>
             </div>
