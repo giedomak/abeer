@@ -33,9 +33,13 @@ angular.module('abeerApp')
           longitude: location.longitude
           title: location.brewery.name
           id: id++
+          options:
+            animation: 2
+          address: location.streetAddress
+          locality: location.locality
+          website: location.brewery.website
         $scope.breweryLocs.push(newbrew)
       $scope.breweryResults.sort($scope.compare)
-      console.log $scope.breweryResults
 
   $scope.compare = (a,b) ->
     return a.distance - b.distance
