@@ -16,7 +16,7 @@
 <div ng-show="breweryResults">
 
     <br>
-    <div ng-repeat="location in breweryResults" | class="fade2">
+    <div ng-repeat="location in breweryResults" class="fade2">
         <div class="row">
             <img class="col-md-2" ng-src="{{location.brewery.images.large !== 'null' && location.brewery.images.large || defaultImg}}">
             <div class="col-md-10">
