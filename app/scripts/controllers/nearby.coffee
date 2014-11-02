@@ -3,13 +3,9 @@ angular.module('abeerApp')
   $rootScope.curTab = 'breweries'
   $rootScope.UM.visited_breweries++
   $scope.defaultImg = "images/defaultBreweryMedium.jpeg"
-  $scope.breweryResults = []
   $scope.breweryResultsNames = []
+  $scope.breweryLocs = []
 
-  $scope.locality = "Amsterdam" # Default
-  $scope.country = "NL"
-  $scope.lat = 5.5
-  $scope.long = 5.5
 
   $scope.geocoder = new google.maps.Geocoder();
 
@@ -24,11 +20,39 @@ angular.module('abeerApp')
     $location.path("/breweries/"+data.description.id)
 
   $scope.getNearbyBreweries = () ->
-    $http.get('http://abeerfor.me/api/locations?countryIsoCode='.concat($scope.country).concat('&locality=').concat($scope.locality))
+    $http.get('http://abeerfor.me/api/locations?countryIsoCode='.concat($scope.country))
     .success (data) ->
       $scope.breweryResults = (brewery for brewery in data.data)
       $scope.breweryResultsNames = (brewery.name for brewery in data.data)
+      id = 0
+      $scope.breweryLocs = []
+      for location in $scope.breweryResults
+        location.distance = $scope.distanceToBrewery(location)
+        newbrew =
+          latitude: location.latitude
+          longitude: location.longitude
+          title: location.brewery.name
+          id: id++
+        $scope.breweryLocs.push(newbrew)
+      $scope.breweryResults.sort($scope.compare)
       console.log $scope.breweryResults
+
+  $scope.compare = (a,b) ->
+    return a.distance - b.distance
+
+
+  # convert numeric degrees to radians
+  $scope.toRad = (value) ->
+    return value * Math.PI / 180
+
+  $scope.distanceToBrewery = (location) ->
+    # simple distance calculation#
+    # works fine for small distances
+    # http://en.wikipedia.org/wiki/Equirectangular_projection
+    R = 6371 # earth radius in km
+    x = ($scope.toRad($scope.map.center.longitude) - $scope.toRad(location.longitude)) * Math.cos(($scope.toRad(location.latitude) + $scope.toRad($scope.map.center.latitude))/2)
+    y = ($scope.toRad($scope.map.center.latitude) - $scope.toRad(location.latitude))
+    return parseInt(Math.sqrt(x*x + y*y) * R)
 
 
   $scope.getBreweryWithName = (value) ->
@@ -56,23 +80,17 @@ angular.module('abeerApp')
       longitude: position.coords.longitude
     $scope.map.control.refresh({latitude: position.coords.latitude, longitude: position.coords.longitude})
     latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-    $scope.geocoder.geocode({'latLng':latlng}, (result, status) ->
-      for listing in result[0].address_components
-        if "locality" in listing.types
-          $scope.locality = listing.short_name
-        if "country" in listing.types
-          $scope.country = listing.short_name
+    $scope.geocoder.geocode({'latLng':latlng}, (results, status) ->
+      for result in results
+        for listing in result['address_components']
+          if "locality" in listing.types
+            $scope.locality = listing.short_name
+          if "country" in listing.types
+            $scope.country = listing.short_name
       $scope.getNearbyBreweries()
     )
 
 
   navigator.geolocation.getCurrentPosition($scope.receivedLoc);
 
-  $scope.breweryLocs =
-    [
-      latitude: 51.4369673
-      longitude: 5.4772592
-      title: "Van Moll"
-      id: 0
-    ]
 

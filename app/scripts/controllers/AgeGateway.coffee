@@ -56,11 +56,20 @@ angular.module('abeerApp')
 		console.log("Not enough")
 		return false
 
-	$http.get('http://ipinfo.io/geo').success (data) ->
-		$scope.countryCode = (angular.fromJson data).country
-		for country in $scope.flatCountries
-			if country.code == $scope.countryCode.toLowerCase()
-				$scope.country = country
+
+	$scope.receivedLoc = (position) ->
+		latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+		$scope.geocoder.geocode({'latLng':latlng}, (result, status) ->
+			for listing in result[0].address_components
+				if "country" in listing.types
+					$scope.countryCode = listing.short_name
+			for country in $scope.flatCountries
+				if country.code == $scope.countryCode.toLowerCase()
+					$scope.country = country
+		)
+
+	$scope.geocoder = new google.maps.Geocoder();
+	navigator.geolocation.getCurrentPosition($scope.receivedLoc);
 
 
 	$scope.days = [1..31]

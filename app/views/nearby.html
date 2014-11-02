@@ -5,7 +5,8 @@
     In an event of an emergency, it is best to take shelter in a safe place. No place is safer than a Brewery. Look below to find on nearest to you!
 </p>
 
-<ui-gmap-google-map id="map" center="map.center" zoom="map.zoom" control="map.control">
+<div spinner ng-hide="country"></div>
+<ui-gmap-google-map ng-show="country" id="map" center="map.center" zoom="map.zoom" control="map.control">
     <ui-gmap-markers models="breweryLocs" coords="'self'" icon="'icon'">
     </ui-gmap-markers>
 </ui-gmap-google-map>
@@ -15,9 +16,9 @@
 <div ng-show="breweryResults">
 
     <br>
-    <div ng-repeat="location in breweryResults">
+    <div ng-repeat="location in breweryResults" | class="fade2">
         <div class="row">
-            <img class="col-md-2" ng-src="{{location.brewery.images.medium !== 'null' && location.brewery.images.medium || defaultImg}}">
+            <img class="col-md-2" ng-src="{{location.brewery.images.large !== 'null' && location.brewery.images.large || defaultImg}}">
             <div class="col-md-10">
                 <a ng-href="#/breweries/{{location.brewery.id}}">{{location.brewery.name}}</a><br>
                 <p class="beerDescription">{{location.brewery.description}}</p>

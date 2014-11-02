@@ -62,7 +62,7 @@ angular.module('abeerApp')
 			# BROWSING BEHAVIOUR
 			if beer.visited >= 0 then beer.preference += 0.2 * beer.visited
 
-		console.log $rootScope.UM.beers_local
+		#console.log $rootScope.UM.beers_local
 
 	calc_recommendation = () ->
 		# make an array of the object, so we can calculate
@@ -106,10 +106,10 @@ angular.module('abeerApp')
 		query = 'http://abeerfor.me/api/beers'
 		if abv_avg then query = query.concat('?abv=').concat(abv_avg-0.5).concat(',').concat(abv_avg+0.5)
 		if ibu_avg then query = query.concat('&ibu=').concat(ibu_avg-2).concat(',').concat(ibu_avg+2)
-		console.log query
+		#console.log query
 		$http.get(query)
 		.success (data) ->
-			console.log data
+			#console.log data
 
 			$scope.totalResults = data.totalResults
 
@@ -117,10 +117,10 @@ angular.module('abeerApp')
 			page = Math.floor (Math.random() * data.numberOfPages)
 
 			if abv_avg or ibu_avg then char = '&' else char = '?'
-			console.log query.concat(char).concat('p=').concat(page)
+			#console.log query.concat(char).concat('p=').concat(page)
 			$http.get(query.concat(char).concat('p=').concat(page))
 			.success (data) ->
-				console.log data
+				#console.log data
 
 				# get a random beer from the page and set it as recommendation
 				$scope.beer = data.data[Math.floor(Math.random()*data.data.length)]
