@@ -40,7 +40,7 @@ There are many breweries in many different <a href="#/countries">countries</a>.<
 
 
 <br>
-<div ng-repeat="brewery in breweries| limitTo:40">
+<div ng-repeat="brewery in breweries| limitTo:40" class="fade2">
     <div class="row">
 		<div class="beer">
         <img class="col-md-2" ng-src="{{brewery.images.medium !== 'null' && brewery.images.medium || defaultImg}}">

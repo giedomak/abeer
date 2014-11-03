@@ -25,6 +25,7 @@
     <br>
     <div ng-repeat="location in breweryResults" class="fade2">
         <div class="row">
+			<div class="beer">
             <img class="col-md-2" ng-src="{{location.brewery.images.large !== 'null' && location.brewery.images.large || defaultImg}}">
             <div class="col-md-10">
                 <a ng-href="#/breweries/{{location.brewery.id}}">{{location.brewery.name}}</a><br>
@@ -37,6 +38,7 @@
                     </tr>
                 </table>
             </div>
+			</div>
         </div>
     </div>
 </div>
