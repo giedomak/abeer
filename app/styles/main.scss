@@ -289,3 +289,16 @@ a:visited {
 .checkbox {
 	margin-left: 20px;
 }
+
+.agegateway {
+	p {
+		text-shadow: 1px 1px black;
+	}
+	.form-control {
+		height: 60px;
+		font-size: 1.2em;
+		display: inline-block;
+		margin: 0;
+		text-align: center;
+	}
+}

@@ -28,10 +28,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container-fluid">
+	<!-- AgeGateway -->
+	<div class="container" ng-view="" ng-show="isAgeGateway()"></div>
+
+	<!-- Site content -->
+    <div class="container-fluid" ng-hide="isAgeGateway()">
       <div class="row">
 
-        <div sidebar class="col-sm-3 col-md-2" ng-hide="isAgeGateway()"></div>
+        <div sidebar class="col-sm-3 col-md-2"></div>
 
         <div class="col-sm-6 col-md-8">
           <div class="content">
@@ -40,14 +44,14 @@
 
             <br>
 
-            <div class="footer" ng-hide="isAgeGateway()">
+            <div class="footer">
             <p>TU/e - 2ID56 - Adaptive web-based systems - <a ng-href="#/about">about</a> </p>
             </div>
 
           </div>
         </div>
 
-		<div recommendation class="col-sm-3 col-md-2" ng-hide="isAgeGateway()"></div>
+		<div recommendation class="col-sm-3 col-md-2"></div>
 
       </div>
     </div>
