@@ -46,11 +46,22 @@ Each beer has a <a href="#/types">type</a> and <a href="#/strengths">strength</a
                     <td>{{beer.abv !=='null' && beer.abv || '-- '}}% ABV</td>
                     <td>{{beer.ibu !== 'null' && beer.ibu || '-- '}} IBU</td>
                     <td>{{beer.year !== 'null' && beer.year || '-- '}} Year</td>
-                    <td><a ng-href="#/breweries/{{getIndexIfObjWithOwnAttr(beer.breweryID)}}">{{beer.breweryName}}</a></td>
+                    <td><a ng-href="#/breweries/{{beer.breweries[0].id}}"> {{beer.breweries[0].name}}</a></td>
                 </tr>
             </table>
         </div>
 		</div>
     </div>
 </div>
-  </div>
+
+
+    <div class="row">
+        <button type="button" class="btn btn-default" ng-click="goBack()" ng-hide="page==1">Previous Page</button>
+
+        <button type="button" class="btn btn-default" ng-click="goNext()">Next Page</button>
+
+    </div>
+
+
+
+</div>

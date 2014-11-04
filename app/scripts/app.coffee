@@ -43,13 +43,16 @@ angular
 	.when '/about',
 		templateUrl: 'views/about.html',
 		controller: 'AboutCtrl'
-	.when '/beers',
+	.when '/beers/:page',
 		templateUrl: 'views/beers.html',
 		controller: 'BeersCtrl'
+	.when '/beers',
+			templateUrl: 'views/beers.html',
+			controller: 'BeersCtrl'
 	.when '/breweries',
 		templateUrl: 'views/breweries.html',
 		controller: 'BreweriesCtrl'
-	.when '/beers/:id',
+	.when '/beer/:id',
 		templateUrl: 'views/beer.html',
 		controller: 'BeerCtrl'
 	.when '/breweries/:id',

@@ -8,9 +8,11 @@
  # Controller of the abeerApp
 ###
 angular.module('abeerApp')
-  .controller 'BeersCtrl', ($rootScope, $scope, $http, $location) ->
+  .controller 'BeersCtrl', ($rootScope, $routeParams, $scope, $http, $location) ->
     $rootScope.curTab = 'beers'
     $rootScope.UM.visited_beers++
+    $scope.page = $routeParams.page or Math.floor((Math.random() * 300) + 1)
+    console.log $scope.page
     $scope.defaultImg = "images/defaultMedium.jpeg"
     $scope.beerResults = []
     $scope.beerResultsNames = []
@@ -23,9 +25,10 @@ angular.module('abeerApp')
           i++
         1
 
-    $http.get('http://abeerfor.me/api/beers')
+    $http.get('http://abeerfor.me/api/beers?withBreweries=Y&p='.concat($scope.page))
       .success (data) ->
         $scope.beers = (beer for beer in data.data)
+        console.log $scope.beers
 
     $scope.selectedBeer = (data) ->
       $location.path("/beers/"+data.description.id)
@@ -54,3 +57,9 @@ angular.module('abeerApp')
           beer.labels = {}
           beer.labels.icon = ""
       return results
+
+    $scope.goBack = () ->
+      $location.path("beers/" + (parseInt($scope.page) - 1))
+
+    $scope.goNext = () ->
+      $location.path("beers/" + (parseInt($scope.page) + 1))
