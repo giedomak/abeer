@@ -5,8 +5,16 @@
     In an event of an emergency, it is best to take shelter in a safe place. No place is safer than a Brewery. Look below to find on nearest to you!
 </p>
 
-<ui-gmap-google-map id="map" center="map.center" zoom="map.zoom" control="map.control">
-    <ui-gmap-markers models="breweryLocs" coords="'self'" icon="'icon'">
+<ui-gmap-google-map  id="map" center="map.center" zoom="map.zoom" control="map.control">
+    <ui-gmap-markers models="breweryLocs" coords="'self'" icon="'icon'" options="'options'">
+        <ui-gmap-windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
+            <div>
+                <p ng-non-bindable="">{{title}}</p>
+                <p ng-non-bindable>{{address}}</p>
+                <p ng-non-bindable>{{locality}}</p>
+                <a ng-non-bindable href="{{website}}">{{website}}</a>
+            </div>
+        </ui-gmap-windows>
     </ui-gmap-markers>
 </ui-gmap-google-map>
 
@@ -15,9 +23,10 @@
 <div ng-show="breweryResults">
 
     <br>
-    <div ng-repeat="location in breweryResults">
+    <div ng-repeat="location in breweryResults" class="fade2">
         <div class="row">
-            <img class="col-md-2" ng-src="{{location.brewery.images.medium !== 'null' && location.brewery.images.medium || defaultImg}}">
+			<div class="beer">
+            <img class="col-md-2" ng-src="{{location.brewery.images.large !== 'null' && location.brewery.images.large || defaultImg}}">
             <div class="col-md-10">
                 <a ng-href="#/breweries/{{location.brewery.id}}">{{location.brewery.name}}</a><br>
                 <p class="beerDescription">{{location.brewery.description}}</p>
@@ -25,10 +34,11 @@
                     <tr>
                         <td>Established {{location.brewery.established !=='null' && location.brewery.established || '-- '}}</td>
                         <td>{{location.brewery.isOrganic === 'true' && '' || 'Not'}} Organic</td>
-                        <td>Website: <a href={{location.brewery.website}}>{{location.brewery.website}} </a></td>
+                        <td>Website: <a ng-href={{location.brewery['website']}}>{{location.brewery['website']}} </a></td>
                     </tr>
                 </table>
             </div>
+			</div>
         </div>
     </div>
 </div>

@@ -15,20 +15,19 @@ angular.module('abeerApp')
 
 	$http.get('http://abeerfor.me:1991/popular')
 	.success (data) ->
-		$scope.beerData = data
-		angular.forEach($scope.beerData, (key, value) -> $scope.getBeerData(value))
+		$scope.beers = data
+		for beer in $scope.beers
+			beer.drinkLater = null
+			if $rootScope.UM.beers_local[beer.id]
+				beer.rating = $rootScope.UM.beers_local[beer.id].rating
+				beer.drinkLater = $rootScope.UM.beers_local[beer.id].drinkLater
+		$scope.beers.sort($scope.compare)
+		console.log data
+		$scope.makeBeerRows($scope.beers, 3)
 
 
-	$scope.getBeerData = (beerID) ->
-		$http.get("http://abeerfor.me/api/beer/".concat(beerID))
-		.success (data) ->
-			data.data.rating = null
-			data.data.drinkLater = null
-			if $rootScope.UM.beers_local[data.data.id]
-				data.data.rating = $rootScope.UM.beers_local[data.data.id].rating
-				data.data.drinkLater = $rootScope.UM.beers_local[data.data.id].drinkLater
-			$scope.beers.push data.data
-			$scope.makeBeerRows($scope.beers, 3)
+	$scope.compare = (beerA, beerB) ->
+		return beerB['sum_ratings'] - beerA['sum_ratings']
 
 
 	$scope.ratingClick = (beer, rating) ->
