@@ -1,20 +1,30 @@
 <div id="AgeDiv" class="container" ng-controller="AgeGatewayCtrl">
-<div class="row">
-    <img ng-src="images/logoSmaller.png">
-</div>
-    <div class="row" ng-style="{color:'white'}"><p class="col-lg-4 col-lg-offset-4" ng-style="{'font-size': '1.5em'}">Select your country</p></div>
-    <div class="row">
-        <select class="form-control col-lg-4 col-lg-offset-4 " ng-style="{width: '290px', height: '60px', 'font-size':'1.2em'}" ng-model="country" ng-options="country.name for country in flatCountries"></select>
-    </div>
-    <div class="row" ng-style="{color:'white'}"><p class="col-lg-4 col-lg-offset-4" ng-style="{'font-size': '1.5em'}">Date of Birth</p></div>
+	<div class="row">
+		<img ng-src="images/logoSmaller.png">
+	</div>
+	<div class="row" ng-style="{color:'white'}"><p class="col-lg-4 col-lg-offset-4" ng-style="{'font-size': '1.5em'}">
+		Select your country</p></div>
+	<div class="row">
+		<select class="form-control col-lg-4 col-lg-offset-4 "
+				ng-style="{width: '290px', height: '60px', 'font-size':'1.2em'}" ng-model="country"
+				ng-options="country.name for country in flatCountries"></select>
+	</div>
+	<div class="row" ng-style="{color:'white'}"><p class="col-lg-4 col-lg-offset-4" ng-style="{'font-size': '1.5em'}">
+		Date of Birth</p></div>
 
-   <div class="row">
-        <input class="form-control col-lg-2 col-lg-offset-4" ng-model="day" type="text" class="form-control" placeholder="DD" maxlength="2" ng-style="{width:'90px', height:'70px', 'font-size':'2em'}"required>
-        <input class=" form-control col-lg-2 col-lg-offset-0" ng-model="month" type="text" class="form-control" placeholder="MM" maxlength="2" ng-style="{width:'90px', height:'70px', 'font-size':'2em'}" required>
-        <input class="form-control col-lg-2 col-lg-offset-0" ng-model="year" type="text" class="form-control" placeholder="YYYY" maxlength="4" min="1900" max="2014" ng-style="{width:'110px', height:'70px', 'font-size':'2em'}" required>
-   </div>
-<div class="row">
-    <button type="button" class="btn btn-primary btn-lg col-lg-4 col-lg-offset-4" ng-style="{width:'290px','font-size':'1.2em'}" ng-click="checkAge()">Enter Site </button>
-</div>
+	<div class="row">
+		<input class="form-control col-lg-2 col-lg-offset-4" ng-model="day" type="text" class="form-control"
+			   placeholder="DD" maxlength="2" ng-style="{width:'90px', height:'70px', 'font-size':'2em'}" required>
+		<input class=" form-control col-lg-2 col-lg-offset-0" ng-model="month" type="text" class="form-control"
+			   placeholder="MM" maxlength="2" ng-style="{width:'90px', height:'70px', 'font-size':'2em'}" required>
+		<input class="form-control col-lg-2 col-lg-offset-0" ng-model="year" type="text" class="form-control"
+			   placeholder="YYYY" maxlength="4" min="1900" max="2014"
+			   ng-style="{width:'110px', height:'70px', 'font-size':'2em'}" required>
+	</div>
+	<div class="row">
+		<button type="button" class="btn btn-primary btn-lg col-lg-4 col-lg-offset-4"
+				ng-style="{width:'290px','font-size':'1.2em'}" ng-click="checkAge()">Enter Site
+		</button>
+	</div>
 
 </div>
