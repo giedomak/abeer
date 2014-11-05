@@ -3,7 +3,7 @@ import json
 import urllib2
 import chardet
 import pickle
-
+import threading
 
 
 urls = (
