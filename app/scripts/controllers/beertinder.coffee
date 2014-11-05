@@ -8,7 +8,7 @@
  # Controller of the abeerApp
 ###
 angular.module('abeerApp')
-.controller 'BeertinderCtrl', ($routeParams, $rootScope, $scope, $http, $location) ->
+.controller 'BeertinderCtrl', ($routeParams, $rootScope, $scope, $http, $location, $timeout) ->
   $rootScope.curTab = 'rateBeers'
   $scope.page = $routeParams.page
   $scope.defaultImg = "images/defaultMedium.jpeg"
@@ -24,8 +24,8 @@ angular.module('abeerApp')
         console.log($rootScope.UM.beers_local[value.id])
         value.rating = $rootScope.UM.beers_local[value.id].rating
         value.drinkLater = $rootScope.UM.beers_local[value.id].drinkLater
-    $scope.makeBeerRows($scope.beers, 3)
-
+    $scope.i = 0
+    $scope.currBeer = $scope.beers[$scope.i]
 
   $scope.ratingClick = (beer, rating) ->
     if !$rootScope.UM.beers_local[beer.id]
@@ -46,26 +46,24 @@ angular.module('abeerApp')
   $scope.goNext = () ->
     $location.path("ratebeers/" + (parseInt($scope.page) + 1))
 
-  $scope.makeBeerRows = (arr, lengthofsublist) ->
-    if not angular.isUndefined(arr) and arr.length > 0
-      $scope.beerRows = []
-      subArray = []
-      pushed = true
-      i = 0
 
-      while i < arr.length
-        if (i + 1) % lengthofsublist is 0
-          subArray.push i
-          $scope.beerRows.push subArray
-          subArray = []
-          pushed = true
-        else
-          subArray.push i
-          pushed = false
-        i++
-      $scope.beerRows.push subArray  unless pushed
-
-  $('.button').click( () ->
-    $('.photo-wrap').addClass('love')
+  $scope.likeBtn = () ->
     $('.photo').addClass('match')
-  )
+    console.log "Like " + $scope.currBeer.name
+    $timeout( () ->
+      $scope.i++
+      $scope.currBeer = $scope.beers[$scope.i]
+      $('.photo').removeClass('match')
+    ,1000 )
+    return true
+  $scope.dislikeBtn = () ->
+    $('.photo').addClass('dislike')
+    console.log "Dislike " + $scope.currBeer.name
+    $timeout( () ->
+      $scope.i++
+      $scope.currBeer = $scope.beers[$scope.i]
+      $('.photo').removeClass('dislike')
+    ,1000 )
+    return true
+
+
