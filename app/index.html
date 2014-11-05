@@ -10,17 +10,13 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angucomplete-alt/angucomplete-alt.css" />
     <link rel="stylesheet" href="bower_components/video.js/dist/video-js/video-js.css" />
-    <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.css" />
-    <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.css" />
-    <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/angucomplete-alt.css">
-    <link rel="stylesheet" href="styles/animate.css">
-    <link rel="stylesheet" href="styles/tindercircle.css">
     <link rel="stylesheet" href="styles/spinner.css">
+    <link rel="stylesheet" href="styles/animate.css">
 
     <!-- endbuild -->
     <link href="//fonts.googleapis.com/css?family=Istok+Web:400,400italic,700italic,700|EB+Garamond:400" rel="stylesheet" type="text/css">
@@ -34,10 +30,10 @@
 
     <!-- Add your site or application content here -->
 	<!-- AgeGateway -->
-	<div class="container" ng-view="" ng-show="isAgeGateway()"></div>
+	<div class="container" ng-view="" ng-if="isAgeGateway()"></div>
 
 	<!-- Site content -->
-    <div class="container-fluid" ng-hide="isAgeGateway()">
+    <div class="container-fluid" ng-if="!isAgeGateway()">
       <div class="row">
 
         <div sidebar class="col-sm-3 col-md-2"></div>
@@ -112,7 +108,6 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
-    <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -129,12 +124,9 @@
     <script src="scripts/directives/sidebar.js"></script>
     <script src="scripts/directives/restrictedPage.js"></script>
     <script src="scripts/directives/spinner.js"></script>
-    <script src="scripts/directives/tindercircle.js"></script>
-    <script src="scripts/directives/carousel.js"></script>
     <script src="scripts/directives/recommendation.js"></script>
     <script src="scripts/controllers/rateBeers.js"></script>
     <script src="scripts/controllers/popularBeers.js"></script>
-    <script src="scripts/controllers/beertinder.js"></script>
     <script src="scripts/controllers/include.js"></script>
     <script src="scripts/controllers/search.js"></script>
     <!-- endbuild -->

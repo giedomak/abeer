@@ -14,16 +14,3 @@ angular.module('abeerApp')
 
     if !$rootScope.UM.setAge
       $location.path("/AgeGateway")
-
-#    $http.get('data/beers.json').success (data) ->
-#      temp = angular.fromJson data
-#      console.log temp
-#      $scope.beers = temp.data.beers
-#      console.log $scope.beers
-#      console.log $scope.beers.beers
-#    $scope.beers = angular.fromJson('beers.json')
-#    console.log $scope.beers
-#    $scope.reloadRoute = () ->
-#      $window.location.reload()
-#      true
-#   true

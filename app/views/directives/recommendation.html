@@ -5,7 +5,7 @@
 <div ng-show="beer">
 	<b>Recommended beer</b>
 	<br>
-	&#x2192; <a ng-href="#/beers/{{beer.id}}">{{beer.name}}</a>
+	&#x2192; <a ng-href="#/beer/{{beer.id}}">{{beer.name}}</a>
 
 	<br>
 	{{quote}}
@@ -17,6 +17,6 @@
 	<b>Saved beers</b>
 
 	<div ng-repeat="beer in savedbeers">
-		&#x2192; <a ng-href="#/beers/{{beer.id}}">{{beer.name}}</a>
+		&#x2192; <a ng-href="#/beer/{{beer.id}}">{{beer.name}}</a>
 	</div>
 </div>

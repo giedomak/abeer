@@ -1,34 +1,34 @@
 angular.module('abeerApp')
-.controller 'SearchCtrl', ($rootScope, $scope, $location, $http) ->
-  $rootScope.curTab = 'search'
-  $rootScope.UM.visited_search++
-  $scope.beerResults = []
-  $scope.beerResultsNames = []
+  .controller 'SearchCtrl', ($rootScope, $scope, $location, $http) ->
+    $rootScope.curTab = 'search'
+    $rootScope.UM.visited_search++
+    $scope.beerResults = []
+    $scope.beerResultsNames = []
 
-  $scope.selectedBeer = (data) ->
-	  $location.path("/beers/"+data.description.id)
+    $scope.selectedBeer = (data) ->
+      $location.path("/beers/"+data.description.id)
 
-  $scope.searchForBeer = (query) ->
-    $http.get('http://abeerfor.me/api/search?q='.concat(query).concat('&type=beer'))
-    .success (data) ->
-      $scope.beerResults = (beer for beer in data.data)
-      $scope.beerResultsNames = (beer.name for beer in data.data)
-
-
-  $scope.getBeerWithName = (value) ->
-    i = 0
-    while i < $scope.beerResults.length
-      return i  if $scope.beerResults[i]['name'] is value
-      i++
-    return i
+    $scope.searchForBeer = (query) ->
+      $http.get('http://abeerfor.me/api/search?q='.concat(query).concat('&type=beer'))
+      .success (data) ->
+        $scope.beerResults = (beer for beer in data.data)
+        $scope.beerResultsNames = (beer.name for beer in data.data)
 
 
-  $scope.loadBeerPage = (beer) ->
-    $location.path("/beers/"+ $scope.beerResults[$scope.getBeerWithName(beer)]['id'])
+    $scope.getBeerWithName = (value) ->
+      i = 0
+      while i < $scope.beerResults.length
+        return i  if $scope.beerResults[i]['name'] is value
+        i++
+      return i
 
-  $scope.addPics = (results) ->
-    for beer in results.data
-      if not beer.labels
-        beer.labels = {}
-        beer.labels.icon = ""
-    return results
+
+    $scope.loadBeerPage = (beer) ->
+      $location.path("/beers/"+ $scope.beerResults[$scope.getBeerWithName(beer)]['id'])
+
+    $scope.addPics = (results) ->
+      for beer in results.data
+        if not beer.labels
+          beer.labels = {}
+          beer.labels.icon = ""
+      return results
