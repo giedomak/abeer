@@ -14,17 +14,17 @@ angular.module('abeerApp')
 	$scope.defaultImg = "images/defaultMedium.jpeg"
 
 	$http.get('http://abeerfor.me/api/beers?hasLabels=Y&p='.concat($scope.page))
-	.success (data) ->
-		$scope.beers = (beer for beer in data.data)
-		for value, index in $scope.beers
-			value.rating = null
-			value.drinkLater = null
-			if $rootScope.UM.beers_local[value.id]
-				console.log("Found beer in UM")
-				console.log($rootScope.UM.beers_local[value.id])
-				value.rating = $rootScope.UM.beers_local[value.id].rating
-				value.drinkLater = $rootScope.UM.beers_local[value.id].drinkLater
-		$scope.makeBeerRows($scope.beers, 3)
+		.success (data) ->
+			$scope.beers = (beer for beer in data.data)
+			for value, index in $scope.beers
+				value.rating = null
+				value.drinkLater = null
+				if $rootScope.UM.beers_local[value.id]
+					console.log("Found beer in UM")
+					console.log($rootScope.UM.beers_local[value.id])
+					value.rating = $rootScope.UM.beers_local[value.id].rating
+					value.drinkLater = $rootScope.UM.beers_local[value.id].drinkLater
+			$scope.makeBeerRows($scope.beers, 3)
 
 
 	$scope.ratingClick = (beer, rating) ->

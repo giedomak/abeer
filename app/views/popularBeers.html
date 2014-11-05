@@ -12,7 +12,7 @@
 <div spinner ng-hide="beerRows"></div>
 <div ng-show="beerRows" class="fade2">
     <div class="row" ng-repeat="row in beerRows">
-        <div class="col-md-4 fx-fade-down" ng-repeat="i in row">
+        <div class="col-md-4" ng-repeat="i in row">
 			<div class="beer">
             <img popover-placement="right" popover="{{beers[i].description | limitTo: 140}}..." popover-trigger="mouseenter"
                  class="col-md-6"

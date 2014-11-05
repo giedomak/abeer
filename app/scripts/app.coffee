@@ -18,9 +18,8 @@ angular
 			'ngTouch',
 			'angucomplete-alt',
 			'ui.bootstrap',
-			'google-maps'.ns(),
-			'mobile-angular-ui'
-		])
+			'google-maps'.ns()
+	])
 .config ($routeProvider) ->
 	include =
 		templateUrl: 'views/include.html',
@@ -53,9 +52,6 @@ angular
 	.when '/breweries',
 		templateUrl: 'views/breweries.html',
 		controller: 'BreweriesCtrl'
-	.when '/beertinder',
-		templateUrl: 'views/beertinder.html',
-		controller: 'BeerTinderCtrl'
 	.when '/beer/:id',
 		templateUrl: 'views/beer.html',
 		controller: 'BeerCtrl'
@@ -130,7 +126,7 @@ angular
 
 		for type in $rootScope.typeJSON
 			markedUp = markedUp.replace(type.title, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ",
-					"") + "\" ng-style=\"{color:'red'}\">" + " " + type.title + "</a>")
+					"") + " " + type.title + "</a>")
 
 		return markedUp
 
