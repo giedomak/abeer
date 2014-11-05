@@ -117,16 +117,13 @@ angular
 		for country in $rootScope.countriesJSON
 
 			markedUp = markedUp.replace(country.title,
-					"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ",
-							"") + "\">" + country.title + "</a>")
+					"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ","") + "\">" + country.title + "</a>")
 			for altName in country.aka
 				markedUp = markedUp.replace(altName,
-						"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ",
-								"") + "\">" + altName + "</a>")
+						"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ","") + "\">" + altName + "</a>")
 
 		for type in $rootScope.typeJSON
-			markedUp = markedUp.replace(type.title, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ",
-					"") + " " + type.title + "</a>")
+			markedUp = markedUp.replace(type.title, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ","") + " " + type.title + "</a>")
 
 		return markedUp
 
