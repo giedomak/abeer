@@ -61,6 +61,9 @@ angular
 	.when '/nearby',
 		templateUrl: 'views/nearby.html',
 		controller: 'NearbyCtrl'
+	.when '/beertinder',
+		templateUrl: 'views/beertinder.html',
+		controller: 'BeertinderCtrl'
 	.when '/recommendation',
 		templateUrl: 'views/directives/whyrecommendation.html',
 		controller: 'RecommendationCtrl'
