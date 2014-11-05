@@ -31,7 +31,7 @@ angular.module('abeerApp')
         console.log $scope.beers
 
     $scope.selectedBeer = (data) ->
-      $location.path("/beers/"+data.description.id)
+      $location.path("/beer/"+data.description.id)
 
     $scope.searchForBeer = (query) ->
       $http.get('http://abeerfor.me/api/search?q='.concat(query).concat('&type=beer'))
@@ -49,7 +49,7 @@ angular.module('abeerApp')
 
 
     $scope.loadBeerPage = (beer) ->
-      $location.path("/beers/"+ $scope.beerResults[$scope.getBeerWithName(beer)]['id'])
+      $location.path("/beer/"+ $scope.beerResults[$scope.getBeerWithName(beer)]['id'])
 
     $scope.addPics = (results) ->
       for beer in results.data

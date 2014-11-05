@@ -1,0 +1,21 @@
+<h1>Beer always loves you</h1>
+<p class="BeerTinder">
+So, I met this guy on Tinder and when we went to get a beer, he whipped out an enormous database of beers, www.abeerfor.me, and I knew he was the one. Once you go ABEER, you don't go back!   -Rianne
+</p>
+
+
+<br>
+<tindercircle ng-hide="beers"></tindercircle>
+
+<div id="carousel-example" class="carousel">
+     <div class="carousel-inner">
+
+          <div href="" ng-repeat="beer in beers" class="item active nonDraggableImage" carousel-example-item>
+               <div class="carousel-example-content"><img src="{{beer.labels.large}}"/>
+                    <br/><small>Swipe me!</small>
+               </div>
+          </div>
+
+
+     </div>
+</div>

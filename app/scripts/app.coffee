@@ -18,7 +18,8 @@ angular
 			'ngTouch',
 			'angucomplete-alt',
 			'ui.bootstrap',
-			'google-maps'.ns()
+			'google-maps'.ns(),
+			'mobile-angular-ui'
 		])
 .config ($routeProvider) ->
 	include =
@@ -52,6 +53,9 @@ angular
 	.when '/breweries',
 		templateUrl: 'views/breweries.html',
 		controller: 'BreweriesCtrl'
+	.when '/beertinder',
+		templateUrl: 'views/beertinder.html',
+		controller: 'BeerTinderCtrl'
 	.when '/beer/:id',
 		templateUrl: 'views/beer.html',
 		controller: 'BeerCtrl'
