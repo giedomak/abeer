@@ -13,8 +13,8 @@ angular.module('abeerApp')
         $rootScope.UM.beers_local[$scope.id].visited++
         $scope.beerData.rating = $rootScope.UM.beers_local[$scope.id].rating
         $scope.beerData.drinkLater = $rootScope.UM.beers_local[$scope.id].drinkLater
-        $scope.beerData.description = $rootScope.linkAnnotate($scope.beerData.description)
-        $scope.beerData.style.description = $rootScope.linkAnnotate($scope.beerData.style.description)
+        $scope.beerData.description = $rootScope.linkAnnotate($scope.beerData.description) if $scope.beerData.description
+        $scope.beerData.style.description = $rootScope.linkAnnotate($scope.beerData.style.description) if $scope.beerData.style
 
 
     $scope.defaultImg = "images/default.jpg"

@@ -113,8 +113,8 @@ angular
 		$rootScope.typeJSON = data
 
 	$rootScope.linkAnnotate = (text) ->
-		if text
-			markedUp = text.toString()
+		if typeof text is 'string'
+			markedUp = text
 			for country in $rootScope.countriesJSON
 
 				markedUp = markedUp.replace(country.title,
@@ -124,7 +124,7 @@ angular
 							"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ","") + "\">" + altName + "</a>")
 
 			for type in $rootScope.typeJSON
-				markedUp = markedUp.replace(type.title, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ","") + " " + type.title + "</a>")
+				markedUp = markedUp.replace(type.title, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ","") + "\">" + type.title + "</a>")
 
 			return markedUp
 
