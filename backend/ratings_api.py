@@ -24,6 +24,7 @@ dumpF.close()
 
 def saveDB():
   threading.Timer(300.0, saveDB).start()
+  print "Dumping DB to file"
   dump_db()
 
 def dump_db():
