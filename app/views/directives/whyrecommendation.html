@@ -1,20 +1,23 @@
 <h1>Recommendation</h1><br>
 
-		<h2>{{beer.name}}</h2><br><br>
-
-	Why do I have to drink this beer?<br><br>
+	Why should I drink {{recbeer.name}}?<br><br>
 
 Because of these beers with their preference:<br><br>
-<table>
+<table class="table table-striped table-bordered table-condensed table-hover">
+	<thead><tr><b><td>Beer</td><td>Preference</td><td>ABV</td><td>IBU</td></b></tr></thead>
 	<tr ng-repeat="pref in prefs">
 		<td style="padding-right: 20px;">{{pref.name}}&nbsp;</td>
 		<td>{{pref.preference}}</td>
+		<td>{{pref.abv}}</td>
+		<td>{{pref.ibu}}</td>
 	</tr>
 </table><br>
 
 The IBU and the ABV is extracted from the top 3 beers sorted on their preference...<br><br>
 
-Avarage IBU from the top 3: {{ibu_avg}}<br>
-Avarage ABV from the top 3: {{abv_avg}}<br><br>
+Avarage ABV from the top 3: {{abv_avg}}<br>
+Avarage IBU from the top 3: {{ibu_avg}}<br><br>
 
-Looking for beers with similar values yields <b>{{totalResults}} results</b> from wich a random beer is recommended
+Looking for beers with similar values yields <b>{{totalResults}} results</b> from wich a random beer is recommended:
+
+<h2>{{recbeer.name}}</h2>
