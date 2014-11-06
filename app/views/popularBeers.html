@@ -6,8 +6,6 @@
 
 
 
-<form class="form-inline">
-</form>
 <br>
 <div spinner ng-hide="beerRows"></div>
 <div ng-show="beerRows" class="fade2">
@@ -18,7 +16,7 @@
                  class="col-md-6"
                  ng-src="{{beers[i].labels.medium !== 'null' && beers[i].labels.medium || defaultImg}}">
             <div class="col-md-6">
-                <a class="beername" ng-href="#/beers/{{beers[i].id}}">{{beers[i].name}}</a> </br>
+                <a class="beername" ng-href="#/beer/{{beers[i].id}}">{{beers[i].name}}</a> </br>
                 <div ng-hide="beers[i].rating == null">Your Rating:</div>
                 <div ng-show="beers[i].rating == null"> Know it? Drank it? Rate it!</div>
                 <rating ng-model="beers[i].rating"

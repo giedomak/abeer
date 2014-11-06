@@ -19,7 +19,7 @@ angular
 			'angucomplete-alt',
 			'ui.bootstrap',
 			'google-maps'.ns()
-		])
+	])
 .config ($routeProvider) ->
 	include =
 		templateUrl: 'views/include.html',
@@ -43,13 +43,16 @@ angular
 	.when '/about',
 		templateUrl: 'views/about.html',
 		controller: 'AboutCtrl'
-	.when '/beers',
+	.when '/beers/:page',
 		templateUrl: 'views/beers.html',
 		controller: 'BeersCtrl'
+	.when '/beers',
+			templateUrl: 'views/beers.html',
+			controller: 'BeersCtrl'
 	.when '/breweries',
 		templateUrl: 'views/breweries.html',
 		controller: 'BreweriesCtrl'
-	.when '/beers/:id',
+	.when '/beer/:id',
 		templateUrl: 'views/beer.html',
 		controller: 'BeerCtrl'
 	.when '/breweries/:id',
@@ -58,9 +61,11 @@ angular
 	.when '/nearby',
 		templateUrl: 'views/nearby.html',
 		controller: 'NearbyCtrl'
+	.when '/beertinder',
+		templateUrl: 'views/beertinder.html',
+		controller: 'BeertinderCtrl'
 	.when '/recommendation',
 		templateUrl: 'views/directives/whyrecommendation.html',
-		controller: 'RecommendationCtrl'
 
 	# countries, types and strengths all use the include template and controller
 	.when '/countries', include
@@ -85,11 +90,13 @@ angular
 		countries: {}
 		strengths: {}
 		types: {}
+		country:{'code':"nl"}
 
 	$rootScope.isAgeGateway = () ->
 		if $location.path() == "/AgeGateway"
 			return true
-		return false
+		else
+			return false
 
 	$rootScope.BV = new $.BigVideo()
 
@@ -110,22 +117,20 @@ angular
 		$rootScope.typeJSON = data
 
 	$rootScope.linkAnnotate = (text) ->
-		markedUp = text
-		for country in $rootScope.countriesJSON
+		if typeof text is 'string'
+			markedUp = text
+			for country in $rootScope.countriesJSON
 
-			markedUp = markedUp.replace(country.title,
-					"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ",
-							"") + "\">" + country.title + "</a>")
-			for altName in country.aka
-				markedUp = markedUp.replace(altName,
-						"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ",
-								"") + "\">" + altName + "</a>")
+				markedUp = markedUp.replace(country.title,
+						"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ","") + "\">" + country.title + "</a>")
+				for altName in country.aka
+					markedUp = markedUp.replace(altName,
+							"<a href=\"/#/countries/" + country.title.toLowerCase().replace(" ","") + "\">" + altName + "</a>")
 
-		for type in $rootScope.typeJSON
-			markedUp = markedUp.replace(type.title, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ",
-					"") + "\" ng-style=\"{color:'red'}\">" + " " + type.title + "</a>")
+			for type in $rootScope.typeJSON
+				markedUp = markedUp.replace(type.title, "<a href=\"#/types/" + type.title.toLowerCase().replace(" ","") + "\">" + type.title + "</a>")
 
-		return markedUp
+			return markedUp
 
 .filter "newline", () ->
 	(data) ->

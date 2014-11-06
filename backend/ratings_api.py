@@ -3,7 +3,7 @@ import json
 import urllib2
 import chardet
 import pickle
-
+import threading
 
 
 urls = (
@@ -22,6 +22,10 @@ except:
 dumpF.close()
 
 
+def saveDB():
+  threading.Timer(300.0, saveDB).start()
+  print "Dumping DB to file"
+  dump_db()
 
 def dump_db():
 	dumpF = open(db_file,'w')
@@ -64,7 +68,6 @@ class beer_rate:
     		beer_db['data'][idx]['ratings'].append(int(rating))
     		beer_db['data'][idx]['sum_ratings'] += int(rating)
     		print beer_db
-    		dump_db()
     		return beer_db['data'][idx]
     	else:
     		beerData = getBeerData(beer)
@@ -75,7 +78,6 @@ class beer_rate:
     		idx = len(beer_db['data']) - 1
     		beer_db['index'][beer] = idx
     		print beer_db
-    		dump_db()
     		return beer_db['data'][idx]
 
 
@@ -88,4 +90,6 @@ class popular:
 
 if __name__ == "__main__":
     app = web.application(urls, globals())
+    saveDB()
     app.run()
+

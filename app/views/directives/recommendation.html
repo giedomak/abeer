@@ -2,13 +2,15 @@
 
 <h4>What should I drink today?</h4>
 <br>
-<div ng-show="beer">
+<div ng-show="recbeer">
 	<b>Recommended beer</b>
 	<br>
-	&#x2192; <a ng-href="#/beers/{{beer.id}}">{{beer.name}}</a>
+	&#x2192; <a ng-href="#/beer/{{recbeer.id}}">{{recbeer.name}}</a> <a href="#/recommendation"><span class="glyphicon glyphicon-question-sign"></span></a>
 
 	<br>
 	{{quote}}
+	<br>
+
 </div>
 
 <br>
@@ -17,6 +19,6 @@
 	<b>Saved beers</b>
 
 	<div ng-repeat="beer in savedbeers">
-		&#x2192; <a ng-href="#/beers/{{beer.id}}">{{beer.name}}</a>
+		&#x2192; <a ng-href="#/beer/{{beer.id}}">{{beer.name}}</a>
 	</div>
 </div>

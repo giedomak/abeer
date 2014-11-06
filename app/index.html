@@ -15,8 +15,9 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/angucomplete-alt.css">
-    <link rel="stylesheet" href="styles/animate.css">
     <link rel="stylesheet" href="styles/spinner.css">
+    <link rel="stylesheet" href="styles/animate.css">
+
     <!-- endbuild -->
     <link href="//fonts.googleapis.com/css?family=Istok+Web:400,400italic,700italic,700|EB+Garamond:400" rel="stylesheet" type="text/css">
     <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
@@ -28,10 +29,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container-fluid">
+	<!-- AgeGateway -->
+	<div class="container" ng-view="" ng-if="isAgeGateway()"></div>
+
+	<!-- Site content -->
+    <div class="container-fluid" ng-if="!isAgeGateway()">
       <div class="row">
 
-        <div sidebar class="col-sm-3 col-md-2" ng-hide="isAgeGateway()"></div>
+        <div sidebar class="col-sm-3 col-md-2"></div>
 
         <div class="col-sm-6 col-md-8">
           <div class="content">
@@ -40,14 +45,14 @@
 
             <br>
 
-            <div class="footer" ng-hide="isAgeGateway()">
+            <div class="footer">
             <p>TU/e - 2ID56 - Adaptive web-based systems - <a ng-href="#/about">about</a> </p>
             </div>
 
           </div>
         </div>
 
-		<div recommendation class="col-sm-3 col-md-2" ng-hide="isAgeGateway()"></div>
+		<div recommendation class="col-sm-3 col-md-2"></div>
 
       </div>
     </div>
@@ -102,7 +107,6 @@
     <script src="bower_components/BigVideo.js/lib/bigvideo.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-    <script src="bower_components/bluebird/js/browser/bluebird.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -115,12 +119,13 @@
     <script src="scripts/controllers/beer.js"></script>
     <script src="scripts/controllers/breweries.js"></script>
     <script src="scripts/controllers/nearby.js"></script>
+    <script src="scripts/controllers/beertinder.js"></script>
     <script src="scripts/controllers/brewery.js"></script>
     <script src="scripts/controllers/AgeGateway.js"></script>
     <script src="scripts/directives/sidebar.js"></script>
     <script src="scripts/directives/restrictedPage.js"></script>
     <script src="scripts/directives/spinner.js"></script>
-	<script src="scripts/directives/recommendation.js"></script>
+    <script src="scripts/directives/recommendation.js"></script>
     <script src="scripts/controllers/rateBeers.js"></script>
     <script src="scripts/controllers/popularBeers.js"></script>
     <script src="scripts/controllers/include.js"></script>
