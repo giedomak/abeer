@@ -95,7 +95,8 @@ angular
 	$rootScope.isAgeGateway = () ->
 		if $location.path() == "/AgeGateway"
 			return true
-		return false
+		else
+			return false
 
 	$rootScope.BV = new $.BigVideo()
 

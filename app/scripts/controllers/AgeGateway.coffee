@@ -44,7 +44,10 @@ angular.module('abeerApp')
 		$rootScope.UM.age = age
 		if $scope.oldEnoughForCountry(age)
 			$rootScope.UM.oldEnough = true
+		console.log "deleting BV"
+#		delete($rootScope.BV)
 		$rootScope.BV.remove()
+		delete($rootScope.BV)
 		$rootScope.UM.setAge = true
 		$location.path("/")
 
