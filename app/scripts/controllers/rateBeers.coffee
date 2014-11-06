@@ -13,18 +13,23 @@ angular.module('abeerApp')
 		$scope.page = $routeParams.page
 		$scope.defaultImg = "images/defaultMedium.jpeg"
 
-		$http.get('http://abeerfor.me/api/beers?hasLabels=Y&p='.concat($scope.page)).success (data) ->
-			console.log data
-			$scope.beers = (beer for beer in data.data)
-			for value, index in $scope.beers
-				value.rating = null
-				value.drinkLater = null
-				if $rootScope.UM.beers_local[value.id]
-					console.log("Found beer in UM")
-					console.log($rootScope.UM.beers_local[value.id])
-					value.rating = $rootScope.UM.beers_local[value.id].rating
-					value.drinkLater = $rootScope.UM.beers_local[value.id].drinkLater
-			$scope.makeBeerRows($scope.beers, 3)
+		$http.get('http://abeerfor.me/api/locations?countryIsoCode='.concat($rootScope.UM.country.code)).success (data) ->
+			$scope.breweryResults = (brewery for brewery in data.data)
+			$scope.breweryResultsNames = (brewery.name for brewery in data.data)
+			$scope.beers = []
+			for brewery in $scope.breweryResults
+				$http.get('http://www.abeerfor.me/api/brewery/'.concat(brewery.id).concat('/beers')).success (data) ->
+					if data.data
+						$scope.beers.push(beer for beer in data.data)
+						for value, index in $scope.beers
+							value.rating = null
+							value.drinkLater = null
+							if $rootScope.UM.beers_local[value.id]
+								console.log("Found beer in UM")
+								console.log($rootScope.UM.beers_local[value.id])
+								value.rating = $rootScope.UM.beers_local[value.id].rating
+								value.drinkLater = $rootScope.UM.beers_local[value.id].drinkLater
+						$scope.makeBeerRows($scope.beers, 3)
 
 
 		$scope.ratingClick = (beer, rating) ->

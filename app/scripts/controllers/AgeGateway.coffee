@@ -52,8 +52,10 @@ angular.module('abeerApp')
 		$scope.drinkingAge = $scope.country.drinking
 		if $scope.drinkingAge <= $rootScope.UM.age
 			console.log("Old enough")
+			$rootScope.UM.country = $scope.country
 			return true
 		console.log("Not enough")
+		$rootScope.UM.country = $scope.country
 		return false
 
 
@@ -66,6 +68,7 @@ angular.module('abeerApp')
 			for country in $scope.flatCountries
 				if country.code == $scope.countryCode.toLowerCase()
 					$scope.country = country
+					$rootScope.UM.country = country
 		)
 
 	$scope.geocoder = new google.maps.Geocoder();

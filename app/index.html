@@ -30,10 +30,10 @@
 
     <!-- Add your site or application content here -->
 	<!-- AgeGateway -->
-	<div class="container" ng-view="" ng-if="isAgeGateway()"></div>
+	<div class="container" ng-view="" ng-show="isAgeGateway()"></div>
 
 	<!-- Site content -->
-    <div class="container-fluid" ng-if="!isAgeGateway()">
+    <div class="container-fluid" ng-hide="isAgeGateway()">
       <div class="row">
 
         <div sidebar class="col-sm-3 col-md-2"></div>
