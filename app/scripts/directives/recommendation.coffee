@@ -4,7 +4,6 @@ angular.module('abeerApp')
 	.directive 'recommendation', () ->
 		templateUrl: "../../views/directives/recommendation.html"
 		controller: "RecommendationCtrl"
-		scope: {}
 
 	.controller 'RecommendationCtrl', ($scope, $rootScope, $http) ->
 		console.log "Rec init"
@@ -71,7 +70,7 @@ angular.module('abeerApp')
 			# sort by preference
 			beers.sort (a,b) ->
 				return a.preference < b.preference
-
+			console.log beers
 			$scope.prefs = beers
 
 			# pick the top 3
@@ -82,7 +81,7 @@ angular.module('abeerApp')
 			organic = []
 			ibu = []
 			for beer in beers
-				abv.push parseFloat beer.abv
+				if beer.abv then abv.push parseFloat beer.abv
 				organic.push if beer.isOrganic is "N" then 0 else 1
 				if beer.ibu then ibu.push parseInt beer.ibu
 
@@ -123,7 +122,7 @@ angular.module('abeerApp')
 					#console.log data
 
 					# get a random beer from the page and set it as recommendation
-					$scope.beer = data.data[Math.floor(Math.random()*data.data.length)]
+					$rootScope.recbeer = data.data[Math.floor(Math.random()*data.data.length)]
 					$scope.quote = $scope.quotes[Math.floor(Math.random()*$scope.quotes.length)]
 
 		calc_savedbeers = () ->

@@ -66,7 +66,6 @@ angular
 		controller: 'BeertinderCtrl'
 	.when '/recommendation',
 		templateUrl: 'views/directives/whyrecommendation.html',
-		controller: 'RecommendationCtrl'
 
 	# countries, types and strengths all use the include template and controller
 	.when '/countries', include
